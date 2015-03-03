@@ -1,0 +1,37 @@
+{
+    "AppExInfoDescription" : "set App other information",
+    "AppExInfo" : {
+        "enableHttpServer" : true,
+        "onlyBuildInServer": false,
+        "enableNativeRate":true,
+        "autoOffset": true,
+        "minSize" : [900, 630],
+        "size" : [900, 630],
+        "#maxSize" : [1024, 500],
+        "hasTitleBar" : true,
+        "hasShadow" : true,
+        "hasTextured" : true,
+        "hasUnifiedTitleAndToolbarWindow" : true,
+        "hasCloseControls" : true,
+        "hasMinimizeControls" : true,
+        "hasResizeControls" : true,
+        "hasToolbarButtonControls" : true,
+        "hideCloseButton" : false,
+        "hideMiniaturizeButton": false,
+        "hideZoomButton" : false,
+        "hideToolbarButton" : false,
+        "hideDocumentIconButton" : false,
+        "hideDocumentVersionsButton" : false,
+        "hideFullScreenButton" : true,
+        "menuHideList" : [
+            {"tag":100,"hide":true},
+            {"tag":200,"hide":false}
+        ],
+        "menuTitleList" : [
+            {"tag":901,"title":"","method":"re", "descript":"About"},
+            {"tag":907,"title":"","method":"re", "descript":"Hide"},
+            {"tag":911,"title":"","method":"re", "descript":"Quit"}
+        ]
+    },
+    "EnableIAP" : false
+}
