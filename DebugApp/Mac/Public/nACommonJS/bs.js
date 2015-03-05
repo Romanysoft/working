@@ -2,6 +2,7 @@
  * Created by Ian on 2014/8/10.
  * 优化
  */
+
 ;(function(factory){
     "use strict";
     if (typeof define === "function" && define.amd){
@@ -27,7 +28,6 @@
     (function($) {
         $.toJSON = $.toJSON || JSON.stringify;
         var b$ = {};
-        b$.version = "20150213";
         b$ = $.extend(window.BS.b$,{});
         b$.pN = b$.pNative = (typeof maccocojs !== 'undefined') && (maccocojs); // 本地引擎
 
@@ -354,10 +354,112 @@
                 }
             },
 
+            ///创建目录
+            createDir: b$.createDir = function(dir_path, atts){
+                if(b$.pN){
+                    try{
+                        var parms = {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['path'] = dir_path || "";
+                        if(atts)  parms['atts'] = atts || {};
+
+                        b$.pN.window.removeDir($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }
+            },
+
             ///删除文件
             removeFile: b$.removeFile = function(file_path){
                 if(b$.pN){
                     return b$.pN.window.removeFile($.toJSON({path:file_path}));
+                }
+            },
+
+            ///删除目录
+            removeDir: b$.removeDir = function(dir_path){
+                if(b$.pN){
+                    try{
+                        var parms = {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['path'] = dir_path || "";
+
+
+                        b$.pN.window.removeDir($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }
+            },
+
+            ///拷贝文件
+            copyFile: b$.copyFile = function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['src'] = parms['src'] || "";
+                        parms['dest'] = parms['dest'] || "";
+
+                        b$.pN.window.copyFile($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }
+            },
+
+            ///拷贝目录
+            copyDir: b$.copyDir = function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['src'] = parms['src'] || "";
+                        parms['dest'] = parms['dest'] || "";
+
+                        b$.pN.window.copyFile($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }
+            },
+
+            ///移动文件
+            moveFile: b$.moveFile = function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['src'] = parms['src'] || "";
+                        parms['dest'] = parms['dest'] || "";
+
+                        b$.pN.window.moveFile($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }
+            },
+
+            ///移动目录
+            moveDir: b$.moveDir = function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['src'] = parms['src'] || "";
+                        parms['dest'] = parms['dest'] || "";
+
+                        b$.pN.window.moveDir($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
                 }
             },
 
@@ -566,7 +668,166 @@
                 }
 
                 return console.error('调用方式不正确，需要的参数为:Native2Webkit 或者webkitCompatible');
+            },
+
+            ///截屏[整个屏幕]
+            captureFull:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['filePath'] = parms['filePath'] || ""; // 保存文件
+
+
+                        b$.pN.window.capture($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }
             }
+
+        };
+
+        /**
+         * 窗体的设置
+         * @type {{minimize: Function, maximize: Function, toggleFullScreen: Function, restore: Function, isMaximized: Function, move: Function, resize: Function, setMinSize: Function, setMaxSize: Function}}
+         */
+        b$.Window = {
+            minimize:function(){
+                if (b$.pN) b$.pN.window.minimize();
+            },
+            maximize:function(){
+                if (b$.pN) b$.pN.window.maximize();
+            },
+            toggleFullScreen:function(){
+                if (b$.pN) b$.pN.window.toggleFullscreen();
+            },
+            restore:function(){
+                if (b$.pN) b$.pN.window.restore();
+            },
+            isMaximized:function(){
+                if (b$.pN){
+                    return b$.pN.window.isMaximized();
+                }
+
+                return false;
+            },
+            move:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['x'] = parms['x'] || 0.0;
+                        parms['y'] = parms['y'] || 0.0;
+
+                        b$.pN.window.move($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('启动窗体移动!')
+                }
+            },
+            resize:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['width'] = parms['width'] || 600;
+                        parms['height'] = parms['height'] || 400;
+
+                        b$.pN.window.resize($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('启动窗体重置大小!')
+                }
+            },
+            setMinSize:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['width'] = parms['width'] || 600;
+                        parms['height'] = parms['height'] || 400;
+
+                        b$.pN.window.setMinsize($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('启动窗体设置最小尺寸!')
+                }
+            },
+            setMaxSize:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['width'] = parms['width'] || 600;
+                        parms['height'] = parms['height'] || 400;
+
+                        b$.pN.window.setMaxsize($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('启动窗体设置最大尺寸!')
+                }
+            }
+
+        };
+
+
+        b$.SystemMenus = {
+            setMenuProperty:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['menuTag'] = parms['menuTag'] || 999;
+                        parms['hideMenu'] = parms['hideMenu'] || false;
+                        parms['title'] = parms['title'] || "MenuTitle";
+                        parms['action'] = parms['action'] || b$._get_callback(function(obj){}, true);
+
+                        b$.pN.window.setMenuProperty($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('启动系统菜单控制!')
+                }
+            },
+            maxRecentDocumentCount:function(){
+                if(b$.pN){
+                    return b$.pN.window.maxRecentDocumentCount();
+                }
+
+                return 0;
+            },
+            addRecentDocument:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['url'] = parms['url'] || "";
+                        parms['mustWritable'] = parms['mustWritable'] || false;
+
+                        b$.pN.window.addRecentDocument($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('启动添加最近使用文档功能')
+                }
+            },
+            clearAllRecentDocuments:function(){
+                if(b$.pN) b$.pN.window.clearAllRecentDocuments();
+            }
+
 
         };
 
@@ -835,6 +1096,24 @@
                 }catch(e){
                     console.error(e)
                 }
+            }
+        };
+
+        // 预览文件
+        b$.previewFile = function(parms){
+            if(b$.pN){
+                try{
+                    parms = parms || {};
+                    //限制内部属性：
+                    parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                    parms['filePath'] = parms['filePath'] || "";
+
+                    b$.pN.window.preveiwFile($.toJSON(parms));
+                }catch(e){
+                    console.error(e);
+                }
+            }else{
+                alert('启动内置预览文件功能')
             }
         };
 
