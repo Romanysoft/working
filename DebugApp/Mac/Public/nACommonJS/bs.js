@@ -781,6 +781,10 @@
         };
 
 
+        /**
+         * 系统菜单控制
+         * @type {{setMenuProperty: Function, maxRecentDocumentCount: Function, addRecentDocument: Function, clearAllRecentDocuments: Function}}
+         */
         b$.SystemMenus = {
             setMenuProperty:function(parms){
                 if(b$.pN){
@@ -868,7 +872,138 @@
             }
         };
 
+        /**
+         * 二进制扩展
+         * @type {{createBinaryFile: Function, createTextFile: Function, getUTF8TextContentFromFile: Function, base64ToFile: Function, base64ToImageFile: Function, imageFileConvertToOthers: Function}}
+         */
+        b$.Binary = {
+            createBinaryFile:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['filePath'] = parms['filePath'] || "";
+                        parms['data'] = parms['data'] || "";
+                        parms['offset'] = parms['offset'] || 0;
+                        parms['dataAppend'] = parms['dataAppend'] || false;
 
+                        b$.pN.binaryFileWriter.writeBinaryArray($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('创建二进制文件')
+                }
+            },
+
+            createTextFile:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['filePath'] = parms['filePath'] || "";
+                        parms['text'] = parms['text'] || "";
+                        parms['offset'] = parms['offset'] || 0;
+                        parms['dataAppend'] = parms['dataAppend'] || true;
+
+                        b$.pN.binaryFileWriter.writeTextToFile($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('创建文本文件')
+                }
+            },
+
+            getUTF8TextContentFromFile:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['filePath'] = parms['filePath'] || "";
+
+                        b$.pN.binaryFileWriter.getTextFromFile($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('获取文本文件中的内容（UTF8编码）')
+                }
+            },
+
+
+            base64ToFile:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['filePath'] = parms['filePath'] || "";
+                        parms['base64String'] = parms['base64String'] || "";
+                        parms['dataAppend'] = parms['dataAppend'] || false;
+
+                        b$.pN.binaryFileWriter.base64ToFile($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('base64编码保存到文件中')
+                }
+            },
+
+            base64ToImageFile:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['filePath'] = parms['filePath'] || "";
+                        parms['base64String'] = parms['base64String'] || "";
+                        parms['imageType'] = parms['imageType'] || 'jpeg'; //png,bmp
+
+                        b$.pN.binaryFileWriter.base64ToImageFile($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('base64编码保存到图片文件中')
+                }
+            },
+
+            imageFileConvertToOthers:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj){}, true);
+                        parms['filePath'] = parms['filePath'] || ""; // 目标文件
+                        parms['orgFilePath'] = parms['orgFilePath'] || ""; // 源文件
+                        parms['imageType'] = parms['imageType'] || 'jpeg'; //png,bmp
+
+                        b$.pN.binaryFileWriter.imageFileConvertToOthers($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('图片格式转换')
+                }
+            },
+
+
+            Sound:{
+                playResourceSoundFile:function(fileUrl){
+                    if(b$.pN) b$.pN.sound.play(fileUrl);
+                }
+            },
+
+            Video:{
+
+            }
+
+        };
 
 
         // 启动核心插件功能
