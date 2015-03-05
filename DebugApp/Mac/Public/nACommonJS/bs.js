@@ -745,6 +745,12 @@
                     alert('启动窗体重置大小!')
                 }
             },
+            getMinSize:function(){
+                if(b$.pN){
+                    return JSON.parse(b$.pN.window.getMinSize());
+                }
+                return {width:600, height:400};
+            },
             setMinSize:function(parms){
                 if(b$.pN){
                     try{
@@ -761,6 +767,12 @@
                     alert('启动窗体设置最小尺寸!')
                 }
             },
+            getMaxSize:function(){
+                if(b$.pN){
+                    return JSON.parse(b$.pN.window.getMaxSize());
+                }
+                return {width:600, height:400};
+            },
             setMaxSize:function(parms){
                 if(b$.pN){
                     try{
@@ -776,6 +788,16 @@
                 }else{
                     alert('启动窗体设置最大尺寸!')
                 }
+            },
+            getSize:function(){
+                if(b$.pN){
+                    return JSON.parse(b$.pN.window.getSize());
+                }
+
+                return {width:600, height:400};
+            },
+            setSize:function(parms){
+                b$.Window.resize(parms);
             }
 
         };
