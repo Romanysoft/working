@@ -8,6 +8,16 @@ Solutions：
 1. [Get Started For Mac App](https://github.com/Romanysoft/working/wiki/Get-Started-For-Mac-App)
 
 
+
+====
+示例共享：
+
+1. [MarkdownD ver 1.0 ](https://github.com/Romanysoft/working/blob/master/MarkdownD.zip)
+1. [MarkdownD 实时更新版本](https://github.com/lauer3912/share_markdownD)
+1. [DisplyHelper App](https://github.com/Romanysoft/working/blob/master/displayhelper.zip)
+1. [Resolution2 App](https://github.com/Romanysoft/working/blob/master/Resolution2_public.zip)
+
+
 ====
 ###开发常用资源推荐
 
