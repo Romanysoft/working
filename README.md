@@ -2,7 +2,8 @@
 working - make app
 ====
 
-Solutions：
+
+###入门解决方案：(必读)
 
 1. [Get Started For Mac App 中文版本](https://github.com/Romanysoft/working/wiki/Get-Started-For-Mac-App%EF%BC%88%E4%B8%AD%E6%96%87%EF%BC%89)
 1. [Get Started For Mac App](https://github.com/Romanysoft/working/wiki/Get-Started-For-Mac-App)
@@ -10,12 +11,15 @@ Solutions：
 
 
 ====
-示例共享：
+###示例共享：
 
-1. [MarkdownD ver 1.0 ](https://github.com/Romanysoft/working/blob/master/MarkdownD.zip)
-1. [MarkdownD 实时更新版本](https://github.com/lauer3912/share_markdownD)
+** 建议下载查看 **
+
 1. [DisplyHelper App](https://github.com/Romanysoft/working/blob/master/displayhelper.zip)
 1. [Resolution2 App](https://github.com/Romanysoft/working/blob/master/Resolution2_public.zip)
+1. [MarkdownD ver 1.0 ](https://github.com/Romanysoft/working/blob/master/MarkdownD.zip)
+1. [MarkdownD 实时更新版本](https://github.com/lauer3912/share_markdownD)
+
 
 
 ====
