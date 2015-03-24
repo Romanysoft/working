@@ -26,7 +26,7 @@ working - make app
 ====
 ### 使用第三方组件，要注意其协议。符合商业软件用途 (必读)
 
-![软件授权协议浅谈](http://note.youdao.com/groupshare/?token=822E252BAEBF4027A7EA9813E2B85011&gid=3992869)
+[软件授权协议浅谈](http://note.youdao.com/groupshare/?token=822E252BAEBF4027A7EA9813E2B85011&gid=3992869)
 
 
 
