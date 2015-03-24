@@ -22,6 +22,14 @@ working - make app
 
 
 
+
+====
+### 使用第三方组件，要注意其协议。符合商业软件用途 (必读)
+
+![软件授权协议浅谈](http://note.youdao.com/groupshare/?token=822E252BAEBF4027A7EA9813E2B85011&gid=3992869)
+
+
+
 ====
 ###开发常用资源推荐
 
@@ -29,7 +37,7 @@ working - make app
 
 
 ===
-###可参考制作App的资源（Javascript 部分）:
+###可参考学习制作App的资源（Javascript 部分）:
 
 1. [slfsrv 是一个可执行程序让你使用 HTML、JS 和 CSS 来创建 GUI 应用，并启动默认的浏览器打开应用](https://github.com/BrentNoorda/slfsrv)
 1. [Shdr 是一个在线的 ESSL/GLSL 阴影编辑器，支持在线效果预览](http://shdr.bkcore.com/)
@@ -150,7 +158,7 @@ working - make app
 (后续陆续补充...)
 
 ===
-###可参考制作App的资源（NodeJS 部分）:
+###可参考学习制作App的资源（NodeJS 部分）:
 
 
 **所有npm的包，都可以作为App的组成部分**
