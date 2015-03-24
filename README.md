@@ -148,15 +148,26 @@ Solutions：
 ===
 ###可参考制作App的资源（NodeJS 部分）:
 
+
+**所有npm的包，都可以作为App的组成部分**
+
 (后续陆续补充...)
 
 ===
 ###可参考制作App的资源（Python 部分）:
 
+
+
+1. [Python技巧文章](https://github.com/Romanysoft/working/wiki/Python%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0)
+
+
 (后续陆续补充...)
 
 ===
 ###可参考制作App的资源（C、C++、Objective-c、Swift 部分）:
+
+
+1. [c系列库](https://github.com/Romanysoft/working/wiki/C%E7%B3%BB%E5%88%97%E5%BA%93)
 
 (后续陆续补充...)
 
