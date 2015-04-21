@@ -3,7 +3,6 @@
  * 常用功能集合
  * 优化
  */
-
 ;(function(factory){
     "use strict";
     if (typeof define === "function" && define.amd){
@@ -113,6 +112,18 @@
             }
 
             return '';
+        };
+
+        // 字符串参数格式化 {index}
+        $.stringFormat = function(){
+            if(arguments.length == 0) return null;
+            var str = arguments[0];
+            for(var i = 1; i < arguments.length; i++){
+                var re = new RegExp('\\{' + (i - 1) + '\\}', 'gm');
+                str = str.replace(re, arguments[i]);
+            }
+
+            return str;
         };
 
 

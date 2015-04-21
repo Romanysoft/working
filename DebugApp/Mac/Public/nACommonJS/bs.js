@@ -75,7 +75,7 @@
                             path:b$.getAppPluginDir() + b$.pIAPPlugin.path
                         }));
 
-                        //看看是否可以起诉购买
+                        //看看是否可以购买
                         if(b$.pN.iap.canMakePayments()){
                             //启动服务
                             b$.pN.iap.startIAPService();
@@ -1029,7 +1029,7 @@
 
 
         // 启动核心插件功能
-        b$.enablePluginCore = function(pluginList){
+        b$.enablePluginCore = function(pluginList, cbFuncName){
             if(b$.pN){
                 try{
                     var org_pluginArray = pluginList || []; // 插件信息数组
@@ -1045,6 +1045,7 @@
 
                     var extendObj = $.objClone(b$.pCorePlugin);
                     extendObj["callMethod"] = "initCore";
+                    if(cbFuncName) extendObj["passBack"] = cbFuncName; // 取代默认回调函数
                     extendObj["arguments"] = [
                         true,
                         pluginArray
@@ -1156,6 +1157,20 @@
                     parms['canChooseFiles'] = true;
                     parms['canChooseDir'] = false;
                     parms['types'] = parms['types'] || [];
+					
+					//下拉文件类型选择处理
+					if("enableFileFormatCombox" in parms){ 
+						parms["enableFileFormatCombox"] = parms["enableFileFormatCombox"] || false;
+					}
+					if("typesDescript" in params){
+						parms["typesDescript"] = parms["typesDescript"] || [];
+					}
+					if("lable" in params){
+						parms["lable"] = parms["lable"] || "File Format:";
+					}
+					//[end]下拉文件类型选择处理
+				
+
 
 
                     b$.pN.window.openFile($.toJSON(parms));
