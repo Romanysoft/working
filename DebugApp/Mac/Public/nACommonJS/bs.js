@@ -869,7 +869,7 @@
             },
             paste:function(){
                 if(b$.pN){
-                    b$.pN.clipboard.paste();
+                   return b$.pN.clipboard.paste();
                 }
             }
         };
