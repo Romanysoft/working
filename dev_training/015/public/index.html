@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en_us">
+<head>
+    <!-- 关于HTML <meta> 标签的用法，大家可以百度一下 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	
+	<!-- 标题 -->
+    <title>Loading...</title>
+
+    <!--样式处理[公共]-->
+    <link rel="stylesheet"  href="styles/mac.css" />
+
+    <!--公共JS[内置]-->
+    <script src="common/jquery/jquery.min.js"></script>
+
+    <!--App样式处理-->
+    <link rel="stylesheet"  href="styles/app.css" />
+	
+    <!--App引用JS 非Mini方式-->
+    <script src="js/util.js"></script>
+    <script src="js/bs.js"></script>
+	<script src="js/app.js"></script>
+</head>
+
+<body>
+
+<div class="flex-container">
+	<button id="btn-openFile">选择文件</button>
+	<button id="btn-openImgFile">选择图像文件</button>
+	<button id="btn-openImgExFile">选择图像文件,可以选择类型</button>
+	<button id="btn-openDir">选择文件夹</button>
+	<textarea id="area-log"></textarea>
+</div>
+
+<script>
+    window.UI.c$.launch();
+</script>
+
+</body>
+</html>

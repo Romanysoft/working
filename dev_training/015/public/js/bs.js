@@ -887,7 +887,7 @@
             },
             getBadge:function(){
                 if(b$.pN){
-                    return b$.pN.dock.badge;
+                    return b$.pN.dock.badge();
                 }
 
                 return "dock";
@@ -1157,20 +1157,6 @@
                     parms['canChooseFiles'] = true;
                     parms['canChooseDir'] = false;
                     parms['types'] = parms['types'] || [];
-					
-					//下拉文件类型选择处理
-					if("enableFileFormatCombox" in parms){ 
-						parms["enableFileFormatCombox"] = parms["enableFileFormatCombox"] || false;
-					}
-					if("typesDescript" in params){
-						parms["typesDescript"] = parms["typesDescript"] || [];
-					}
-					if("lable" in params){
-						parms["lable"] = parms["lable"] || "File Format:";
-					}
-					//[end]下拉文件类型选择处理
-				
-
 
 
                     b$.pN.window.openFile($.toJSON(parms));

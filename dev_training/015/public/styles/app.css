@@ -1,0 +1,17 @@
+
+.flex-container {
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	-webkit-flex-direction: column; /* Safari */
+	flex-direction:         column;
+	-webkit-justify-content: space-around; /* Safari */
+	justify-content:         space-around;
+	-webkit-align-items: flex-start; /* Safari */
+	align-items:         flex-start;	
+}
+
+#area-log{
+	width: 100%;
+	height: 220px;  
+	scrollbar-base-color:lightsalmon; 
+}
