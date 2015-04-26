@@ -178,6 +178,8 @@
          * App 内容封装
          */
         b$.App = {
+			
+			/// 获得App的名称
             appName:null,
             getAppName:function(){
                 if(b$.pN){
@@ -189,6 +191,7 @@
                 return "AppName";
             },
 
+			/// 获得产品的版本
             appVersion:null,
             getAppVersion:function(){
                 if(b$.pN){
@@ -200,6 +203,7 @@
                 return "4.5.6";
             },
 
+			/// 获得产品的ID
             appId:null,
             getAppId:function(){
                 if(b$.pN){
@@ -211,6 +215,7 @@
                 return "AppID";
             },
 
+			/// 获得App是否在沙盒内
             getSandboxEnable:function(){
                 if(b$.pN){
                     var sandboxEnable = b$.pN.app.getSandboxEnable();
@@ -219,6 +224,7 @@
                 return false;
             },
 
+			/// 获取App内部注册信息
             getRegInfoJSONString:function(){
                 if(b$.pN){
                     var str = b$.pN.app.getRegInfoJSONString();
@@ -227,6 +233,7 @@
                 return "";
             },
 
+			/// 获取App认证的内部序列号信息
             getSerialNumber:function(){
                 if(b$.pN){
                     var str = b$.pN.app.getStringSerialNumber();
@@ -235,6 +242,7 @@
                 return "";
             },
 
+			/// 获取本地IP地址
             getLocalIP:function(){
                 if(b$.pN){
                     var str = b$.pN.app.getLocalIP();
@@ -243,9 +251,54 @@
                 return "";
             },
 
+			
+			/// 终止运行，退出系统
+			terminate: function(){
+				if(b$.pN){
+                    b$.pN.app.terminate();
+                }				
+			},
+			
+			/// 激活自己
+			activate: function(){
+				if(b$.pN){
+                    b$.pN.app.activate();
+                }
+			},
+			
+			/// 隐藏自己
+			hide:function(){
+				if(b$.pN){
+                    b$.pN.app.hide();
+                }
+			},
+			
+			/// 取消隐藏自己
+			unhide:function(){
+				if(b$.pN){
+                    b$.pN.app.unhide();
+                }
+			},
+			
+			/// 发出beep声音
+			beep:function(){
+				if(b$.pN){
+                    b$.pN.app.beep();
+                }
+			},
+			
+			/// 激活Bounce事件
+			bounce:function(){
+				if(b$.pN){
+                    b$.pN.app.bounce();
+                }
+			},
+			
+			
+			/// 打开链接地址
             open:function(data){
                 if(b$.pN){
-                    return b$.pN.app.open(data);
+                    return b$.pN.app.open(data || "http://www.baidu.com");
                 }else{
                     try{
                         window.open(data);
@@ -253,7 +306,45 @@
 
                 }
             },
+			
+			
+			/// 打开文件，使用系统默认行为
+			openFileWithDefaultApp:function(filePath){
+				if(b$.pN){
+                    b$.pN.app.openFile(filePath);
+                }
+			},
 
+			
+			/// 通过应用程序的名称，启动应用程序
+			launchApplication:function(applicationName){
+				if(b$.pN){
+                    b$.pN.app.launch(applicationName || 'safari');
+                }
+			},
+			
+			/// 发送电子邮件
+			sendEmail:function(parms){
+                if(b$.pN){
+                    try{
+                        parms = parms || {};
+                        //限制内部属性：
+                        parms['sendAddress'] = parms['sendAddress'] || "admin@gmail.com";
+                        parms['toAddress'] = parms['toAddress'] ||"admin@gmail.com";
+                        parms['subject'] = parms['subject'] ||"Hello";
+                        parms['body'] = parms['body'] ||"Hello!!";
+						
+
+                        b$.pN.app.sendEmailWithMail($.toJSON(parms));
+                    }catch(e){
+                        console.error(e);
+                    }
+                }else{
+                    alert('启动发送邮件')
+                }				
+			},
+			
+			
             //{开启启动部分}
             isStartAtLogin:function(){
                 if(b$.pN){
@@ -319,6 +410,159 @@
                 }
                 return "";
             },
+			
+			/// 获得App的包的目录
+			getAppBundlePath: function(){
+				if(b$.pN){
+                    return b$.pN.path.application();
+                }
+                return "";
+			},
+			
+			/// 获得AppDataHomeDir
+			getAppDataHomeDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.appDataHomeDir();
+                }
+                return "";
+			},
+			
+			/// 获得Home Directory
+			getHomeDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.homeDir();
+                }
+                return "";
+			},
+			
+			/// 获得DocumentsDir
+			getDocumentsDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.documentsDir();
+                }
+                return "";
+			},
+			
+			/// 获得本地Documents目录
+			getLocalDocumentsDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.localDocumentsDir();
+                }
+                return "";
+			},
+			
+			/// 获得LibraryDir
+			getLibraryDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.libraryDir();
+                }
+                return "";
+			},
+			
+			/// 获得临时目录
+			getTempDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.tempDir();
+                }
+                return "";
+			},
+			
+			/// 获得Cache目录
+			getCacheDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.cacheDir();
+                }
+                return "";
+			},
+			
+			/// 获得Application目录
+			getApplicationDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.applicationDir();
+                }
+                return "";
+			},
+			
+			/// 获得DesktopDir，桌面路径
+			getDesktopDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.desktopDir();
+                }
+                return "";
+			},
+			
+			/// 获得downloadDir，下载目录路径
+			getDownloadDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.downloadDir();
+                }
+                return "";
+			},
+			
+			/// 获得本地download目录路径
+			getLocalDownloadDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.localDownloadDir();
+                }
+                return "";
+			},
+			
+			/// 获得Movies目录路径
+			getMoviesDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.moviesDir();
+                }
+                return "";
+			},
+			
+			/// 获得本地Movies目录路径
+			getLocalMoviesDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.localMoviesDir();
+                }
+                return "";
+			},
+			
+			/// 获得Music目录
+			getMusicDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.musicDir();
+                }
+                return "";
+			},
+			
+			/// 获得本地Music目录
+			getLocalMusicDir: function(){
+				if(b$.pN){
+                    return b$.pN.path.localMusicDir();
+                }
+                return "";
+			},
+			
+			/// 获得本地Pictures目录
+			getLocalPicturesDir:function(){
+				if(b$.pN){
+                    return b$.pN.path.localPicturesDir();
+                }
+                return "";
+			},
+			
+			/// 获得UserName
+			getUserName: function(){
+				if(b$.pN){
+                    return b$.pN.path.userName();
+                }
+                return "";
+			},
+			
+			/// 获得User全名(UserFullName)
+			getUserFullName: function(){
+				if(b$.pN){
+                    return b$.pN.path.userFullName();
+                }
+                return "";
+			},
+			
 
             /// 检测路径是否存在
             checkPathIsExist: b$.pathIsExist = function(path){
@@ -670,6 +914,23 @@
                 return console.error('调用方式不正确，需要的参数为:Native2Webkit 或者webkitCompatible');
             },
 
+			
+			///设置用户设置的语言
+			setUserLanguage:function(language){
+				if(b$.pN){
+                    b$.pN.app.setUserLanguage(language || 'en-us');
+                }
+			},
+			
+			///获取用户设置的语言
+			getUserLanguage:function(){
+				if(b$.pN){
+                   return b$.pN.app.curUserLanguage();
+                }
+				
+				return "en-us";
+			},
+			
             ///截屏[整个屏幕]
             captureFull:function(parms){
                 if(b$.pN){
@@ -694,18 +955,28 @@
          * @type {{minimize: Function, maximize: Function, toggleFullScreen: Function, restore: Function, isMaximized: Function, move: Function, resize: Function, setMinSize: Function, setMaxSize: Function}}
          */
         b$.Window = {
+			
+			// 最小化窗体
             minimize:function(){
                 if (b$.pN) b$.pN.window.minimize();
             },
+			
+			// 最大化窗体
             maximize:function(){
                 if (b$.pN) b$.pN.window.maximize();
             },
+			
+			// 全屏切换
             toggleFullScreen:function(){
                 if (b$.pN) b$.pN.window.toggleFullscreen();
             },
+			
+			// 窗体状态恢复
             restore:function(){
                 if (b$.pN) b$.pN.window.restore();
             },
+			
+			// 是否最大化
             isMaximized:function(){
                 if (b$.pN){
                     return b$.pN.window.isMaximized();
@@ -713,6 +984,16 @@
 
                 return false;
             },
+			
+			// 获取原点坐标
+			getOrigin:function(){
+				if(b$.pN){
+                    return JSON.parse(b$.pN.window.getOrigin());
+                }
+                return {x:0, y:0};
+			},
+			
+			// 移动窗体
             move:function(parms){
                 if(b$.pN){
                     try{
@@ -729,6 +1010,8 @@
                     alert('启动窗体移动!')
                 }
             },
+			
+			// 改变窗体大小
             resize:function(parms){
                 if(b$.pN){
                     try{
@@ -745,12 +1028,16 @@
                     alert('启动窗体重置大小!')
                 }
             },
+			
+			// 获取窗体尺寸最小值
             getMinSize:function(){
                 if(b$.pN){
                     return JSON.parse(b$.pN.window.getMinSize());
                 }
                 return {width:600, height:400};
             },
+			
+			// 设置窗体尺寸最小值
             setMinSize:function(parms){
                 if(b$.pN){
                     try{
@@ -767,12 +1054,16 @@
                     alert('启动窗体设置最小尺寸!')
                 }
             },
+			
+			// 获取窗体最大值
             getMaxSize:function(){
                 if(b$.pN){
                     return JSON.parse(b$.pN.window.getMaxSize());
                 }
                 return {width:600, height:400};
             },
+			
+			// 设置窗体最大值
             setMaxSize:function(parms){
                 if(b$.pN){
                     try{
@@ -789,6 +1080,8 @@
                     alert('启动窗体设置最大尺寸!')
                 }
             },
+			
+			// 获取窗体当前尺寸
             getSize:function(){
                 if(b$.pN){
                     return JSON.parse(b$.pN.window.getSize());
@@ -796,6 +1089,8 @@
 
                 return {width:600, height:400};
             },
+			
+			// 设置窗体当前尺寸
             setSize:function(parms){
                 b$.Window.resize(parms);
             }
