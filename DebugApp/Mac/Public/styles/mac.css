@@ -1,0 +1,9 @@
+body {
+  background-color: #ECECEC;
+  font-family: "Helvetica Neue", Helvetica, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-weight: 300;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}

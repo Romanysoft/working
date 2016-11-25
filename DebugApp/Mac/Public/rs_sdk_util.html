@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Romanysoft | DebugApp</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+	
+	 <!-- CodeMirror -->
+	 <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> <span>
+                            <img alt="image" src="img/logo_48.png" />
+                             </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Ver 2016.11.20</strong>
+                             </span>  </span> </a>
+                        </div>
+                        <div class="logo-element">
+                            SDK
+                        </div>
+                    </li>
+                    <li class="active">
+                        <a href="rs_sdk_index.html"><i class="fa fa-cube"></i> <span class="nav-label">Romanysoft SDK</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="rs_sdk_index.html">Getting Started</a></li>
+							<li class="active"><a href="rs_sdk_util.html">Utils</a></li>
+                            <li><a href="rs_sdk_app.html">App</a></li>
+                            <li><a href="rs_sdk_notice.html">Notice</a></li>
+                            <li><a href="rs_sdk_windows.html">Window</a></li>
+                            <li><a href="rs_sdk_menus.html">Menus</a></li>
+                            <li><a href="rs_sdk_clipboard.html">Clipboard</a></li>
+                            <li><a href="rs_sdk_dock.html">Dock</a></li>
+                            <li><a href="rs_sdk_binary.html">Binary</a></li>
+							<li><a href="rs_sdk_dialog.html">Dialog</a></li>
+                            <li><a href="rs_sdk_dragdrop.html">DragDrop</a></li>
+                            <li><a href="rs_sdk_plugins.html">Plugins</a></li>
+                            <li><a href="rs_sdk_task.html">Task</a></li>
+                            <li><a href="rs_sdk_sound.html">Sound <span class="label label-primary pull-right">不常用</span></a></li>
+                            <li><a href="rs_sdk_iap.html">IAP</a></li>
+                            <li><a href="rs_sdk_xpc.html">XPC</a></li>
+                        </ul>
+                    </li>                    
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="index.html">Dashboard v.1</a></li>
+                            <li><a href="dashboard_2.html">Dashboard v.2</a></li>
+                            <li><a href="dashboard_3.html">Dashboard v.3</a></li>
+                            <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                            <li><a href="dashboard_5.html">Dashboard v.5 <span class="label label-primary pull-right">NEW</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="graph_flot.html">Flot Charts</a></li>
+                            <li><a href="graph_morris.html">Morris.js Charts</a></li>
+                            <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
+                            <li><a href="graph_chartjs.html">Chart.js</a></li>
+                            <li><a href="graph_chartist.html">Chartist</a></li>
+                            <li><a href="c3.html">c3 charts</a></li>
+                            <li><a href="graph_peity.html">Peity Charts</a></li>
+                            <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="mailbox.html">Inbox</a></li>
+                            <li><a href="mail_detail.html">Email view</a></li>
+                            <li><a href="mail_compose.html">Compose email</a></li>
+                            <li><a href="email_template.html">Email templates</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
+                    </li>
+                    <li>
+                        <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="form_basic.html">Basic form</a></li>
+                            <li><a href="form_advanced.html">Advanced Plugins</a></li>
+                            <li><a href="form_wizard.html">Wizard</a></li>
+                            <li><a href="form_file_upload.html">File Upload</a></li>
+                            <li><a href="form_editors.html">Text Editor</a></li>
+                            <li><a href="form_markdown.html">Markdown</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="profile_2.html">Profile v.2</a></li>
+                            <li><a href="contacts_2.html">Contacts v.2</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="project_detail.html">Project detail</a></li>
+                            <li><a href="teams_board.html">Teams board</a></li>
+                            <li><a href="social_feed.html">Social feed</a></li>
+                            <li><a href="clients.html">Clients</a></li>
+                            <li><a href="full_height.html">Outlook view</a></li>
+                            <li><a href="vote_list.html">Vote list</a></li>
+                            <li><a href="file_manager.html">File manager</a></li>
+                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="issue_tracker.html">Issue tracker</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="article.html">Article</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="timeline.html">Timeline</a></li>
+                            <li><a href="pin_board.html">Pin board</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="search_results.html">Search results</a></li>
+                            <li><a href="lockscreen.html">Lockscreen</a></li>
+                            <li><a href="invoice.html">Invoice</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login_two_columns.html">Login v.2</a></li>
+                            <li><a href="forgot_password.html">Forget password</a></li>
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="404.html">404 Page</a></li>
+                            <li><a href="500.html">500 Page</a></li>
+                            <li><a href="empty_page.html">Empty page</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="toastr_notifications.html">Notification</a></li>
+                            <li><a href="nestable_list.html">Nestable list</a></li>
+                            <li><a href="agile_board.html">Agile board</a></li>
+                            <li><a href="timeline_2.html">Timeline v.2</a></li>
+                            <li><a href="diff.html">Diff</a></li>
+                            <li><a href="i18support.html">i18 support</a></li>
+                            <li><a href="sweetalert.html">Sweet alert</a></li>
+                            <li><a href="idle_timer.html">Idle timer</a></li>
+                            <li><a href="truncate.html">Truncate</a></li>
+                            <li><a href="spinners.html">Spinners</a></li>
+                            <li><a href="tinycon.html">Live favicon</a></li>
+                            <li><a href="google_maps.html">Google maps</a></li>
+                            <li><a href="code_editor.html">Code editor</a></li>
+                            <li><a href="modal_window.html">Modal window</a></li>
+                            <li><a href="clipboard.html">Clipboard</a></li>
+                            <li><a href="forum_main.html">Forum view</a></li>
+                            <li><a href="validation.html">Validation</a></li>
+                            <li><a href="tree_view.html">Tree view</a></li>
+                            <li><a href="loading_buttons.html">Loading buttons</a></li>
+                            <li><a href="chat_view.html">Chat view</a></li>
+                            <li><a href="masonry.html">Masonry</a></li>
+                            <li><a href="tour.html">Tour</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="icons.html">Icons</a></li>
+                            <li><a href="draggable_panels.html">Draggable Panels</a></li> <li><a href="resizeable_panels.html">Resizeable Panels</a></li>
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="video.html">Video</a></li>
+                            <li><a href="tabs_panels.html">Panels</a></li>
+                            <li><a href="tabs.html">Tabs</a></li>
+                            <li><a href="notifications.html">Notifications & Tooltips</a></li>
+                            <li><a href="badges_labels.html">Badges, Labels, Progress</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="table_basic.html">Static Tables</a></li>
+                            <li><a href="table_data_tables.html">Data Tables</a></li>
+                            <li><a href="table_foo_table.html">Foo Tables</a></li>
+                            <li><a href="jq_grid.html">jqGrid</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="ecommerce_products_grid.html">Products grid</a></li>
+                            <li><a href="ecommerce_product_list.html">Products list</a></li>
+                            <li><a href="ecommerce_product.html">Product edit</a></li>
+                            <li><a href="ecommerce_product_detail.html">Product detail</a></li>
+                            <li><a href="ecommerce-cart.html">Cart</a></li>
+                            <li><a href="ecommerce-orders.html">Orders</a></li>
+                            <li><a href="ecommerce_payments.html">Credit Card form</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
+                            <li><a href="slick_carousel.html">Slick Carousel</a></li>
+                            <li><a href="carousel.html">Bootstrap Carousel</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="index.html#">Third Level <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="index.html#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html#">Third Level Item</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li><a href="index.html#">Second Level Item</a></li>
+                            <li>
+                                <a href="index.html#">Second Level Item</a></li>
+                            <li>
+                                <a href="index.html#">Second Level Item</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
+                    </li>
+                    <li class="landing_link">
+                        <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
+                    </li>
+                    <li class="special_link">
+                        <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="rs_sdk_index.html#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to Romanysoft SDK Demo and INSPINIA+ Admin Theme. </span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="index.html#">
+                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a7.jpg">
+                                </a>
+                                <div class="media-body">
+                                    <small class="pull-right">46h ago</small>
+                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right text-navy">5h ago</small>
+                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right">23h ago</small>
+                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html">
+                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="index.html#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+
+
+        <div class="wrapper wrapper-content  animated fadeInRight article">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <div class="pull-right">
+                            </div>
+                            <div class="text-center article-title">
+                            <span class="text-muted"><i class="fa fa-clock-o"></i> 2016年11月20日</span>
+                                <h1>
+                                    Utils
+                                </h1>
+                            </div>
+                            <p>
+                                <strong>util.js</strong> 提供了很多实用的功能。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			
+			
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <h2>
+                                <strong>历史遗留的功能函数</strong>
+                            </h2>
+
+							<h3><code>$.objClone(obj)</code></h3>
+                            <div class="alert alert-warning">
+                                对象深度克隆，返回新的对象
+                            </div>	
+
+							<h3><code>$.getMyDateStr()</code> <label class="label label-primary">适用于使用了KendoUI库。老版本API遗留</label> </h3>
+                            <div class="alert alert-warning">
+                                获取kendo的时间
+                            </div>	
+							
+							<h3><code>$.getFormatDateStr(dateObj, fmt)</code> </h3>
+                            <div class="alert alert-warning">
+                                简易格式化Date <br>
+								// 对Date的扩展，将 Date 转化为指定格式的String<br>
+								// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，<br>
+								// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)<br>
+								// 例子：<br>
+								// <code>$.getFormatDateStr(new Date(), "yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 </code><br>
+								// <code>$.getFormatDateStr(new Date(),"yyyy-M-d h:m:s.S")       ==> 2006-7-2 8:9:4.18 </code><br>
+                            </div>								
+
+							<h3><code>$.obj2string(o)</code></h3>
+                            <div class="alert alert-warning">
+                                将对象<code>o</code>输出为String类型
+                            </div>	
+							
+							<h3><code>$.stringFormat()</code></h3>
+                            <div class="alert alert-warning">
+                                可变参数对字符串进行格式化输出，适用于<code>{}</code> 包裹的字符串
+								
+							   <h6>示例：</h6>
+                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.stringFormat("{1} Hello {0} {0}", "World", "Let's" ); // 输出："Let's Hello World World"
+							   </textarea>									
+                            </div>								
+
+							<h3><code>$.compareVersion(ver1, ver2)</code></h3>
+                            <div class="alert alert-warning">
+                                比较版本号。<code>ver1 > ver2 </cdoe> 返回 <code>1</code>; <code>ver1 == ver2 </cdoe> 返回 <code>0</code>; <code>ver1 < ver2 </cdoe> 返回 <code>-1</code>;
+							   <h6>示例：</h6>
+                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.compareVersion("1.0.1", "1.0.0") // 输出：1
+$.compareVersion("1.0.0", "1.0.0") // 输出：0
+$.compareVersion("1.0.0", "1.0.1") // 输出：-1
+							   </textarea>								
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+            </div>			
+			
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <h2>
+                                <strong>$.RTYWebHelper</strong> ---- Web标识识别单元
+                            </h2>
+
+							<h3><code>$.RTYWebHelper.ua()</code></h3>	
+                            <div class="alert alert-warning">
+								返回<code>navigator.userAgent.toLowerCase()</code>的值
+                            </div>		
+
+							<h3><code>$.RTYWebHelper.isOpera()</code></h3>
+                            <div class="alert alert-warning">
+                                判断是否为Opera内核浏览器？如果是，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYWebHelper.isChrome()</code></h3>
+                            <div class="alert alert-warning">
+                                判断是否为Chrome内核浏览器？如果是，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYWebHelper.isSafari()</code></h3>
+                            <div class="alert alert-warning">
+                                判断是否为Safari内核浏览器？如果是，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYWebHelper.isSafari3()</code></h3>
+                            <div class="alert alert-warning">
+                                判断是否为Safari内核浏览器 版本为5系列？如果是，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYWebHelper.isSafariExtend(version)</code></h3>
+                            <div class="alert alert-warning">
+                                判断是否为Safari内核指定版本浏览器 如果是，返回 <code>true</code>, 反之 <code>false</code>
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>@param version 匹配版本，例如：601.6.17</code>; <br>
+						
+                            </div>								
+
+                        </div>
+                    </div>
+                </div>
+            </div>			
+			
+			
+			
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <h2>
+                                <strong>$.RTYUtils</strong> --- 常用工具类
+                            </h2>
+							<h3><code>$.RTYUtils.getType(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                通用的类型判断，返回传入参数<code>o</code>的构造函数字符串形式，例如：<code> var obj = {};  console.log($.RTYUtils.getType(obj)); </code> 输出为: <code> "[object Object]" </code>
+                            </div>
+							
+							<h3><code>$.RTYUtils.isUndefinedOrNull(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>undefined</code> 或 <code>null</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>
+							
+							<h3><code>$.RTYUtils.isObject(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>对象</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isArray(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>数组</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isBoolean(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>Boolean类型</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isString(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>字符串String类型</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isNull(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>null</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isUndefined(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>undefined</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isNumber(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>数字Number类型</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isDate(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>日期Date类型</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isRegExp(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>正则表达式RegExp类型</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>		
+
+							<h3><code>$.RTYUtils.isFunction(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>函数Function类型</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.isBlob(var o)</code></h3>
+                            <div class="alert alert-warning">
+                                判断传入的参数<code>o</code>是否为<code>Blob类型</code>. 如果符合，返回 <code>true</code>, 反之 <code>false</code>
+                            </div>	
+
+							<h3><code>$.RTYUtils.blobData2String(var o, function cb)</code></h3>
+                            <div class="alert alert-warning">
+                                Blob数据转换成字符串. 参数: <code>@param o Blob对象 </code>; <code>@param cb 回调函数 </code>;
+                            </div>		
+
+							<h3><code>$.RTYUtils.blobData2ArrayBuffer(var o, function cb)</code></h3>
+                            <div class="alert alert-warning">
+                                Blob数据转换成ArrayBuffer], 要变成String，你需要解析ArrayBuf. 参数: <code>@param o Blob对象 </code>; <code>@param cb 回调函数 </code>;
+                            </div>	
+
+							<h3><code>$.RTYUtils.param2Array(var param, array allowTypes)</code></h3>
+                            <div class="alert alert-warning">
+                                参数包装成数组. 参数: <code>@param param 参数值 </code>; <code>@param allowTypes 允许什么类型的param转换成数组 </code> ,返回 <code>数组[]</code> 
+                            </div>
+
+							<h3><code>$.RTYUtils.queue</code><label class="label">高级应用</label></h3>
+                            <div class="alert alert-warning">
+                                按顺序及步骤执行队列，规范异步执行嵌套的一种办法。使代码逻辑简单化
+								
+								<h6>示例. 创建一个简单的队列执行</h6>
+                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.queue()
+	.next(function(nxt){
+		// 先执行获取远程数据1
+		$.getJSON( "ajax/test1.json", function( data ) {
+			if(data){
+				nxt && nxt();
+			}
+		});
+	})
+	.next(function(nxt){
+		// 先执行获取远程数据2
+		$.getJSON( "ajax/test2.json", function( data ) {
+			nxt && nxt();
+		}).fail(function(){
+			nxt && nxt("fail");
+		});										
+	})
+	.done(function(nxt, err){ // 执行完成的处理
+		if(err){
+			console.log(err);  // 输出 fail
+		}else{
+			console.log('----------- run complate ----------------');
+		}
+		
+		
+	});
+										
+							   </textarea>									   
+                            </div>	
+							
+							<h3><code>$.RTYUtils.checkFileType(var fileName, Array fileTypes)</code></h3>
+                            <div class="alert alert-warning">
+                                判断输入参数fileName的扩展名是否在参数fileTypes数组中，不区分大小写. 参数: <code>@param fileName 带扩展名的文件名称 </code>; <code>@param fileTypes 要判断的文件扩展名数组 </code> ,如果包含在内，返回 <code>true</code>, 反之 <code>false</code>
+								<br>
+								示例1: <code>$.RTYUtils.checkFileType("~/test/test.gz.rar", ["gz.rar"])</code> 返回 <code>false</code><br>
+								示例2: <code>$.RTYUtils.checkFileType("~/test/test.gz.rar", ["rar"])</code> 返回 <code>true</code><br>
+                            </div>
+
+							<h3><code>$.RTYUtils.loadScript(var fileName, Function callback，String into)</code> <label class="label label-primary">低版本safari不适用</label></h3> 
+                            <div class="alert alert-warning">
+                                动态加载js文件。
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>@param fileName JS文件名，相对于index.html路径. 可以带js扩展名，也可以不带</code>; <br>
+								<code>@param callback 加载成功后执行的回调函数 </code> <br>
+								<code>@param into 嵌入页面的位置，默认是 head </code> <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.loadScript('js/plugins/test.js', function(){
+	//加载成功后，执行以下代码
+	console.log('加载成功.....');
+}, 'body');
+										
+							   </textarea>		
+                            </div>	
+							
+							<h3><code>$.RTYUtils.loadCSS(var fileName, Function callback，String into)</code> <label class="label label-primary">低版本safari不适用</label></h3> 
+                            <div class="alert alert-warning">
+                                动态加载CSS文件。
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>@param fileName css文件名，相对于index.html路径. 可以带css扩展名，也可以不带</code>; <br>
+								<code>@param callback 加载成功后执行的回调函数 </code> <br>
+								<code>@param into 嵌入页面的位置，默认是 head </code> <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.loadCSS('js/plugins/test.css', function(){
+	//加载成功后，执行以下代码
+	console.log('加载成功.....');
+}, 'body');
+										
+							   </textarea>		
+                            </div>	
+
+							<h3><code>$.RTYUtils.loadPlugin(var fileName, Function callback，String into)</code> <label class="label label-primary">低版本safari不适用</label></h3> 
+                            <div class="alert alert-warning">
+                                动态加载插件，是 <code>$.RTYUtils.loadCSS</code> 和 <code>$.RTYUtils.loadScript</code> 的集成版本，
+								特别适用于不立即执行的插件
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>@param fileName 插件文件名，相对于index.html路径. 不带.js 和 .css 扩展名</code>; <br>
+								<code>@param callback 加载成功后执行的回调函数 </code> <br>
+								<code>@param into 嵌入页面的位置，默认是 head </code> <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.loadPlugin('js/plugins/test', function(){
+	//加载成功后，执行以下代码
+	console.log('加载成功.....');
+}, 'body');
+										
+							   </textarea>		
+                            </div>	
+
+							<h3><code>$.RTYUtils.executePlugin(var name, String path，var context)</code> <label class="label label-primary">低版本safari不适用</label></h3> 
+                            <div class="alert alert-warning">
+                                动态加载并执行插件功能，是 <code>$.RTYUtils.loadCSS</code> 和 <code>$.RTYUtils.loadScript</code> 的集成版本高级应用
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>@param name 插件名，或者函数名称</code>; <br>
+								<code>@param path 加载的插件路径 </code> <br>
+								<code>@param context 上下文环境，默认是 this</code> <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.executePlugin('copyExcel','js/plugins/test', this);
+										
+							   </textarea>		
+                            </div>	
+
+							<h3><code>$.RTYUtils.googleLangIDMaps 对象</code> <label class="label">多语言处理</label></h3> 
+                            <div class="alert alert-warning">
+                                谷歌多语言Map映射表对象。参照谷歌语言标识处理方式。以短写方式来查询兼容语言标识。
+								<br><br>
+								<strong>数据结构说明:</strong> <br>
+								<code>englishName 英文名称</code>; <br>
+								<code>localName 本地名称 </code> <br>
+								<code>zhName 中文名称</code> <br>
+								<code>compatible 兼容的语言标识数组</code> <br>
+								<code>compatibleForKendoUI 与KendoUI兼容的语言标识数组</code> <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+"zh-CN": {
+	englishName: "Chinese Simplified",
+	localName: "简体中文",
+	zhName: "中文简体",
+	compatible: ['zh', 'zh-CN', 'zh_cn', 'zh-Hans'],
+	compatibleForKendoUI:{
+		culture:"zh-CN",
+		message:"zh-CN"
+	}
+},
+"zh-TW": {
+	englishName: "Chinese Traditional",
+	localName: "繁体中文",
+	zhName: "中文繁体",
+	compatible: ['zh-TW', 'zh_tw', 'zh-Hant'],
+	compatibleForKendoUI:{
+		culture:"zh-TW",
+		message:"zh-TW"
+	}
+}
+										
+							   </textarea>		
+                            </div>								
+							
+							
+							<h3><code>$.RTYUtils.getGoogleLangID(String langKey)</code> <label class="label">多语言处理</label></h3> 
+                            <div class="alert alert-warning">
+                                根据langKey，获取googleLangIDMaps 中的key值
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>langKey 语言key字符串</code>; <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.getGoogleLangID('zh_cn'); // 返回"zh-CN"								
+							   </textarea>		
+                            </div>		
+
+							<h3><code>$.RTYUtils.loadLanguage(String languageFilesPath，String fileExt, Function callback, var referLang, bool trySafeMode)</code> <label class="label">多语言处理</label></h3> 
+                            <div class="alert alert-warning">
+                                国际化，加载语言
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>languageFilesPath 语言包的路径，相对于index.html</code>; <br>
+								<code>fileExt 语言包文件的扩展名，[文件扩展名: .json 或者 .js]</code>; <br>
+								<code>callback 成功加载后的回调函数</code>; <br>
+								<code>referLang {[string or array]} 特指语言标识，未指定使用检测到的，传入 undefined 参数，否则，使用GoogleLangID</code>; <br>
+								<code>trySafeMode 是否使用安全模式，自动检测英文</code>; <br>
+								<br>
+								常用方式示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; max-height:200px;">
+/**
+ * 路径：public/locales/zh-CN.js
+ * Created by Ian on 2015/5/22.
+ */
+(function ($) {
+    var Native = (function () {
+        function Native() {
+            this.data = {};
+        }
+        return Native;
+    }());
+    var UI = (function () {
+        function UI() {
+            this.navPage = {
+                "Files": "文件管理",
+                "Workspace": "工作区",
+                "Settings": "设置"
+            };
+            this.filePage = {
+                "Title": "文件管理",
+                "Btn-Load": "加载",
+                "Btn-Save": "保存",
+                "Btn-Remove": "移除",
+                "Btn-New": "新建文件",
+                "Btn-RevealIn": "在文件管理器中显示",
+                "Btn-ImportFiles": "导入文件",
+                "Btn-Help": "在线帮助",
+                "SaveDialog-Title": "另存为",
+                "SaveDialog-BtnSave": "保存",
+                "ImportDialog-Title": "导入 markdown 文件",
+                "ImportDialog-BtnImport": "导入",
+                createNewDocTip: {
+                    "Title": "消息",
+                    "Content": "已经拥有数量最多的当前文档的 [{docCount}], 你可以增加最大文件数，以满足您的要求。每次购买，增加5个文档数量。",
+                    "btnBuy": "购买",
+                    "btnCancel": "取消"
+                },
+                Message: {
+                    "existOnImport_message": "文档 '{path}' 已经存在于工作空间..",
+                    "existOnImport_title": "警告",
+                    "fileChangeByOther_message": "文档 '{path}' 内容发生变化 ",
+                    "fileChangeByOther_title": "信息",
+                    "fileRenamedByOther_message": "文档 '{path}' 已经被重命名 ",
+                    "fileRenamedByOther_title": "信息",
+                    "fileDeletedByOther_message": "文档 '{path}' 被删除",
+                    "fileDeletedByOther_title": "信息",
+                    "fileReloadConfirm_title": "警告",
+                    "fileReloadConfirm_message": "本地文档 '{path}' 内容发生变化, 是否重新加载?",
+                    "fileReloadConfirm_btnOK": "重新加载",
+                    "fileReloadConfirm_btnCancel": "不加载",
+                    "filesChangeWantSaveConfirm_message": "以下文件内容发生变更但是没有被保存 \n '{filePaths}' \n, 是否立即保存? \n",
+                    "filesChangeWantSaveConfirm_saveAll": "保存所有",
+                    "filesChangeWantSaveConfirm_dontSave": "不保存",
+                    "fileExportPDFSelect_message": "导出PDF操作提示: \n你可以选择导出当前Markdown实时预览内容也可以选择导出当前操作视图内容",
+                    "fileExportPDFSelect_exportPreview": "导出预览内容",
+                    "fileExportPDFSelect_exportCurrentView": "导出操作视图",
+                    "dropfileconfirm_message": "提示: 是导入文件还是创建文件链接?",
+                    "dropfileconfirm_import": "导入",
+                    "dropfileconfirm_createlink": "创建链接"
+                }
+            };
+            this.workspacePage = {
+                "Title": "工作区",
+                "Btn-Help": "在线帮助"
+            };
+            this.settingsPage = {
+                "Title": "设置",
+                "Btn-reset_user_settings": "重置用户设置",
+                "Btn-save_user_settings": "保存用户设置",
+                "Btn-use_default_user_settings": "使用默认用户设置",
+                "Btn-Help": "在线帮助"
+            };
+        }
+        return UI;
+    }());
+    var Message = (function () {
+        function Message() {
+        }
+        return Message;
+    }());
+    var I18N = (function () {
+        function I18N() {
+            this["zh-CN"] = {
+                UI: new UI(),
+                Native: new Native(),
+                Message: new Message()
+            };
+        }
+        return I18N;
+    }());
+    window["I18N"] = window["I18N"] || {};
+    window["I18N"] = $.extend(window["I18N"], new I18N());
+})(jQuery);
+//# sourceMappingURL=zh-CN.js.map						
+							   </textarea>			                        
+							   <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.loadLanguage("locales/", ".js", function(obj) {
+            try {
+                eval(obj.data);
+                var language = obj.info.langID;
+            } catch (e) {
+                console.error(e);
+            }
+        });							
+							   </textarea>	
+							   
+							   
+
+							   	
+                            </div>								
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <h2>
+                                <strong>HTML动态模板加载</strong> <label class="label">历史遗留版本。 需要使用Safari进行测试</label>
+                            </h2>
+							
+							<h3><code>$.RTYUtils.templateLoader(String path, Function next)</code> <label class="label">html模板加载</label></h3> 
+                            <div class="alert alert-warning">
+                                HTML模板加载
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>path 模板的路径。相对于index.html</code>; <br>
+								<code>next 加载成功后的，回调函数</code>; <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.templateLoader('templates/plugins/view_about.html', function(){
+	console.log("模板加载成功.... ");
+})							
+							   </textarea>		
+                            </div>	
+							
+							<h3><code>$.RTYUtils.templateLoaderAgent(Array templateFileList, Function successCallBack)</code> <label class="label">html模板加载</label></h3> 
+                            <div class="alert alert-warning">
+                                HTML模板加载助手，适应于多模板一起加载
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>templateFileList 模板的路径数组。相对于index.html</code>; <br>
+								<code>successCallBack 加载成功后的，回调函数</code>; <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.templateLoaderAgent(['templates/plugins/view_about.html', 'templates/plugins/view_main.html'], function(){
+	console.log("模板加载成功.... ");
+})							
+							   </textarea>		
+                            </div>
+							
+							<h3><code>$.RTYUtils.cssjsLoader(String path, Function next)</code> <label class="label">css和js加载</label></h3> 
+                            <div class="alert alert-warning">
+                                动态加载JS或者CSS通用方式
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>path js或者CSS的路径。相对于index.html</code>; <br>
+								<code>next 加载成功后的，回调函数</code>; <br>
+								<br>
+								示例1:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+$.RTYUtils.cssjsLoader('templates/plugins/view_about.js', function(){
+	console.log("加载成功.... ");
+})							
+							   </textarea>		
+                            </div>							
+							
+                        </div>
+                    </div>
+                </div>
+            </div>			
+			
+			
+			
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <h2>
+                                <strong>集成Ensure.js</strong> <label class="label">兼容性最好的html、js、css加载套件</label>
+                            </h2>
+							
+							<h3><code>$.RTY_3rd_Ensure.ensure(data, callback, failcall, scope)</code> <label class="label">动态加载</label></h3> 
+                            <div class="alert alert-warning">
+                                兼容性最好的html、js、css加载套件
+								<br><br>
+								<strong>参数说明:</strong> <br>
+								<code>data 加载配置对象</code>; <br>
+								<code>callback 加载成功后的，回调函数</code>; <br>
+								<code>failcall 加载失败后的，回调函数</code>; <br>
+								<code>scope 加载插入的作用域，默认是Body</code>; <br>
+								<br>
+								示例1, 动态加载css文件:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+var cssFile = "css/animate/animate.css";								
+$.RTY_3rd_Ensure.ensure({css: cssFile}, function () { 
+	console.log('----- load success -------- ');
+}, function(err){
+	console.log('----- load failed -------- ');
+})						
+							   </textarea><br>		
+							   
+								<br>
+								示例2, 动态加载js文件:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+var jsFile = "js/animate/animate.js";								
+$.RTY_3rd_Ensure.ensure({js: jsFile}, function () { 
+	console.log('----- load success -------- ');
+}, function(err){
+	console.log('----- load failed -------- ');
+})						
+							   </textarea><br>		
+
+
+								<br>
+								示例3, 动态加载html文件:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+var htmlFile = "template/animate/animate.html";								
+$.RTY_3rd_Ensure.ensure({html: htmlFile}, function () { 
+	console.log('----- load success -------- ');
+}, function(err){
+	console.log('----- load failed -------- ');
+})						
+							   </textarea><br>		
+
+
+								示例4, 动态加载html\js\css文件:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+var htmlFile = "template/animate/animate.html";	
+var cssFile = "css/animate/animate.css";
+var jsFile = "js/animate/animate.js";
+							
+$.RTY_3rd_Ensure.ensure({html: htmlFile, js: jsFile, css: cssFile}, function () { 
+	console.log('----- load success -------- ');
+}, function(err){
+	console.log('----- load failed -------- ');
+})						
+							   </textarea><br>	
+
+								示例5, 常用的通用处理:<br>
+		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+var cssUrls = [];
+
+var jsUrls = [
+	//<!--插件部分加载-->
+	//<!--扩展加载-->
+
+
+	//<!--App 核心-->
+	"js/core/app.observer.js",
+	"js/core/app.config.js",
+	"js/core/app.util.js",
+
+	//<!--App 插件-->
+
+	//<!--App UI组件-->
+	"js/components/app.main.js",
+
+	//<!--App 启动-->
+	'js/app.js'
+];
+$.RTYUtils.queue()
+	.next(function(nxt){
+		var _f = function(urls){
+			if (urls.length > 0){
+				/**
+				 * 备注：
+				 * $.RTY_3rd_Ensure.ensure 完全兼容多款浏览器，
+				 * $.RTYUtils.loadCSS 不支持Safari
+				 */
+				$.RTY_3rd_Ensure.ensure({css: urls.shift()}, function () {  _f && _f(urls);})
+				//$.RTYUtils.loadCSS(urls.shift(), function () {  _f && _f(urls);})
+			}else{
+				nxt && nxt();
+			}
+		};
+
+		_f(cssUrls);
+	})
+	.next(function(nxt){
+		var _f = function(urls){
+			if (urls.length > 0){
+				/**
+				 * 备注：
+				 * $.RTY_3rd_Ensure.ensure 完全兼容多款浏览器，
+				 * $.RTYUtils.loadScript 不支持Safari
+				 */
+				$.RTY_3rd_Ensure.ensure({js: urls.shift()}, function () {_f && _f(urls);})
+				//$.RTYUtils.loadScript(urls.shift(), function () {_f && _f(urls);})
+			}else{
+				nxt && nxt();
+			}
+		};
+
+		_f(jsUrls);
+	})
+	.done(function(nxt){
+		console.log('----------- load complate ----------------');
+	})				
+							   </textarea><br>
+
+
+
+							   
+                            </div>	
+							
+
+                        </div>
+                    </div>
+                </div>
+            </div>				
+			
+        </div>			
+		
+        </div>
+
+
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="common/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- GITTER -->
+    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+
+    <!-- Toastr -->
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+	
+	<!-- CodeMirror -->
+	<script src="js/plugins/codemirror/codemirror.js"></script>
+	<script src="js/plugins/codemirror/mode/javascript/javascript.js"></script>
+	
+	
+	<!-- 加载SDK -->
+	<script src="sdk/util.js"></script>
+	<script src="sdk/bs.js"></script>
+	
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 4000
+                };
+                toastr.success('Responsive INSPINIA Admin Theme', 'Welcome to Romanysoft SDK');
+
+            }, 1300);
+			
+			// 代码格式化
+			$.each($('.sdk-code'), function(i, ele){ CodeMirror.fromTextArea(ele,{
+			lineNumbers: true
+			})});
+        });
+    </script>
+</body>
+</html>

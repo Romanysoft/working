@@ -1,4 +1,5 @@
 {
+    "enableDeveloperDebug":  true,
     "AppExInfoDescription" : "set App other information",
     "AppExInfo" : {
         "enableHttpServer" : true,
@@ -33,5 +34,19 @@
             {"tag":911,"title":"","method":"re", "descript":"Quit"}
         ]
     },
-    "EnableIAP" : false
+    "EnableIAP" : false,
+    "Tasks":[
+        {
+            "id":"task1",
+            "descript":"unzip core_data.zip",
+             "conditionType":"||",
+             "conditions":[{"key":"core_data_version", "op":"<", "value":100100106},{"type":"path_exist","path":"${APPDATA_HOME}/Resources/config.plist", "value":false}],
+            "taskAppPath":"${BUNDEL_PLUGIN}/EasyZip",
+            "command":["-i", "${BUNDEL_RESOURCE}/data/python/Resources/core_data.zip", "-o", "${APPDATA_HOME}/Resources", "-u", "-d"],
+            "environmentDic":{},
+            "currentDirectoryPath":"",
+            "waitUntilExit":true,
+            "dependences":[]
+        }
+    ]
 }
