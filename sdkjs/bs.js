@@ -18,6 +18,10 @@
  *                      统一Notice的Alert的返回值
  *                      新增获取文件名称的方式
  * 2016年9月11日15:01:47 获取是否已经注册的接口
+ * 2016年11月21日12:07:35
+ *                      添加获取其他文件或目录图标路径(png格式文件)的接口
+ *                      添加获取其他App的基本信息的接口
+ *                      添加得到一个临时随机文件路径的接口
  */
 
 (function(factory) {
@@ -767,6 +771,15 @@
                 return "";
             },
 
+
+            /// 获得Pictures目录
+            getPicturesDir: function() {
+                if (b$.pN) {
+                    return b$.pN.path.picturesDir();
+                }
+                return "";
+            },
+
             /// 获得本地Pictures目录
             getLocalPicturesDir: function() {
                 if (b$.pN) {
@@ -829,11 +842,14 @@
             },
 
             ///创建空文件
-            createEmptyFile: b$.createEmptyFile = function(file_path) {
+            createEmptyFile: b$.createEmptyFile = function(file_path, cb) {
                 if (b$.pN) {
                     var _path = file_path || (b$.pN.path.tempDir() + "tmp.txt");
                     return b$.pN.window.createEmptyFile($.toJSON({
-                        path: _path
+                        path: _path,
+                        callback: b$._get_callback(function(obj) {
+                            cb && cb(obj);
+                        }, true)
                     }));
                 }
             },
@@ -858,11 +874,14 @@
             },
 
             ///删除文件
-            removeFile: b$.removeFile = function(file_path) {
+            removeFile: b$.removeFile = function(file_path, cb) {
                 if (b$.pN) {
                     var _path = file_path || (b$.pN.path.tempDir() + "tmp.txt");
                     return b$.pN.window.removeFile($.toJSON({
-                        path: _path
+                        path: _path,
+                        callback: b$._get_callback(function(obj) {
+                            cb && cb(obj);
+                        }, true)
                     }));
                 }
             },
@@ -1068,6 +1087,53 @@
                 if (b$.pN) {
                     var _path = path || (b$.pN.path.tempDir() + "tmp.txt");
                     return b$.pN.path.getFilePropertyJSONString(_path);
+                }
+
+                return "";
+            },
+
+            ///获取文件或目录的系统图标路径，返回的是png方式
+            getFileOrDirIconPath: function(path) {
+                if (b$.pN) {
+                    var _path = path || (b$.pN.path.tempDir() + "tmp.txt");
+                    return b$.pN.path.getFileOrDirIconPath(_path);
+                }
+
+                return "";
+            },
+
+            /// 获取临时文件的路径
+            getNewTempFilePath: function (fileName) {
+                if (b$.pN) {
+                    return b$.pN.path.getNewTempFilePath(fileName || "rs.txt"); // fileName 文件名称
+                }
+
+                return "";
+            },
+
+            ///获取其他App的基本信息
+            /**
+             *
+             * @param path 路径
+             * @param cb   回调函数
+             * 返回的值的样例：
+             *
+             */
+            getOtherAppInfo: function(path, cb){
+                if (b$.pN) {
+                    try {
+                        var parms = {};
+                        //限制内部属性：
+                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj) {
+                                cb && cb(obj);
+                            }, true);
+                        parms['path'] = path || (b$.pN.path.tempDir() + "/tmp_dir001");
+
+
+                        return b$.pN.window.getOtherAppInfo($.toJSON(parms));
+                    } catch (e) {
+                        console.error(e);
+                    }
                 }
 
                 return "";
@@ -1388,7 +1454,7 @@
                 if (getType === 'Native2Webkit') { // 先获取Native的语言，然后查找Map
                     var apple_lng = 'en-US';
                     if (b$.pN) {
-                        apple_lng = b$.pN.app.getAppleLanguage();
+                        apple_lng = b$.pN.app.curAppleLanguage();
                     }
 
                     if (NativeApple2WebKit_LanguageMap.hasOwnProperty(apple_lng)) {
@@ -1431,7 +1497,7 @@
             ///设置用户的语言
             setUserLanguage: function(language) {
                 if (b$.pN) {
-                    b$.pN.app.setUserLanguage(language || 'en-US');
+                    return b$.pN.app.setUserLanguage(language || 'en-US');
                 }
             },
 
