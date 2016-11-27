@@ -12,6 +12,13 @@ working - make app
 1. **https://github.com/Romanysoft/working/tree/master/sdkjs**  同步最新的SDKJS包
 
 
+====
+### Romanysoft合作开发（中国区）在线系统
+[Romanysoft合作开发（中国区）在线系统](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
+
+
+
+====
 
 ###入门解决方案：(必读)
 
