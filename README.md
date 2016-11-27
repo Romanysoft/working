@@ -3,6 +3,10 @@ working - make app
 ====
 
 
+![](https://github.com/Romanysoft/working/blob/master/images/debugApp_screen.jpg)
+
+
+
 ###入门解决方案：(必读)
 
 1. [Get Started For Mac App 中文版本](https://github.com/Romanysoft/working/wiki/Get-Started-For-Mac-App%EF%BC%88%E4%B8%AD%E6%96%87%EF%BC%89)
