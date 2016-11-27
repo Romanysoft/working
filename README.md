@@ -5,6 +5,12 @@ working - make app
 
 ![](https://github.com/Romanysoft/working/blob/master/images/debugApp_screen.jpg)
 
+###主要组成部分： 
+
+1. **https://github.com/Romanysoft/working/tree/master/DebugApp/Mac/debug_app/DebugApp.zip** 可以直接解压到macOS系统上运行
+1. **https://github.com/Romanysoft/working/tree/master/DebugApp/Mac/Public DebugApp.zip** 核心public源码
+1. **https://github.com/Romanysoft/working/tree/master/sdkjs**  同步最新的SDKJS包
+
 
 
 ###入门解决方案：(必读)
