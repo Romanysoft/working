@@ -17,9 +17,9 @@
 
     <!-- Gritter -->
     <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
-	
-	 <!-- CodeMirror -->
-	 <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
+
+    <!-- CodeMirror -->
+    <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
@@ -30,361 +30,384 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav metismenu" id="side-menu">
-                    <li class="nav-header">
-                        <div class="dropdown profile-element"> <span>
-                            <img alt="image" src="img/logo_48.png" />
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" src="img/logo_48.png"/>
                              </span>
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Ver 2016.11.20</strong>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong
+                                    class="font-bold">Ver 2016.11.20</strong>
                              </span>  </span> </a>
-                        </div>
-                        <div class="logo-element">
-                            SDK
-                        </div>
-                    </li>
-                    <li class="active">
-                        <a href="rs_sdk_index.html"><i class="fa fa-cube"></i> <span class="nav-label">Romanysoft SDK</span> <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="rs_sdk_index.html">Getting Started</a></li>
-							<li><a href="rs_sdk_util.html">Utils</a></li>
-                            <li class="active"><a href="rs_sdk_app.html">App</a></li>
-                            <li><a href="rs_sdk_notice.html">Notice</a></li>
-                            <li><a href="rs_sdk_windows.html">Window</a></li>
-                            <li><a href="rs_sdk_menus.html">Menus</a></li>
-                            <li><a href="rs_sdk_clipboard.html">Clipboard</a></li>
-                            <li><a href="rs_sdk_dock.html">Dock</a></li>
-                            <li><a href="rs_sdk_binary.html">Binary</a></li>
-							<li><a href="rs_sdk_dialog.html">Dialog</a></li>
-                            <li><a href="rs_sdk_dragdrop.html">DragDrop</a></li>
-                            <li><a href="rs_sdk_plugins.html">Plugins</a></li>
-                            <li><a href="rs_sdk_task.html">Task</a></li>
-                            <li><a href="rs_sdk_sound.html">Sound <span class="label label-primary pull-right">不常用</span></a></li>
-                            <li><a href="rs_sdk_iap.html">IAP</a></li>
-                            <li><a href="rs_sdk_xpc.html">XPC</a></li>
-                        </ul>
-                    </li>                    
-                    <li>
-                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li class="active"><a href="index.html">Dashboard v.1</a></li>
-                            <li><a href="dashboard_2.html">Dashboard v.2</a></li>
-                            <li><a href="dashboard_3.html">Dashboard v.3</a></li>
-                            <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
-                            <li><a href="dashboard_5.html">Dashboard v.5 <span class="label label-primary pull-right">NEW</span></a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="graph_flot.html">Flot Charts</a></li>
-                            <li><a href="graph_morris.html">Morris.js Charts</a></li>
-                            <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
-                            <li><a href="graph_chartjs.html">Chart.js</a></li>
-                            <li><a href="graph_chartist.html">Chartist</a></li>
-                            <li><a href="c3.html">c3 charts</a></li>
-                            <li><a href="graph_peity.html">Peity Charts</a></li>
-                            <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="mailbox.html">Inbox</a></li>
-                            <li><a href="mail_detail.html">Email view</a></li>
-                            <li><a href="mail_compose.html">Compose email</a></li>
-                            <li><a href="email_template.html">Email templates</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
-                    </li>
-                    <li>
-                        <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="form_basic.html">Basic form</a></li>
-                            <li><a href="form_advanced.html">Advanced Plugins</a></li>
-                            <li><a href="form_wizard.html">Wizard</a></li>
-                            <li><a href="form_file_upload.html">File Upload</a></li>
-                            <li><a href="form_editors.html">Text Editor</a></li>
-                            <li><a href="form_markdown.html">Markdown</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="contacts.html">Contacts</a></li>
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="profile_2.html">Profile v.2</a></li>
-                            <li><a href="contacts_2.html">Contacts v.2</a></li>
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="project_detail.html">Project detail</a></li>
-                            <li><a href="teams_board.html">Teams board</a></li>
-                            <li><a href="social_feed.html">Social feed</a></li>
-                            <li><a href="clients.html">Clients</a></li>
-                            <li><a href="full_height.html">Outlook view</a></li>
-                            <li><a href="vote_list.html">Vote list</a></li>
-                            <li><a href="file_manager.html">File manager</a></li>
-                            <li><a href="calendar.html">Calendar</a></li>
-                            <li><a href="issue_tracker.html">Issue tracker</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="article.html">Article</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="timeline.html">Timeline</a></li>
-                            <li><a href="pin_board.html">Pin board</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="search_results.html">Search results</a></li>
-                            <li><a href="lockscreen.html">Lockscreen</a></li>
-                            <li><a href="invoice.html">Invoice</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="login_two_columns.html">Login v.2</a></li>
-                            <li><a href="forgot_password.html">Forget password</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="404.html">404 Page</a></li>
-                            <li><a href="500.html">500 Page</a></li>
-                            <li><a href="empty_page.html">Empty page</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="toastr_notifications.html">Notification</a></li>
-                            <li><a href="nestable_list.html">Nestable list</a></li>
-                            <li><a href="agile_board.html">Agile board</a></li>
-                            <li><a href="timeline_2.html">Timeline v.2</a></li>
-                            <li><a href="diff.html">Diff</a></li>
-                            <li><a href="i18support.html">i18 support</a></li>
-                            <li><a href="sweetalert.html">Sweet alert</a></li>
-                            <li><a href="idle_timer.html">Idle timer</a></li>
-                            <li><a href="truncate.html">Truncate</a></li>
-                            <li><a href="spinners.html">Spinners</a></li>
-                            <li><a href="tinycon.html">Live favicon</a></li>
-                            <li><a href="google_maps.html">Google maps</a></li>
-                            <li><a href="code_editor.html">Code editor</a></li>
-                            <li><a href="modal_window.html">Modal window</a></li>
-                            <li><a href="clipboard.html">Clipboard</a></li>
-                            <li><a href="forum_main.html">Forum view</a></li>
-                            <li><a href="validation.html">Validation</a></li>
-                            <li><a href="tree_view.html">Tree view</a></li>
-                            <li><a href="loading_buttons.html">Loading buttons</a></li>
-                            <li><a href="chat_view.html">Chat view</a></li>
-                            <li><a href="masonry.html">Masonry</a></li>
-                            <li><a href="tour.html">Tour</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="icons.html">Icons</a></li>
-                            <li><a href="draggable_panels.html">Draggable Panels</a></li> <li><a href="resizeable_panels.html">Resizeable Panels</a></li>
-                            <li><a href="buttons.html">Buttons</a></li>
-                            <li><a href="video.html">Video</a></li>
-                            <li><a href="tabs_panels.html">Panels</a></li>
-                            <li><a href="tabs.html">Tabs</a></li>
-                            <li><a href="notifications.html">Notifications & Tooltips</a></li>
-                            <li><a href="badges_labels.html">Badges, Labels, Progress</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="table_basic.html">Static Tables</a></li>
-                            <li><a href="table_data_tables.html">Data Tables</a></li>
-                            <li><a href="table_foo_table.html">Foo Tables</a></li>
-                            <li><a href="jq_grid.html">jqGrid</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="ecommerce_products_grid.html">Products grid</a></li>
-                            <li><a href="ecommerce_product_list.html">Products list</a></li>
-                            <li><a href="ecommerce_product.html">Product edit</a></li>
-                            <li><a href="ecommerce_product_detail.html">Product detail</a></li>
-                            <li><a href="ecommerce-cart.html">Cart</a></li>
-                            <li><a href="ecommerce-orders.html">Orders</a></li>
-                            <li><a href="ecommerce_payments.html">Credit Card form</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
-                            <li><a href="slick_carousel.html">Slick Carousel</a></li>
-                            <li><a href="carousel.html">Bootstrap Carousel</a></li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li>
-                                <a href="index.html#">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="index.html#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html#">Third Level Item</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li><a href="index.html#">Second Level Item</a></li>
-                            <li>
-                                <a href="index.html#">Second Level Item</a></li>
-                            <li>
-                                <a href="index.html#">Second Level Item</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
-                    </li>
-                    <li class="landing_link">
-                        <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
-                    </li>
-                    <li class="special_link">
-                        <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
-
-        <div id="page-wrapper" class="gray-bg dashbard-1">
-        <div class="row border-bottom">
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="rs_sdk_index.html#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
-                <div class="form-group">
-                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                </div>
-            </form>
-        </div>
-            <ul class="nav navbar-top-links navbar-right">
+                    </div>
+                    <div class="logo-element">
+                        SDK
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="rs_sdk_index.html"><i class="fa fa-cube"></i> <span class="nav-label">Romanysoft SDK</span>
+                        <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="rs_sdk_index.html">Getting Started</a></li>
+                        <li><a href="rs_sdk_util.html">Utils</a></li>
+                        <li class="active"><a href="rs_sdk_app.html">App</a></li>
+                        <li><a href="rs_sdk_notice.html">Notice</a></li>
+                        <li><a href="rs_sdk_windows.html">Window</a></li>
+                        <li><a href="rs_sdk_menus.html">Menus</a></li>
+                        <li><a href="rs_sdk_clipboard.html">Clipboard</a></li>
+                        <li><a href="rs_sdk_dock.html">Dock</a></li>
+                        <li><a href="rs_sdk_binary.html">Binary</a></li>
+                        <li><a href="rs_sdk_dialog.html">Dialog</a></li>
+                        <li><a href="rs_sdk_dragdrop.html">DragDrop</a></li>
+                        <li><a href="rs_sdk_plugins.html">Plugins</a></li>
+                        <li><a href="rs_sdk_task.html">Task</a></li>
+                        <li><a href="rs_sdk_sound.html">Sound <span
+                                class="label label-primary pull-right">不常用</span></a></li>
+                        <li><a href="rs_sdk_iap.html">IAP</a></li>
+                        <li><a href="rs_sdk_xpc.html">XPC</a></li>
+                    </ul>
+                </li>
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to Romanysoft SDK Demo and INSPINIA+ Admin Theme. </span>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="index.html#">
-                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a7.jpg">
-                                </a>
-                                <div class="media-body">
-                                    <small class="pull-right">46h ago</small>
-                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a4.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="pull-right text-navy">5h ago</small>
-                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/profile.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="pull-right">23h ago</small>
-                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html">
-                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
-                                </a>
-                            </div>
-                        </li>
+                    <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="index.html">Dashboard v.1</a></li>
+                        <li><a href="dashboard_2.html">Dashboard v.2</a></li>
+                        <li><a href="dashboard_3.html">Dashboard v.3</a></li>
+                        <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                        <li><a href="dashboard_5.html">Dashboard v.5 <span
+                                class="label label-primary pull-right">NEW</span></a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="index.html#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="mailbox.html">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="profile.html">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="grid_options.html">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="notifications.html">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="graph_flot.html">Flot Charts</a></li>
+                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
+                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
+                        <li><a href="graph_chartjs.html">Chart.js</a></li>
+                        <li><a href="graph_chartist.html">Chartist</a></li>
+                        <li><a href="c3.html">c3 charts</a></li>
+                        <li><a href="graph_peity.html">Peity Charts</a></li>
+                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span
+                            class="label label-warning pull-right">16/24</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="mailbox.html">Inbox</a></li>
+                        <li><a href="mail_detail.html">Email view</a></li>
+                        <li><a href="mail_compose.html">Compose email</a></li>
+                        <li><a href="email_template.html">Email templates</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a>
+                </li>
+                <li>
+                    <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="form_basic.html">Basic form</a></li>
+                        <li><a href="form_advanced.html">Advanced Plugins</a></li>
+                        <li><a href="form_wizard.html">Wizard</a></li>
+                        <li><a href="form_file_upload.html">File Upload</a></li>
+                        <li><a href="form_editors.html">Text Editor</a></li>
+                        <li><a href="form_markdown.html">Markdown</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span> <span
+                            class="pull-right label label-primary">SPECIAL</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="contacts.html">Contacts</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="profile_2.html">Profile v.2</a></li>
+                        <li><a href="contacts_2.html">Contacts v.2</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="project_detail.html">Project detail</a></li>
+                        <li><a href="teams_board.html">Teams board</a></li>
+                        <li><a href="social_feed.html">Social feed</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="full_height.html">Outlook view</a></li>
+                        <li><a href="vote_list.html">Vote list</a></li>
+                        <li><a href="file_manager.html">File manager</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="issue_tracker.html">Issue tracker</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="article.html">Article</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="timeline.html">Timeline</a></li>
+                        <li><a href="pin_board.html">Pin board</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="search_results.html">Search results</a></li>
+                        <li><a href="lockscreen.html">Lockscreen</a></li>
+                        <li><a href="invoice.html">Invoice</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login_two_columns.html">Login v.2</a></li>
+                        <li><a href="forgot_password.html">Forget password</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="404.html">404 Page</a></li>
+                        <li><a href="500.html">500 Page</a></li>
+                        <li><a href="empty_page.html">Empty page</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span
+                            class="label label-info pull-right">NEW</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="toastr_notifications.html">Notification</a></li>
+                        <li><a href="nestable_list.html">Nestable list</a></li>
+                        <li><a href="agile_board.html">Agile board</a></li>
+                        <li><a href="timeline_2.html">Timeline v.2</a></li>
+                        <li><a href="diff.html">Diff</a></li>
+                        <li><a href="i18support.html">i18 support</a></li>
+                        <li><a href="sweetalert.html">Sweet alert</a></li>
+                        <li><a href="idle_timer.html">Idle timer</a></li>
+                        <li><a href="truncate.html">Truncate</a></li>
+                        <li><a href="spinners.html">Spinners</a></li>
+                        <li><a href="tinycon.html">Live favicon</a></li>
+                        <li><a href="google_maps.html">Google maps</a></li>
+                        <li><a href="code_editor.html">Code editor</a></li>
+                        <li><a href="modal_window.html">Modal window</a></li>
+                        <li><a href="clipboard.html">Clipboard</a></li>
+                        <li><a href="forum_main.html">Forum view</a></li>
+                        <li><a href="validation.html">Validation</a></li>
+                        <li><a href="tree_view.html">Tree view</a></li>
+                        <li><a href="loading_buttons.html">Loading buttons</a></li>
+                        <li><a href="chat_view.html">Chat view</a></li>
+                        <li><a href="masonry.html">Masonry</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="icons.html">Icons</a></li>
+                        <li><a href="draggable_panels.html">Draggable Panels</a></li>
+                        <li><a href="resizeable_panels.html">Resizeable Panels</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="video.html">Video</a></li>
+                        <li><a href="tabs_panels.html">Panels</a></li>
+                        <li><a href="tabs.html">Tabs</a></li>
+                        <li><a href="notifications.html">Notifications & Tooltips</a></li>
+                        <li><a href="badges_labels.html">Badges, Labels, Progress</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="table_basic.html">Static Tables</a></li>
+                        <li><a href="table_data_tables.html">Data Tables</a></li>
+                        <li><a href="table_foo_table.html">Foo Tables</a></li>
+                        <li><a href="jq_grid.html">jqGrid</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-shopping-cart"></i> <span
+                            class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="ecommerce_products_grid.html">Products grid</a></li>
+                        <li><a href="ecommerce_product_list.html">Products list</a></li>
+                        <li><a href="ecommerce_product.html">Product edit</a></li>
+                        <li><a href="ecommerce_product_detail.html">Product detail</a></li>
+                        <li><a href="ecommerce-cart.html">Cart</a></li>
+                        <li><a href="ecommerce-orders.html">Orders</a></li>
+                        <li><a href="ecommerce_payments.html">Credit Card form</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
+                        <li><a href="slick_carousel.html">Slick Carousel</a></li>
+                        <li><a href="carousel.html">Bootstrap Carousel</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li>
+                            <a href="index.html#">Third Level <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="index.html#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="index.html#">Third Level Item</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="index.html#">Second Level Item</a></li>
+                        <li>
+                            <a href="index.html#">Second Level Item</a></li>
+                        <li>
+                            <a href="index.html#">Second Level Item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="css_animation.html"><i class="fa fa-magic"></i> <span
+                            class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
+                </li>
+                <li class="landing_link">
+                    <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span>
+                        <span class="label label-warning pull-right">NEW</span></a>
+                </li>
+                <li class="special_link">
+                    <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
                 </li>
             </ul>
 
-        </nav>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="rs_sdk_index.html#"><i
+                            class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control"
+                                   name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">Welcome to Romanysoft SDK Demo and INSPINIA+ Admin Theme. </span>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="index.html#">
+                            <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/a7.jpg">
+                                    </a>
+                                    <div class="media-body">
+                                        <small class="pull-right">46h ago</small>
+                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>.
+                                        <br>
+                                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/a4.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="pull-right text-navy">5h ago</small>
+                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
+                                        Smith</strong>. <br>
+                                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/profile.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="pull-right">23h ago</small>
+                                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="mailbox.html">
+                                        <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="index.html#">
+                            <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="mailbox.html">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="profile.html">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                        <span class="pull-right text-muted small">12 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="grid_options.html">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="notifications.html">
+                                        <strong>See All Alerts</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </nav>
         </div>
 
 
@@ -396,7 +419,7 @@
                             <div class="pull-right">
                             </div>
                             <div class="text-center article-title">
-                            <span class="text-muted"><i class="fa fa-clock-o"></i> 2016年11月20日</span>
+                                <span class="text-muted"><i class="fa fa-clock-o"></i> 2016年11月20日</span>
                                 <h1>
                                     App
                                 </h1>
@@ -404,646 +427,839 @@
                             <p>
                                 <strong>App</strong> 提供了很多直接调用macOS提供的接口。
                             </p>
-							<br>
-							
-							<h3><code>BS.b$.App.getAppName()</code><button class="coderun">try
-                            </button><sub></sub></h3>
+                            <br>
+
+                            <h3><code class="enableRun">BS.b$.App.getAppName()</code>
+                                <button class="coderun">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
                                 获取产品的名称
-                            </div>	
+                            </div>
 
-							<h3><code>BS.b$.App.getAppVersion()</code><button class="coderun">try
-                            </button><sub></sub></h3>
+                            <h3><code class="enableRun">BS.b$.App.getAppVersion()</code>
+                                <button class="coderun">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
                                 获取产品的版本
-                            </div>	
-
-							<h3><code>BS.b$.App.getAppBuildVersion()</code><button class="coderun">try
-                            </button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得产品的构建包的版本
-                            </div>		
-
-							<h3><code>BS.b$.App.getAppId()</code><button class="coderun">try
-                            </button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得产品的ID
-                            </div>	
-
-							<h3><code>BS.b$.App.getAppArgv()</code><button class="coderun">try
-                            </button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获取启动的时候进程附带的参数
                             </div>
 
-							<h3><code>BS.b$.App.getSandboxEnable()</code><button class="coderun">try
-                            </button><sub></sub></h3>
+                            <h3><code class="enableRun">BS.b$.App.getAppBuildVersion()</code>
+                                <button class="coderun">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								获得App是否在沙盒内
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.terminate()</code><button class="trycode">try
-                            </button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								终止运行App
+                                获得产品的构建包的版本
                             </div>
 
-							<h3><code>BS.b$.App.activate()</code><button class="trycode">try
-                            </button><sub></sub></h3>
+                            <h3><code class="enableRun">BS.b$.App.getAppId()</code>
+                                <button class="coderun">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								激活App，让App成为焦点
+                                获得产品的ID
                             </div>
-							
-							<h3><code>BS.b$.App.hide()</code><button class="trycode">try
-                            </button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								隐藏App
-                            </div>		
 
-							<h3><code>BS.b$.App.unhide()</code><button class="trycode">try
-                            </button><sub></sub></h3>
+                            <h3><code class="enableRun">BS.b$.App.getAppArgv()</code>
+                                <button class="coderun">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								取消隐藏App
-                            </div>								
-							
-							<h3><code>BS.b$.App.beep()</code><button class="trycode">try</button><sub></sub></h3>
+                                获取启动的时候进程附带的参数
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getSandboxEnable()</code>
+                                <button class="coderun">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								让App发出beep声音
-                            </div>								
-							
-							<h3><code>BS.b$.App.bounce()</code><button class="trycode">try</button><sub></sub></h3>
+                                获得App是否在沙盒内
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.terminate()</code>
+                                <button class="trycode">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								激活Bounce事件
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.open("https://www.bing.com/")</code><button class="trycode">try</button><sub></sub></h3>
+                                终止运行App
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.activate()</code>
+                                <button class="trycode">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								启动默认程序打开链接地址
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param url url地址</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                激活App，让App成为焦点
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.hide()</code>
+                                <button class="trycode">try
+                                </button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                隐藏App
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.unhide()</code>
+                                <button class="trycode">try
+                                </button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                取消隐藏App
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.beep()</code>
+                                <button class="trycode">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                让App发出beep声音
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.bounce()</code>
+                                <button class="trycode">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                激活Bounce事件
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.open("https://www.bing.com/")</code>
+                                <button class="trycode">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                启动默认程序打开链接地址
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param url url地址</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.open("https://www.bing.com/");
-							   </textarea>									
-                            </div>	
-							
-							<h3><code>BS.b$.App.openFileWithDefaultApp("/private/var/log/system.log")</code><button
-                                    class="trycode">try
-                            </button><sub></sub></h3>
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.openFileWithDefaultApp("/private/var/log/system.log")</code>
+                                <button
+                                        class="trycode">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								启动默认程序打开文件
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param filePath 文件全路径</code>; <br>									
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                启动默认程序打开文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param filePath 文件全路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.openFileWithDefaultApp("/private/var/log/system.log");
-							   </textarea>									
-                            </div>	
-							
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
 
-							<h3><code>BS.b$.App.launchApplication("Safari")</code><button class="trycode">try</button><sub></sub></h3>
+
+                            <h3><code class="enableRun">BS.b$.App.launchApplication("Safari")</code>
+                                <button class="trycode">try</button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								启动默认程序打开文件
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param applicationName 应用App的名称</code>; <br>									
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                启动默认程序打开文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param applicationName 应用App的名称</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.launchApplication("Safari");
-							   </textarea>									
-                            </div>		
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
 
-							<h3><code>BS.b$.App.sendEmail(parms)</code></h3>
+                            <h3><code class="enableRun">BS.b$.App.sendEmail(parms)</code></h3>
                             <div class="alert alert-warning">
-								发送电子邮件
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param parms 是一个对象</code>; <br>									
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                发送电子邮件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param parms 是一个对象</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.sendEmail({
 	toAddress: "xxxxx@gmail.com",
 	subject: "Hello!",
 	body: "Hello!"
 });
-							   </textarea>									
-                            </div>	
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
 
-							<h3><code>BS.b$.App.setInfoToUserDefaults(jsonObj)</code> <label class="label label-primary">UserDefaults</label> </h3>
+                            <h3><code class="enableRun">BS.b$.App.setInfoToUserDefaults(jsonObj)</code> <label
+                                    class="label label-primary">UserDefaults</label></h3>
                             <div class="alert alert-warning">
-								存储信息{key: value: }方式,Map方式
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj 数据对象</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                存储信息{key: value: }方式,Map方式
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj 数据对象</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.setInfoToUserDefaults({
 	callback: BS.b$._get_callback(function(obj) {
-        cb && cb(obj);
+        window.RTYD_callback(obj);
     }, true),
 	key: 'key1',
-	value: 'value1
+	value: 'value1'
 });
-							   </textarea>									
+							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
-							
-							<h3><code>BS.b$.App.getInfoFromUserDefaults(jsonObj)</code> <label class="label label-primary">UserDefaults</label> </h3>
+
+                            <h3><code class="enableRun">BS.b$.App.getInfoFromUserDefaults(jsonObj)</code> <label
+                                    class="label label-primary">UserDefaults</label></h3>
                             <div class="alert alert-warning">
-								获取存储信息{key: value: }方式,Map方式
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj 数据对象</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                获取存储信息{key: value: }方式,Map方式
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj 数据对象</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.getInfoFromUserDefaults({
 	callback: BS.b$._get_callback(function(obj) {
-        cb && cb(obj);
+        window.RTYD_callback(obj);
     }, true),
 	key: 'key1'
 });
-							   </textarea>									
-                            </div>							
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
 
 
-							<h3><code>BS.b$.App.removeItemFromUserDefaults(jsonObj)</code> <label class="label label-primary">UserDefaults</label> </h3>
+                            <h3><code class="enableRun">BS.b$.App.removeItemFromUserDefaults(jsonObj)</code> <label
+                                    class="label label-primary">UserDefaults</label></h3>
                             <div class="alert alert-warning">
-								移除存储信息{key: value: }方式,Map方式
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj 数据对象</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                移除存储信息{key: value: }方式,Map方式
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj 数据对象</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.removeItemFromUserDefaults({
 	callback: BS.b$._get_callback(function(obj) {
-        cb && cb(obj);
+        window.RTYD_callback(obj);
     }, true),
 	key: 'key1'
 });
-							   </textarea>									
-                            </div>								
-
-							
-							<h3><code>BS.b$.App.getServerPort()</code> <label class="label label-primary">适应于启动Web服务App</label> </h3>
-                            <div class="alert alert-warning">
-								获取开通的服务器端口								
-                            </div>		
-
-                            <h3><code>BS.b$.App.getAppPluginDir()</code> 或 <code>BS.b$.getAppPluginDir
-                                ()</code><button
-                                    class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得App的插件目录								
-                            </div>	
-
-							<h3><code>BS.b$.App.getAppResourceDir() 或 BS.b$.getAppResourceDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Application的Resource目录								
-                            </div>	
-
-							<h3><code>BS.b$.App.getAppResourcePublicDir() 或 BS.b$.getAppResourcePublicDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Public目录							
-                            </div>		
-
-							<h3><code>BS.b$.App.getAppBundlePath()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得App的包的目录							
-                            </div>	
-
-							<h3><code>BS.b$.App.getAppDataHomeDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得AppDataHomeDir							
-                            </div>	
-
-							<h3><code>BS.b$.App.getHomeDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Home Directory							
-                            </div>	
-
-							<h3><code>BS.b$.App.getDocumentsDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得DocumentsDir							
-                            </div>	
-
-							<h3><code>BS.b$.App.getLocalDocumentsDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得本地Documents目录							
-                            </div>	
-
-							<h3><code>BS.b$.App.getLibraryDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得LibraryDir							
-                            </div>	
-
-							<h3><code>BS.b$.App.getTempDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得临时目录							
-                            </div>	
-
-							<h3><code>BS.b$.App.getCacheDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Cache目录							
-                            </div>	
-
-							<h3><code>BS.b$.App.getApplicationDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Application目录							
-                            </div>	
-
-							<h3><code>BS.b$.App.getDesktopDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得DesktopDir，桌面路径							
-                            </div>	
-
-							<h3><code>BS.b$.App.getDownloadDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得downloadDir，下载目录路径							
-                            </div>	
-
-							<h3><code>BS.b$.App.getLocalDownloadDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得本地download目录路径							
-                            </div>	
-
-							<h3><code>BS.b$.App.getMoviesDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Movies目录路径							
-                            </div>	
-
-							<h3><code>BS.b$.App.getLocalMoviesDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得本地Movies目录路径							
-                            </div>	
-
-							<h3><code>BS.b$.App.getMusicDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Music目录							
-                            </div>	
-							
-							<h3><code>BS.b$.App.getLocalMusicDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得本地Music目录							
-                            </div>								
-
-
-							<h3><code>BS.b$.App.getPicturesDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得Pictures目录							
-                            </div>	
-							
-							<h3><code>BS.b$.App.getLocalPicturesDir()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得本地Pictures目录							
-                            </div>								
-
-
-							<h3><code>BS.b$.App.getUserName()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得UserName							
-                            </div>	
-
-							<h3><code>BS.b$.App.getUserFullName()</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								获得User全名(UserFullName)							
+							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
 
-							<h3><code>BS.b$.App.checkPathIsExist(path)</code> 或 <code>BS.b$.checkPathIsExist(path)</code> </h3>
+
+                            <h3><code class="enableRun">BS.b$.App.getServerPort()</code> <label
+                                    class="label label-primary">适应于启动Web服务App</label> <button
+                                    class="coderun">try
+                            </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								检测路径是否存在	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkPathIsExist("/DataTest/test/1.xml")
-							   </textarea>									
+                                获取开通的服务器端口
                             </div>
-							
-							
-							<h3><code>BS.b$.App.checkFileIsZero(file_path)</code> 或 <code>BS.b$.checkFileIsZeroSize(file_path)</code> </h3>
+
+                            <h3><code class="enableRun">BS.b$.App.getAppPluginDir()</code> 或 <code>BS.b$.getAppPluginDir
+                                ()</code>
+                                <button
+                                        class="coderun">try
+                                </button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								检测文件是否为0Byte	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param file_path 文件的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkFileIsZero("/DataTest/test/1.xml")
-							   </textarea>									
-                            </div>							
-							
-							<h3><code>BS.b$.App.createEmptyFile(path)</code> 或 <code>BS.b$.createEmptyFile(path)</code> </h3>
-                            <div class="alert alert-warning">
-								创建空文件	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.createEmptyFile("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>		
-							
-							
-							<h3><code>BS.b$.App.createDir(dir_path, atts, cb)</code> 或 <code>BS.b$.createDir(dir_path, atts, cb)</code> </h3>
-                            <div class="alert alert-warning">
-								创建目录	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param dir_path 目录路径</code>; <br>								
-								<code>@param atts 目录属性对象</code>; <br>								
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.createDir("/DataTest/test/newdir/1/", {}, function(){console.log('.....')});
-							   </textarea>									
+                                获得App的插件目录
                             </div>
-							
-							<h3><code>BS.b$.App.removeFile(path)</code> 或 <code>BS.b$.removeFile(path)</code> </h3>
+
+                            <h3><code class="enableRun">BS.b$.App.getAppResourceDir()</code> 或 <code>BS.b$.getAppResourceDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								删除文件	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.removeFile("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.removeDir(dir_path, cb)</code> 或 <code>BS.b$.removeDir(dir_path, cb)</code> </h3>
+                                获得Application的Resource目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getAppResourcePublicDir()</code> 或
+                                <code>BS.b$.getAppResourcePublicDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								删除目录	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param dir_path 目录路径</code>; <br>																
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.removeDir("/DataTest/test/newdir/1/", function(){console.log('.....')});
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.copyFile(parms, cb)</code> 或 <code>BS.b$.copyFile(parms, cb)</code> </h3>
+                                获得Public目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getAppBundlePath()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
                             <div class="alert alert-warning">
-								拷贝文件	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param parms 传输属性参数</code>; <br>								
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                获得App的包的目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getAppDataHomeDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得AppDataHomeDir
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getHomeDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得Home Directory
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getDocumentsDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得DocumentsDir
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getLocalDocumentsDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得本地Documents目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getLibraryDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得LibraryDir
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getTempDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得临时目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getCacheDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得Cache目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getApplicationDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得Application目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getDesktopDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得DesktopDir，桌面路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getDownloadDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得downloadDir，下载目录路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getLocalDownloadDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得本地download目录路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getMoviesDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得Movies目录路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getLocalMoviesDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得本地Movies目录路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getMusicDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得Music目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getLocalMusicDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得本地Music目录
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.getPicturesDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得Pictures目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getLocalPicturesDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得本地Pictures目录
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.getUserName()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得UserName
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getUserFullName()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得User全名(UserFullName)
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.checkPathIsExist(path)</code> 或
+                                <code class="enableRun">BS.b$.checkPathIsExist(path)</code></h3>
+                            <div class="alert alert-warning">
+                                检测路径是否存在
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+    var exist = BS.b$.App.checkPathIsExist("/private/var/log/system.log");
+    window.RTYD_callback(exist);
+                                                                       </textarea><p class="runLogShow"></p>
+                                </div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.checkFileIsZero(file_path)</code> 或 <code class="enableRun">BS.b$.checkFileIsZeroSize(file_path)</code>
+                            </h3>
+                            <div class="alert alert-warning">
+                                检测文件是否为0Byte
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param file_path 文件的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var isZero = BS.b$.App.checkFileIsZero("/private/var/log/system.log");
+window.RTYD_callback(isZero);
+                                                                        </textarea><p class="runLogShow"></p>
+                                </div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.createEmptyFile(path, cb)</code> 或 <code
+                                    class="enableRun">BS.b$.createEmptyFile(path, cb)</code>
+                            </h3>
+                            <div class="alert alert-warning">
+                                创建空文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件绝对路径</code>; <br>
+                                <code class="param">@param cb 回调函数，说明创建成功与否，如果创建失败，返回创建失败的原因</code>; <br>
+                                <code class="param">@return 创建成功与否</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                        <textarea class="sdk-code" style="width: 100%; height:200px;">
+var success = BS.b$.App.createEmptyFile(BS.b$.App.getDocumentsDir() + "/new.xml");
+window.RTYD_callback(success);
+							                                            </textarea><p class="runLogShow"></p>
+                                </div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.createDir(dir_path, atts, cb)</code> 或 <code class="enableRun">BS.b$.createDir(dir_path,
+                                atts, cb)</code></h3>
+                            <div class="alert alert-warning">
+                                创建目录
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param dir_path 目录路径</code>; <br>
+                                <code class="param">@param atts 目录属性对象</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <code class="param">@return 创建成功与否</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+BS.b$.App.createDir(BS.b$.App.getDocumentsDir() + "/newdir/1/", {}, function(obj){
+    window.RTYD_callback(obj);
+});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.removeFile(path, cb)</code> 或 <code class="enableRun">
+                                BS.b$.removeFile(path, cb)</code></h3>
+                            <div class="alert alert-warning">
+                                删除文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件绝对路径</code>; <br>
+                                <code class="param">@param cb 回调函数，说明删除成功与否，如果删除失败，返回失败的原因</code>; <br>
+                                <code class="param">@return 删除成功与否</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var success = BS.b$.App.removeFile(BS.b$.App.getDocumentsDir() + "/new.xml");
+window.RTYD_callback(success);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.removeDir(dir_path, cb)</code> 或 <code class="enableRun">BS.b$.removeDir(dir_path,
+                                cb)</code></h3>
+                            <div class="alert alert-warning">
+                                删除目录
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param dir_path 目录路径</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <code class="param">@return 删除成功与否</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+BS.b$.App.removeDir(BS.b$.App.getDocumentsDir() + "/newdir/1/", function(obj){
+    window.RTYD_callback(obj);
+});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.copyFile(parms, cb)</code> 或 <code class="enableRun">BS.b$.copyFile(parms, cb)</code></h3>
+                            <div class="alert alert-warning">
+                                拷贝文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param parms 传输属性参数</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.copyFile(
 	{
-		src:"/DataTest/test/new.xml",   // 文件源路径
-		dest: "/DataTest/out/new.xml"   // 文件目标路径
+		src: BS.b$.App.getDocumentsDir() + "/new.xml",   // 文件源路径
+		dest: BS.b$.App.getDocumentsDir() + "/out.xml"   // 文件目标路径
 	},
-	function(info){console.log('.......')}
-)
-							   </textarea>									
-                            </div>								
-							
-							<h3><code>BS.b$.App.copyDir(parms, cb)</code> 或 <code>BS.b$.copyDir(parms, cb)</code> </h3>
+function(obj){
+    window.RTYD_callback(obj);
+});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.copyDir(parms, cb)</code> 或 <code class="enableRun">BS.b$.copyDir(parms, cb)</code></h3>
                             <div class="alert alert-warning">
-								拷贝目录	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param parms 传输属性参数</code>; <br>								
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                拷贝目录
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param parms 传输属性参数</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.copyDir(
 	{
-		src:"/DataTest/test/",   // 目录源路径
-		dest: "/DataTest/out/"   // 目标路径
+		src: BS.b$.App.getDocumentsDir() + "/newdir/",   // 目录源路径
+		dest: BS.b$.App.getDocumentsDir() + "/out/"   // 目标路径
 	},
-	function(info){console.log('.......')}
-)
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.moveFile(parms, cb)</code> 或 <code>BS.b$.moveFile(parms, cb)</code> </h3>
+function(obj){
+    window.RTYD_callback(obj);
+});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.moveFile(parms, cb)</code> 或 <code class="enableRun">BS.b$.moveFile(parms, cb)</code></h3>
                             <div class="alert alert-warning">
-								移动文件	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param parms 传输属性参数</code>; <br>								
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                移动文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param parms 传输属性参数</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.moveFile(
 	{
-		src:"/DataTest/test/new.xml",   // 文件源路径
-		dest: "/DataTest/out/new.xml"   // 文件目标路径
+		src: BS.b$.App.getDocumentsDir() + "/new.xml",   // 文件源路径
+		dest: BS.b$.App.getDocumentsDir() + "/out.xml"   // 文件目标路径
 	},
-	function(info){console.log('.......')}
-)
-							   </textarea>									
-                            </div>								
-							
-							<h3><code>BS.b$.App.moveDir(parms, cb)</code> 或 <code>BS.b$.moveDir(parms, cb)</code> </h3>
+function(obj){
+    window.RTYD_callback(obj);
+});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.moveDir(parms, cb)</code> 或 <code class="enableRun">BS.b$.moveDir(parms, cb)</code></h3>
                             <div class="alert alert-warning">
-								移动目录	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param parms 传输属性参数</code>; <br>								
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                移动目录
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param parms 传输属性参数</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.moveDir(
 	{
-		src:"/DataTest/test/",   // 目录源路径
-		dest: "/DataTest/out/"   // 目标路径
+		src: BS.b$.App.getDocumentsDir() + "/newdir",   // 目录源路径
+		dest: BS.b$.App.getDocumentsDir() + "/out"   // 目标路径
 	},
-	function(info){console.log('.......')}
-)
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.findFile(dir, fileName, cbName, cb)</code> 或 <code>BS.b$.findFile(dir, fileName, cbName, cb)</code> </h3>
-                            <div class="alert alert-warning">
-								查找文件是否在此目录中存在	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param dir 查询的目录</code>; <br>								
-								<code>@param fileName 文件名</code>; <br>								
-								<code>@param cbName 回调函数名称（过时API使用），当前，直接赋值为null</code>; <br>	
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.findFile("/DataTest/test/", "new.xml", null, function(info){console.log(info)});
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.checkPathIsReadable(path)</code> </h3>
-                            <div class="alert alert-warning">
-								判断路径是否可读	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkPathIsReadable("/DataTest/test/")
-							   </textarea>									
-                            </div>
-							
-							<h3><code>BS.b$.App.checkPathIsExecutable(path)</code> </h3>
-                            <div class="alert alert-warning">
-								判断路径是否可运行	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkPathIsExecutable("/DataTest/test/")
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.checkPathIsDeletable(path)</code> </h3>
-                            <div class="alert alert-warning">
-								判断路径是否可删除	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkPathIsDeletable("/DataTest/test/")
-							   </textarea>									
-                            </div>	
-
-							<h3><code>BS.b$.App.checkPathIsWritable(path)</code> 或 <code>BS.b$.checkPathIsWritable(path)</code> </h3>
-                            <div class="alert alert-warning">
-								路径是否可以写,具有写的权限	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkPathIsWritable("/DataTest/test/")
-							   </textarea>									
-                            </div>								
-							
-							
-							<h3><code>BS.b$.App.checkPathIsFile(path)</code> </h3>
-                            <div class="alert alert-warning">
-								判断是否为文件	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkPathIsFile("/DataTest/test/")
-							   </textarea>									
-                            </div>								
-							
-							
-							<h3><code>BS.b$.App.checkPathIsDir(path)</code> </h3>
-                            <div class="alert alert-warning">
-								判断是否为目录	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.checkPathIsDir("/DataTest/test/")
-							   </textarea>									
-                            </div>								
-							
-							
-							<h3><code>BS.b$.App.getFileName(path)</code> </h3>
-                            <div class="alert alert-warning">
-								获取文件名称，包括扩展名	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getFileName("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.getFileExt(path)</code> </h3>
-                            <div class="alert alert-warning">
-								获取文件扩展名	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getFileExt("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>								
-							
-							
-							<h3><code>BS.b$.App.getPathParentPath(path)</code> </h3>
-                            <div class="alert alert-warning">
-								获取路径上一级目录路径	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getPathParentPath("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>							
-						
-							
-							<h3><code>BS.b$.App.getFilePropertyJSONString(path)</code> </h3>
-                            <div class="alert alert-warning">
-								获取文件的基本属性	
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getFilePropertyJSONString("/DataTest/test/new.xml")
-							   </textarea>									
+function(obj){
+    window.RTYD_callback(obj);
+});
+							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
 
-                            <h3><code>BS.b$.App.getFileOrDirIconPath(path)</code> </h3>
+
+                            <h3><code class="enableRun">BS.b$.App.findFile(dir, fileName, cbName, cb)</code> 或 <code class="enableRun">BS.b$.findFile(dir,
+                                fileName, cbName, cb)</code></h3>
+                            <div class="alert alert-warning">
+                                查找文件是否在此目录中存在
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param dir 查询的目录</code>; <br>
+                                <code class="param">@param fileName 文件名</code>; <br>
+                                <code class="param">@param cbName 回调函数名称（过时API使用），当前，直接赋值为null</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+BS.b$.App.findFile( BS.b$.App.getDocumentsDir() + "/newdir", "new.xml", null, function(obj){
+    window.RTYD_callback(obj);
+});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.checkPathIsReadable(path)</code></h3>
+                            <div class="alert alert-warning">
+                                判断路径是否可读
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var able = BS.b$.App.checkPathIsReadable("/private/var/log/system.log");
+window.RTYD_callback(able);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.checkPathIsExecutable(path)</code></h3>
+                            <div class="alert alert-warning">
+                                判断路径是否可运行
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var able = BS.b$.App.checkPathIsExecutable("/private/var/log");
+window.RTYD_callback(able);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.checkPathIsDeletable(path)</code></h3>
+                            <div class="alert alert-warning">
+                                判断路径是否可删除
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var able = BS.b$.App.checkPathIsDeletable("/private/var/log");
+window.RTYD_callback(able);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.checkPathIsWritable(path)</code> 或
+                                <code class="enableRun">BS.b$.checkPathIsWritable(path)</code></h3>
+                            <div class="alert alert-warning">
+                                路径是否可以写,具有写的权限
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var able = BS.b$.App.checkPathIsWritable("/private/var/log");
+window.RTYD_callback(able);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.checkPathIsFile(path)</code></h3>
+                            <div class="alert alert-warning">
+                                判断是否为文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var isFile = BS.b$.App.checkPathIsFile("/private/var/log/system.log");
+window.RTYD_callback(isFile);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.checkPathIsDir(path)</code></h3>
+                            <div class="alert alert-warning">
+                                判断是否为目录
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var isDir = BS.b$.App.checkPathIsDir("/private/var/log");
+window.RTYD_callback(isDir);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.getFileName(path)</code></h3>
+                            <div class="alert alert-warning">
+                                获取文件名称，包括扩展名
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var fileName = BS.b$.App.getFileName("/private/var/log/system.log");
+window.RTYD_callback(fileName);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.getFileExt(path)</code></h3>
+                            <div class="alert alert-warning">
+                                获取文件扩展名
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var ext = BS.b$.App.getFileExt("/private/var/log/system.log");
+window.RTYD_callback(ext);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.getPathParentPath(path)</code></h3>
+                            <div class="alert alert-warning">
+                                获取路径上一级目录路径
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var parentDir = BS.b$.App.getPathParentPath("/private/var/log/system.log");
+window.RTYD_callback(parentDir);
+
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.getFilePropertyJSONString(path)</code></h3>
+                            <div class="alert alert-warning">
+                                获取文件的基本属性
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var json = BS.b$.App.getFilePropertyJSONString("/private/var/log/system.log");
+window.RTYD_callback(json);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getFileOrDirIconPath(path)</code></h3>
                             <div class="alert alert-warning">
                                 获取文件或目录的系统图标路径，返回的是png方式
                                 <br><br>
                                 <strong>参数说明:</strong> <br>
-                                <code>@param path 文件或目录的绝对路径</code>; <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
                                 <h6>示例：</h6>
-                                <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getFileOrDirIconPath("/DataTest/test/new.xml")
-							   </textarea>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var imgUrl = BS.b$.App.getFileOrDirIconPath("/Applications");
+window.RTYD_callback(imgUrl);
+							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
 
-                            <h3><code>BS.b$.App.getNewTempFilePath(fileName)</code> </h3>
+                            <h3><code class="enableRun">BS.b$.App.getNewTempFilePath(fileName)</code></h3>
                             <div class="alert alert-warning">
                                 获取临时文件的路径
                                 <br><br>
                                 <strong>参数说明:</strong> <br>
-                                <code>@param fileName 文件名称</code>; <br>
+                                <code class="param">@param fileName 文件名称</code>; <br>
                                 <h6>示例：</h6>
-                                <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getNewTempFilePath("new.xml")
-							   </textarea>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var path = BS.b$.App.getNewTempFilePath("new.xml");
+window.RTYD_callback(path);
+							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
 
-                            <h3><code>BS.b$.App.getOtherAppInfo(path, cb)</code> </h3>
+                            <h3><code class="enableRun">BS.b$.App.getOtherAppInfo(path, cb)</code></h3>
                             <div class="alert alert-warning">
                                 获取其他App的基本信息
                                 <br><br>
                                 <strong>参数说明:</strong> <br>
-                                <code>@param path App绝对路径</code>; <br>
-                                <code>@param cb 回调函数</code>; <br>
+                                <code class="param">@param path App绝对路径</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
                                 <h6>示例：</h6>
-                                <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 //{\"AppVersion\":\"10.0.1\",\"AppCategoryType\":\"public.app-category.productivity\",\"AppIconPath\":\"/Applications/Safari.app/Contents/Resources/compass.icns\",\"AppIcon2PngPath\":\"/var/folders/5v/ld4mwk5968b1b28sm6t3srgr0000gn/T/tmp_rs_image_1479909259.png\",\"AppName\":\"Safari\",\"AppIconValue\":\"compass\",\"AppId\":\"com.apple.Safari\",\"AppBuildVersion\":\"12602.2.14.0.7\"}
 
 
@@ -1059,180 +1275,208 @@ BS.b$.App.getNewTempFilePath("new.xml")
 //}
 BS.b$.App.getOtherAppInfo("/Applications/Safari.app", function(info){
      console.log($.obj2string(info));
+     window.RTYD_callback(info);
 });
-							   </textarea>
+							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
-							
-							
-							<h3><code>BS.b$.App.fileSizeAtPath(path)</code> </h3>
+
+
+                            <h3><code class="enableRun">BS.b$.App.fileSizeAtPath(path)</code></h3>
                             <div class="alert alert-warning">
-								获得文件/目录size(实际字节数 1024)
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.fileSizeAtPath("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>							
-							
-							
-							<h3><code>BS.b$.App.diskSizeAtPath(path)</code> </h3>
+                                获得文件/目录size(实际字节数 1024)
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var size = BS.b$.App.fileSizeAtPath("/Applications/Safari.app");
+window.RTYD_callback(size);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.diskSizeAtPath(path)</code></h3>
                             <div class="alert alert-warning">
-								获得文件/目录占用磁盘(字节数 1000)
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param path 文件或目录的绝对路径</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.diskSizeAtPath("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>								
-							
-							
-							<h3><code>BS.b$.App.md5Digest(str)</code> </h3>
+                                获得文件/目录占用磁盘(字节数 1000)
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param path 文件或目录的绝对路径</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var size = BS.b$.App.diskSizeAtPath("/Applications/Safari.app");
+window.RTYD_callback(size);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.md5Digest(str)</code></h3>
                             <div class="alert alert-warning">
-								获得字符串的md5值
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param str 源字符串</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.md5Digest("/DataTest/test/new.xml")
-							   </textarea>									
-                            </div>							
-							
-							<h3><code>BS.b$.App.getAppleLanguage()</code> </h3>
+                                获得字符串的md5值
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param str 源字符串</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var str = BS.b$.App.md5Digest("~/Documents/newdir/new.xml");
+window.RTYD_callback(str);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getAppleLanguage()</code></h3>
                             <div class="alert alert-warning">
-								获得当前苹果操作系统本地的语言
-								<br><br>							
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getAppleLanguage();  //en-US
-							   </textarea>									
-                            </div>							
-							
-							<h3><code>BS.b$.App.getCompatibleGoogleLanguageInfo()</code> </h3>
+                                获得当前苹果操作系统本地的语言
+                                <br><br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var lng = BS.b$.App.getAppleLanguage();  //en-US
+window.RTYD_callback(lng); 							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getCompatibleGoogleLanguageInfo()</code></h3>
                             <div class="alert alert-warning">
-								获取兼容Google翻译的语言标识信息
-								<br><br>							
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getCompatibleGoogleLanguageInfo();  //en-US
-							   </textarea>									
-                            </div>							
-							
-							<h3><code>BS.b$.App.getCompatibleWebkitLanguageList(_getType)</code> </h3>
+                                获取兼容Google翻译的语言标识信息
+                                <br><br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var info = BS.b$.App.getCompatibleGoogleLanguageInfo();  //en-US
+window.RTYD_callback(info);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getCompatibleWebkitLanguageList(_getType)</code></h3>
                             <div class="alert alert-warning">
-								获得兼容浏览器的语言标识, 发起者，为Native
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param _getType 类型：(1) Native2Webkit  (2) webkitCompatible</code>; <br>									
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getCompatibleWebkitLanguageList("Native2Webkit");  //en-US
-							   </textarea>									
-                            </div>								
-							
-							<h3><code>BS.b$.App.setUserLanguage(language)</code> </h3>
+                                获得兼容浏览器的语言标识, 发起者，为Native
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param _getType 类型：(1) Native2Webkit (2) webkitCompatible</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var info = BS.b$.App.getCompatibleWebkitLanguageList("Native2Webkit");  //en-US
+window.RTYD_callback(info);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.setUserLanguage(language)</code></h3>
                             <div class="alert alert-warning">
-								设置存储App的用户的语言
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param language 语言标识</code>; <br>									
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                设置存储App的用户的语言
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param language 语言标识</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.setUserLanguage("en-US");  //en-US
-							   </textarea>									
-                            </div>								
-							
-							<h3><code>BS.b$.App.getUserLanguage()</code> </h3>
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getUserLanguage()</code></h3>
                             <div class="alert alert-warning">
-								获取App用户设置的语言
-								<br><br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.getUserLanguage();  //en-US
-							   </textarea>									
-                            </div>								
-							
-							<h3><code>BS.b$.App.captureFull(jsonObj, cb)</code> </h3>
+                                获取App用户设置的语言
+                                <br><br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var info = BS.b$.App.getUserLanguage();  //en-US
+window.RTYD_callback(info);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.captureFull(jsonObj, cb)</code></h3>
                             <div class="alert alert-warning">
-								截屏[整个屏幕]
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj json对象</code>; <br>									
-								<code>@param cb 回调函数</code>; <br>									
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                截屏[整个屏幕]
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj json对象</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.captureFull({
 	filePath: BS.b$.App.getTempDir() + "cap_screen.png"
-}, function(info){console.log(info)}); 
-							   </textarea>									
-                            </div>							
-							
-							<h3><code>BS.b$.App.addDirPathToChangeWatcher(jsonObj, cb)</code> 或 <code>BS.b$.App.addFilePathToChangeWatcher(jsonObj, cb)</code><button class="coderun">try</button><sub></sub></h3>
-                            <div class="alert alert-warning">
-								添加文件目录到变化监视器
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj json对象</code>; <br>									
-								<code>@param cb 回调函数</code>; <br>									
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.addDirPathToChangeWatcher({
-	path: "/Users/Ian/Documents/"
- }, function(info){console.log(info)}); 
+}, function(info){window.RTYD_callback(info);});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
 
-                            //[Log] {"path":"/Users/Ian/Documents/New_1433573622398.md","flag":"FileWritten"} (app.js, line 270)
-                            //[Log] {"path":"/Users/Ian/Documents/New_1433573622398.md","flag":"FileAttributesChanged"} (app.js, line 270)
-                            //[Log] {"path":"/Users/Ian/Documents/New_1433573622398.md","flag":"FileSizeIncreased"} (app.js, line 270)
-                            //[Log] {"path":"/Users/Ian/Documents/New_1433573622398.md","flag":"AccessWasRevoked"} (app.js, line 270)
-                            //[Log] {"path":"/Users/Ian/Documents/New_1433573622398.md","flag":"LinkCountChanged"} (app.js, line 270)
-                            //[Log] {"path":"/Users/Ian/Documents/New_1433573622398.md","flag":"FileRenamed"} (app.js, line 270)
-                            //[Log] {"path":"/Users/Ian/Documents/New_1433573622398.md","flag":"FileDeleted"} (app.js, line 270)
-							   </textarea>									
-                            </div>								
-							
-							<h3><code>BS.b$.App.removeFromChangeWatcher(jsonObj)</code> </h3>
+                            <h3><code>BS.b$.App.addDirPathToChangeWatcher(jsonObj, cb)</code> 或 <code>BS.b$.App.addFilePathToChangeWatcher(jsonObj,
+                                cb)</code></h3>
                             <div class="alert alert-warning">
-								从变化监视器中移除
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj json对象</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                添加文件目录到变化监视器
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj json对象</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+BS.b$.App.addDirPathToChangeWatcher({
+	path: "/private/var/log/system.log"
+ }, function(info){window.RTYD_callback(info);});
+
+
+							                                       </textarea><p class="codeLine"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.removeFromChangeWatcher(jsonObj)</code></h3>
+                            <div class="alert alert-warning">
+                                从变化监视器中移除
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj json对象</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.removeFromChangeWatcher({
-	path: "/Users/Ian/Documents/"
+	path: "/private/var/log/system.log"
 });
-							   </textarea>									
-                            </div>								
-							
-							
-							<h3><code>BS.b$.App.print(jsonObj)</code> </h3>
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
+                            <h3><code class="enableRun">BS.b$.App.print(jsonObj)</code></h3>
                             <div class="alert alert-warning">
-								打印
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj json对象</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                打印
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj json对象</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.print({
 	silent: false,
 	printBackground: false
 });
-							   </textarea>									
-                            </div>								
-							
-							<h3><code>BS.b$.App.printToPDF(jsonObj, cb)</code> </h3>
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.printToPDF(jsonObj, cb)</code></h3>
                             <div class="alert alert-warning">
-								打印到PDF文件
-								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param jsonObj json对象</code>; <br>
-								<code>@param cb 回调函数</code>; <br>								
-							   <h6>示例：</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                打印到PDF文件
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param jsonObj json对象</code>; <br>
+                                <code class="param">@param cb 回调函数</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.print({
 	marginsType: 0,
 	pageSize: 'A4',
@@ -1240,116 +1484,73 @@ BS.b$.App.print({
 	printSelectionOnly: false,
 	landscape: false,
 	filePath: BS.b$.App.getTempDir() + "test.pdf"
-}, function(info){console.log(info)});
-							   </textarea>									
-                            </div>							
-							
-							
-							
+}, function(info){window.RTYD_callback(info);});
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
-			
-        </div>			
-		
-        </div>
 
+        </div>
 
     </div>
 
-    <!-- Mainly scripts -->
-    <script src="common/jquery/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+</div>
 
-    <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="js/demo/peity-demo.js"></script>
+<!-- Mainly scripts -->
+<script src="common/jquery/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+<!-- Flot -->
+<script src="js/plugins/flot/jquery.flot.js"></script>
+<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/plugins/flot/jquery.flot.spline.js"></script>
+<script src="js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="js/plugins/flot/jquery.flot.pie.js"></script>
 
-    <!-- jQuery UI -->
-    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Peity -->
+<script src="js/plugins/peity/jquery.peity.min.js"></script>
+<script src="js/demo/peity-demo.js"></script>
 
-    <!-- GITTER -->
-    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
 
-    <!-- Sparkline -->
-    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jQuery UI -->
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-    <!-- Sparkline demo data  -->
-    <script src="js/demo/sparkline-demo.js"></script>
+<!-- GITTER -->
+<script src="js/plugins/gritter/jquery.gritter.min.js"></script>
 
-    <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
-    <!-- Toastr -->
-    <script src="js/plugins/toastr/toastr.min.js"></script>
-	
-	<!-- CodeMirror -->
-	<script src="js/plugins/codemirror/codemirror.js"></script>
-	<script src="js/plugins/codemirror/mode/javascript/javascript.js"></script>
-	
-	
-	<!-- 加载SDK -->
-	<script src="sdk/util.js"></script>
-	<script src="sdk/bs.js"></script>
-	
-    <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                toastr.options = {
-                    closeButton: true,
-                    progressBar: true,
-                    showMethod: 'slideDown',
-                    timeOut: 4000
-                };
-                toastr.success('Responsive INSPINIA Admin Theme', 'Welcome to Romanysoft SDK');
+<!-- Sparkline demo data  -->
+<script src="js/demo/sparkline-demo.js"></script>
 
-            }, 1300);
-			
-			// 代码格式化
-			$.each($('.sdk-code'), function(i, ele){ CodeMirror.fromTextArea(ele,{
-			lineNumbers: true
-			})});
+<!-- ChartJS-->
+<script src="js/plugins/chartJs/Chart.min.js"></script>
 
-			// 代码可尝试执行
-            $.each($('button.coderun'), function (i, ele) {
-                var js = $(ele).parent('h3').children('code').html();
-                try{
-                    var value = eval(js);
-                    console.log(value);
-                    $(ele).parent('h3').children('sub').html(" = " + JSON.stringify(value));
-                }catch(e){
-                    alert(e);
-                }
-            });
+<!-- Toastr -->
+<script src="js/plugins/toastr/toastr.min.js"></script>
 
-            // 代码可尝试执行
-            $.each($('button.trycode'), function (i, ele) {
-                var js = $(ele).parent('h3').children('code').html();
-                $(ele).on('click', function () {
-                    try{
-                        var value = eval(js);
-                        console.log(value);
-                        $(ele).parent('h3').children('sub').html(" = " + JSON.stringify(value));
-                    }catch(e){
-                        alert(e);
-                    }
-                });
-            });
-        });
-    </script>
+<!-- CodeMirror -->
+<script src="js/plugins/codemirror/codemirror.js"></script>
+<script src="js/plugins/codemirror/mode/javascript/javascript.js"></script>
+
+
+<!-- 加载SDK -->
+<script src="sdk/util.js"></script>
+<script src="sdk/bs.js"></script>
+
+<!-- 加载公共代码 -->
+<script src="js/app.js"></script>
+
 </body>
 </html>

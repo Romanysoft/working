@@ -2,6 +2,8 @@
     "enableDeveloperDebug":  true,
     "AppExInfoDescription" : "set App other information",
     "AppExInfo" : {
+        "enableSpecPublicDir": true,
+        "userSpecPublicDir":"/Volumes/DataShareHFS/2013projects/NativeSelf/DebugApp",
         "enableHttpServer" : true,
         "onlyBuildInServer": false,
         "enableNativeRate":true,

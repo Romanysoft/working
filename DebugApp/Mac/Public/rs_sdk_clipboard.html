@@ -482,25 +482,8 @@
 	<!-- 加载SDK -->
 	<script src="sdk/util.js"></script>
 	<script src="sdk/bs.js"></script>
-	
-    <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                toastr.options = {
-                    closeButton: true,
-                    progressBar: true,
-                    showMethod: 'slideDown',
-                    timeOut: 4000
-                };
-                toastr.success('Responsive INSPINIA Admin Theme', 'Welcome to Romanysoft SDK');
 
-            }, 1300);
-			
-			// 代码格式化
-			$.each($('.sdk-code'), function(i, ele){ CodeMirror.fromTextArea(ele,{
-			lineNumbers: true
-			})});
-        });
-    </script>
+    <!-- 加载公共代码 -->
+    <script src="js/app.js"></script>
 </body>
 </html>

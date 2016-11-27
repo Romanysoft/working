@@ -771,6 +771,15 @@
                 return "";
             },
 
+
+            /// 获得Pictures目录
+            getPicturesDir: function() {
+                if (b$.pN) {
+                    return b$.pN.path.picturesDir();
+                }
+                return "";
+            },
+
             /// 获得本地Pictures目录
             getLocalPicturesDir: function() {
                 if (b$.pN) {
@@ -833,11 +842,14 @@
             },
 
             ///创建空文件
-            createEmptyFile: b$.createEmptyFile = function(file_path) {
+            createEmptyFile: b$.createEmptyFile = function(file_path, cb) {
                 if (b$.pN) {
                     var _path = file_path || (b$.pN.path.tempDir() + "tmp.txt");
                     return b$.pN.window.createEmptyFile($.toJSON({
-                        path: _path
+                        path: _path,
+                        callback: b$._get_callback(function(obj) {
+                            cb && cb(obj);
+                        }, true)
                     }));
                 }
             },
@@ -862,11 +874,14 @@
             },
 
             ///删除文件
-            removeFile: b$.removeFile = function(file_path) {
+            removeFile: b$.removeFile = function(file_path, cb) {
                 if (b$.pN) {
                     var _path = file_path || (b$.pN.path.tempDir() + "tmp.txt");
                     return b$.pN.window.removeFile($.toJSON({
-                        path: _path
+                        path: _path,
+                        callback: b$._get_callback(function(obj) {
+                            cb && cb(obj);
+                        }, true)
                     }));
                 }
             },
@@ -1439,7 +1454,7 @@
                 if (getType === 'Native2Webkit') { // 先获取Native的语言，然后查找Map
                     var apple_lng = 'en-US';
                     if (b$.pN) {
-                        apple_lng = b$.pN.app.getAppleLanguage();
+                        apple_lng = b$.pN.app.curAppleLanguage();
                     }
 
                     if (NativeApple2WebKit_LanguageMap.hasOwnProperty(apple_lng)) {
@@ -1482,7 +1497,7 @@
             ///设置用户的语言
             setUserLanguage: function(language) {
                 if (b$.pN) {
-                    b$.pN.app.setUserLanguage(language || 'en-US');
+                    return b$.pN.app.setUserLanguage(language || 'en-US');
                 }
             },
 
