@@ -16,7 +16,7 @@ working - make app
 ### Romanysoft合作开发（中国区）在线系统
 [Romanysoft合作开发（中国区）在线系统](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
 
-
+![](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/images/intro_zh-CN.png)
 
 ====
 
