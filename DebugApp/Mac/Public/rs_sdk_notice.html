@@ -414,18 +414,21 @@
 								<code>@param jsonObj json对象</code>; <br>								
 								<code>有返回值，默认是点击按钮的索引值</code>; <br>								
 							   <h6>示例1：简单直接调用</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.Notice.alert();
-							   </textarea>
+                                                               <div class="cx-code">                                     <button></button>                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
+var info = BS.b$.Notice.alert({message:"hello"});
+window.RTYD_callback(info);
+							   </textarea><p class="runLogShow"></p></div>
 							   <h6>示例2：高级配置</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.Notice.alert({
+                                                               <div class="cx-code">                                     <button></button>                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
+var info = BS.b$.Notice.alert({
 	message: "Tip",
 	title: "Information",
 	buttons: ["OK"],
 	alertType: "Alert"
 });
-							   </textarea>								   
+
+window.RTYD_callback(info);
+							   </textarea><p class="runLogShow"></p></div>								   
                             </div>	
 
 							
@@ -437,17 +440,18 @@ BS.b$.Notice.alert({
 								<code>@param jsonObj json对象</code>; <br>								
 								<code>@param cb 回调函数</code>; <br>															
 							   <h6>示例1：简单直接调用</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.Notice.notify();
-							   </textarea>
+                                                               <div class="cx-code">                                     <button></button>                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
+var info = BS.b$.Notice.notify({content:"hello"});
+window.RTYD_callback(info);
+							   </textarea><p class="runLogShow"></p></div>
 							   <h6>示例2：高级配置</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                                               <div class="cx-code">                                     <button></button>                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.Notice.notify({
 	content: "Tip",
 	title: "Information"
-}, function(info){console.log(info)}
+}, function(info){window.RTYD_callback(info);}
 );
-							   </textarea>								   
+							   </textarea><p class="runLogShow"></p></div>								   
                             </div>							
 							
 							
@@ -459,17 +463,18 @@ BS.b$.Notice.notify({
 								<code>@param jsonObj json对象</code>; <br>								
 								<code>@param cb 回调函数</code>; <br>															
 							   <h6>示例1：简单直接调用</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.Notice.dockMessage();
-							   </textarea>
+                                                               <div class="cx-code">                                     <button></button>                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
+var info = BS.b$.Notice.dockMessage({content:"hello"});
+window.RTYD_callback(info);
+							   </textarea><p class="runLogShow"></p></div>
 							   <h6>示例2：高级配置</h6>
-                               <textarea class="sdk-code" style="width: 100%; height:200px;">
+                                                               <div class="cx-code">                                     <button></button>                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.Notice.dockMessage({
 	content: "Tip",
 	title: "Information"
-}, function(info){console.log(info)}
+}, function(info){window.RTYD_callback(info);}
 );
-							   </textarea>								   
+							   </textarea><p class="runLogShow"></p></div>								   
                             </div>								
 							
                         </div>

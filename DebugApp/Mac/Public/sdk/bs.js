@@ -22,6 +22,8 @@
  *                      添加获取其他文件或目录图标路径(png格式文件)的接口
  *                      添加获取其他App的基本信息的接口
  *                      添加得到一个临时随机文件路径的接口
+ * 2016年11月28日19:59:15
+ *                      添加重启启动App的接口 App.relanuch
  */
 
 (function(factory) {
@@ -460,6 +462,13 @@
             terminate: function() {
                 if (b$.pN) {
                     b$.pN.app.terminate();
+                }
+            },
+
+            /// 重启启动，先退出，然后重新启动
+            relaunch: function() {
+                if (b$.pN) {
+                    b$.pN.app.relaunch();
                 }
             },
 
