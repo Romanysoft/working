@@ -2,11 +2,10 @@
     "enableDeveloperDebug":  true,
     "AppExInfoDescription" : "set App other information",
     "AppExInfo" : {
-        "enableSpecPublicDir": true,
-        "userSpecPublicDir":"/Volumes/DataShareHFS/2013projects/NativeSelf/DebugApp",
+        "enableSpecPublic": true,
+        "userSpecPublic": "${DOCUMENTS}/${APP_NAME}/public/index.html",
         "enableHttpServer" : true,
         "onlyBuildInServer": false,
-        "enableNativeRate":true,
         "autoOffset": true,
         "minSize" : [900, 630],
         "size" : [900, 630],
@@ -27,7 +26,7 @@
         "hideDocumentVersionsButton" : false,
         "hideFullScreenButton" : true,
         "menuHideList" : [
-            {"tag":100,"hide":true},
+            {"tag":100,"hide":false},
             {"tag":200,"hide":false}
         ],
         "menuTitleList" : [

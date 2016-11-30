@@ -17,7 +17,10 @@
  *                      集成跨平台的加載js\css\html方案。并優化
  *                      幾個RTYConfig單元設置，方便消息共享
  *
- * 2016年10月28日21:02:02 
+ * 2016年11月30日13:02:31
+ *                      添加Convert Arguments Into An Array函数
+ *                      arguments2Array()
+ *
  */
 ;
 (function (factory) {
@@ -672,6 +675,15 @@
                 if ($.type(param) === "array") return param;
 
                 return [];
+            },
+
+            /**
+             * Convert Arguments Into An Array
+             * @returns []
+             */
+            arguments2Array:function(){
+                var args = [].slice.call(arguments, 0);
+                return args;
             },
 
             //====================================================================================

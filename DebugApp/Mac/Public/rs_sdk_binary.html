@@ -468,7 +468,7 @@ BS.b$.Binary.createTextFile({
  WindowsCP1251,WindowsCP1252,WindowsCP1253,WindowsCP1254,WindowsCP1250,ISO2022JP,MacOSRoman
  UTF16,UTF16BigEndian,UTF16LittleEndian
  **/
-BS.b$.Binary.createTextFile({
+BS.b$.Binary.getUTF8TextContentFromFile({
 	filePath: BS.b$.App.getTempDir() + "test1.txt"            // 文件路径
 	encode: "utf8", // 文件编码， 默认编码是utf8
 	async: true,     // 异步的时候，回调函数有效，否则无效，直接返回内容值
