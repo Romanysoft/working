@@ -208,14 +208,33 @@ working - make app
 1. [Javascript图形绘制库 jsDraw2D](http://jsdraw2d.jsfiction.com/)
 1. [JavaScript 的 GIF 动画生成 gif.js](https://github.com/jnordberg/gif.js)
 1. [JavaScript模块加载器 lodJS](https://github.com/yanhaijing/lodjs)
-
-
+1. [Bootstrap：Web前端开发框架](https://github.com/twbs/bootstrap)
+1. [Riot.js：不到1kb的客户端Model-View-Presenter（MVP）框架](https://github.com/moot/riotjs)
+1. [jQWidgets：jQuery HTML5 UI组件框架](http://www.jqwidgets.com/)
+1. [Velocity.js：加速JavaScript动画](https://github.com/julianshapiro/velocity)
+1. [jquery.transit：提供流畅CSS3变换和过渡效果的jQuery插件](https://github.com/rstacruz/jquery.transit/)
+1. [bounce.js：创建有趣的CSS3动画](https://github.com/tictail/bounce.js)
+1. [Dynamics.js：创建具有物理运动效果动画的JS库](https://github.com/michaelvillar/dynamics.js)
+1. [JSLinux：Javascript 编写的 x86 模拟器](http://bellard.org/jslinux/)
+1. [JuliusJS：一个语言识别的 JavaScript 库](https://github.com/zzmp/juliusjs)
+1. [D3.js：用于图形展示的开源Javascript库](https://github.com/mbostock/d3)
+1. [Visual Sedimentation：可视化数据流图工具](https://github.com/INRIA/VisualSedimentation)
+1. [LESS.js是JavaScript，一种动态样式语言，属于CSS预处理语言的一种，它使用类似CSS的语法，为CSS的赋予了动态语言的特性，如变量、继承、运算、函数等，更方便CSS的编写和维护。](https://github.com/less/less.js)
+1. [Js2coffee Javascript代码转换成成Coffee语言代码](https://github.com/js2coffee/js2coffee)
+1. [NProgress.js 动态跟踪的进度条](https://github.com/rstacruz/nprogress) http://ricostacruz.com/nprogress/
+1. [Flatdoc 使用Markdown文件创建的页面自动渲染](https://github.com/rstacruz/flatdoc) http://ricostacruz.com/flatdoc/
+1. [rscss 方便智能的CSS组件](https://github.com/rstacruz/rscss) http://rscss.io/
+1. [Backbone Patterns, 使用Backbone.js 构建App](https://github.com/rstacruz/backbone-patterns)
 
 
 (后续陆续补充...)
 
 ===
 ###可参考学习制作App的资源（NodeJS 部分）:
+
+1. [用纯Node.js写的JVM](https://github.com/YaroslavGaponov/node-jvm)
+1. [PNPM 更便捷的npm 安装](https://github.com/rstacruz/pnpm)
+1. []()
 
 
 **所有npm的包，都可以作为App的组成部分**
@@ -316,6 +335,10 @@ working - make app
 
 ===
 ###可参考制作App的资源（Ruby 部分）:
+
+
+1. [Mina 自动化工具](https://github.com/mina-deploy/mina)
+
 
 (后续陆续补充...)
 
