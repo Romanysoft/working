@@ -38,10 +38,25 @@
     "EnableIAP" : false,
     "Tasks":[
         {
+            "id":"task0",
+            "index": 0,
+            "descript":"remove resource dir",
+            "platforms":"darwin, MacOSX",
+            "conditionType":"&&",
+            "conditions":[{"key":"core_resource_appbuildveriosn", "op":"!=", "value":100},
+                {"type":"path_exist",
+                "path":"${APPDATA_HOME}/Resources/__boot__.py", "value":true}],
+            "taskType":"delete_dir",
+            "path": "${APPDATA_HOME}/Resources"
+        },
+        {
             "id":"task1",
+            "index": 1,
             "descript":"unzip core_data.zip",
-             "conditionType":"||",
-             "conditions":[{"key":"core_data_version", "op":"<", "value":100100106},{"type":"path_exist","path":"${APPDATA_HOME}/Resources/config.plist", "value":false}],
+            "platforms":"darwin, MacOSX",
+            "conditionType":"||",
+            "conditions":[{"key":"core_data_version", "op":"!=", "value":100},{"type":"path_exist",
+                "path":"${APPDATA_HOME}/Resources/__boot__.py", "value":false}],
             "taskAppPath":"${BUNDEL_PLUGIN}/EasyZip",
             "command":["-i", "${BUNDEL_RESOURCE}/data/python/Resources/core_data.zip", "-o", "${APPDATA_HOME}/Resources", "-u", "-d"],
             "environmentDic":{},
