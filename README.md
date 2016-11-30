@@ -227,7 +227,7 @@ working - make app
 1. [Backbone Patterns, 使用Backbone.js 构建App](https://github.com/rstacruz/backbone-patterns)
 
 
-(后续陆续补充...)
+[**查看更多内容**](https://github.com/Romanysoft/working/wiki/JavaScript-%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE%E6%94%B6%E9%9B%86)
 
 ===
 ###可参考学习制作App的资源（NodeJS 部分）:
