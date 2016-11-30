@@ -4,6 +4,7 @@ working - make app
 
 
 ====
+### [申请加入](http://wpa.qq.com/msgrd?v=3&uin=34314687&site=qq&menu=yes)
 ### Romanysoft合作开发（中国区）在线系统
 [Romanysoft合作开发（中国区）在线系统](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
 
