@@ -225,9 +225,48 @@ working - make app
 ===
 ###可参考制作App的资源（Python 部分）:
 
-
-
 1. [Python技巧文章](https://github.com/Romanysoft/working/wiki/Python%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0)
+1. [Google-translate-python：一个Python在线翻译模块](https://github.com/terryyin/google-translate-python)
+1. [Times：处理时间转换的Python库](https://github.com/nvie/times)
+1. [lxml：Python的lxml XML工具箱](https://github.com/lxml/lxml)
+1. [PythonJS：Python到JavaScript、Dart、Coffee和Lua的翻译器](https://github.com/PythonJS/PythonJS)
+1. [Pyinstruments：Python的调用栈分析器](https://github.com/joerick/pyinstrument)
+1. [Cryptography：用于加密的Python库](https://github.com/pyca/cryptography)
+1. [Pyquery：jquery一样的Python库](https://github.com/gawel/pyquery)
+1. [Python-qrcode：QR码生成器](https://github.com/lincolnloop/python-qrcode)
+1. [Streamparse：处理实时数据流的Python库](https://github.com/Parsely/streamparse)
+1. [PyAPNs：与苹果推送通知服务（APNs）交互的Python库](https://github.com/djacobs/PyAPNs)
+1. [Folium：Python + Leaflet.js.olium可以让你用Python强大生态系统来处理数据，然后用Leaflet地图来展示。](https://github.com/wrobstory/folium)
+1. [You-Get：YouTube/Youku/Niconico视频下载器](https://github.com/soimort/you-get)
+1. [Python-lust：Unix服务器的微型工具箱](https://github.com/zedshaw/python-lust)
+1. [Tagger：自动为文本文档增加标签](https://github.com/apresta/tagger)
+1. [Ramp：快速开发机器学习原型.Ramp是一个基于pandas的Python库，可以快速开发机器学习解决方案的原型。它是一个轻量级的机器学习框架，可插入已有的Python学习和统计工具（如scikit-learn、rpy2等）](https://github.com/kvh/ramp)
+1. [Gittle：给人类使用的Pythonic Git](https://github.com/FriendCode/gittle)
+1. [Gspread：用Python管理谷歌电子表格](https://github.com/burnash/gspread)
+1. [Shovel：Python中的Rake.Shovel可以简单的把Python函数转换为任务，然后通过命令行访问和调用他们，像Rake一样。新shovel还支持在浏览器中调用这些任务，而不需要修改你的shovel脚本](https://github.com/seomoz/shovel)
+1. [Kombu：Python的消息库.Kombu是一个为Python写的消息库，目标是为AMQ协议提供一个傻瓜式的高层接口，让Python中的消息传递变得尽可能简单，并且也提供一些常见消息传递问题的解决方案。](https://github.com/celery/kombu)
+1. [PDFMiner：Python的PDF解析器](https://github.com/euske/pdfminer)
+1. [PRAW全称“Python Reddit API Wrapper”，是Python语言下的Reddit API包装器，包装了所有reddit API规则，使得在Python下访问reddit变得异常简单。](https://github.com/praw-dev/praw)
+1. [Flanker：Python的邮件地址和Mime解析库](https://github.com/mailgun/flanker)
+1. [Splinter：测试网络应用的工具](https://github.com/cobrateam/splinter)
+1. [Urllib3：具有线程安全连接池、文件post等功能的Python HTTP库](https://github.com/shazow/urllib3)
+1. [Moviepy：用脚本来编辑电影](https://github.com/Zulko/moviepy)
+1. [Pydown：用Python做一个HTML5的演示,Pydown是一个在单个HTML页面上的演示系统，受keydown所启发。一个做成的演示系统](https://github.com/isnowfy/pydown)
+1. [Pycrypto：Python的密码工具箱](https://github.com/dlitz/pycrypto)
+1. [PyMySQL：纯Python的MySQL客户端](http://www.python.org/dev/peps/pep-0249)
+1. [Responses：模拟Python Requests的工具库](https://github.com/dropbox/responses)
+1. [Pika是一个纯Python实现的AMQP 0-9-1协议，它尝试与底层网络支持库之间保持独立。](https://github.com/pika/pika)
+1. [Mongoengine：Python的操作MongoDB数据库的对象-文档映射器](https://github.com/MongoEngine/mongoengine)
+1. [Schedule：给人类用的Python作业调度工具](https://github.com/dbader/schedule)
+1. [Scrapely：一个纯Python写的HTML抓屏库](https://github.com/scrapy/scrapely)
+1. [Statsmodels：Python的统计建模和计量经济学工具](https://github.com/statsmodels/statsmodels)
+1. [Dulwich：纯Python实现的Git](https://github.com/jelmer/dulwich)
+1. [Python-markdown2：完全用Python实现的Markdown](https://github.com/trentm/python-markdown2)
+1. [Scales：Python版的Metrics.跟踪服务器状态和统计指标，使你全面掌握服务器状态，还可以发送指标到Graphite来图像呈现或者向文件写入崩溃信息。](https://github.com/Cue/scales)
+1. [Pystache：基于Python语言的Mustache.Pystache是用Python语言实现的Mustache（胡须）。Mustache是一个非常棒的模板语言，模板包含 Mustache标记的字符串，这些标记默认用两个{{}}围起来，就像人的胡须一样，简洁明了。](https://github.com/defunkt/pystache)
+
+
+
 
 
 (后续陆续补充...)
