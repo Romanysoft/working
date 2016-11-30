@@ -22,6 +22,7 @@ working - make app
 
 ![](https://github.com/Romanysoft/working/blob/master/images/debugApp_screen.jpg)
 
+[API在线查看](https://romanysoft.github.io/working/DebugApp/Mac/Public/index.html)
 
 
 1. **https://github.com/Romanysoft/working/tree/master/DebugApp/Mac/debug_app/DebugApp.zip** 可以直接解压到macOS系统上运行
