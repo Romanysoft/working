@@ -671,14 +671,14 @@ BS.b$.App.removeItemFromUserDefaults({
                                 <button
                                         class="coderun">try
                                 </button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得App的插件目录
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getAppResourceDir()</code> 或 <code>BS.b$.getAppResourceDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得Application的Resource目录
                             </div>
@@ -700,21 +700,21 @@ BS.b$.App.removeItemFromUserDefaults({
 
                             <h3><code class="enableRun">BS.b$.App.getAppDataHomeDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得AppDataHomeDir
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getHomeDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得Home Directory
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getDocumentsDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得DocumentsDir
                             </div>
@@ -728,42 +728,56 @@ BS.b$.App.removeItemFromUserDefaults({
 
                             <h3><code class="enableRun">BS.b$.App.getLibraryDir()</code>
                                 <button class="coderun">try</button>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
+                            <div class="alert alert-warning">
+                                获得Library目录
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getLocalLibraryDir()</code>
+                                <button class="coderun">try</button>
                                 <sub></sub></h3>
                             <div class="alert alert-warning">
-                                获得LibraryDir
+                                获得本地Library目录
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getTempDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得临时目录
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getCacheDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得Cache目录
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getApplicationDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得Application目录
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getDesktopDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得DesktopDir，桌面路径
                             </div>
 
-                            <h3><code class="enableRun">BS.b$.App.getDownloadDir()</code>
+                            <h3><code class="enableRun">BS.b$.App.getLocalDesktopDir()</code>
                                 <button class="coderun">try</button>
                                 <sub></sub></h3>
+                            <div class="alert alert-warning">
+                                获得本地DesktopDir，桌面路径。
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getDownloadDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得downloadDir，下载目录路径
                             </div>
@@ -777,7 +791,7 @@ BS.b$.App.removeItemFromUserDefaults({
 
                             <h3><code class="enableRun">BS.b$.App.getMoviesDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得Movies目录路径
                             </div>
@@ -791,7 +805,7 @@ BS.b$.App.removeItemFromUserDefaults({
 
                             <h3><code class="enableRun">BS.b$.App.getMusicDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得Music目录
                             </div>
@@ -806,7 +820,7 @@ BS.b$.App.removeItemFromUserDefaults({
 
                             <h3><code class="enableRun">BS.b$.App.getPicturesDir()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得Pictures目录
                             </div>
@@ -821,16 +835,51 @@ BS.b$.App.removeItemFromUserDefaults({
 
                             <h3><code class="enableRun">BS.b$.App.getUserName()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得UserName
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.getUserFullName()</code>
                                 <button class="coderun">try</button>
-                                <sub></sub></h3>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
                             <div class="alert alert-warning">
                                 获得User全名(UserFullName)
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getWritableDocumentsDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
+                            <div class="alert alert-warning">
+                                获得沙盒状态下可写入的Documents路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getWritableDownloadDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
+                            <div class="alert alert-warning">
+                                获得沙盒状态下可写入的Download路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getWritableMusicDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
+                            <div class="alert alert-warning">
+                                获得沙盒状态下可写入的Music路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getWritableMoviesDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
+                            <div class="alert alert-warning">
+                                获得沙盒状态下可写入的Movies路径
+                            </div>
+
+                            <h3><code class="enableRun">BS.b$.App.getWritablePicturesDir()</code>
+                                <button class="coderun">try</button>
+                                <sub></sub><label class="label label-primary">推荐使用</label></h3>
+                            <div class="alert alert-warning">
+                                获得沙盒状态下可写入的Pictures路径
                             </div>
 
                             <h3><code class="enableRun">BS.b$.App.checkPathIsExist(path)</code> 或

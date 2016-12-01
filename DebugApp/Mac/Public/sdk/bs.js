@@ -24,6 +24,12 @@
  *                      添加得到一个临时随机文件路径的接口
  * 2016年11月28日19:59:15
  *                      添加重启启动App的接口 App.relanuch
+ *
+ * 2016年12月1日10:04:01
+ *                      补充两个获取路径的接口
+ *                      (1)获得本地desktop目录路径
+ *                      (2)获得本地Library目录路径
+ *
  */
 
 (function(factory) {
@@ -748,6 +754,22 @@
                 return "";
             },
 
+            /// 获得本地desktop目录路径
+            getLocalDesktopDir:function() {
+                if (b$.pN) {
+                    return b$.pN.path.localDesktopDir();
+                }
+                return "";
+            },
+
+            /// 获得本地Library目录路径
+            getLocalLibraryDir:function() {
+                if (b$.pN) {
+                    return b$.pN.path.localLibraryDir();
+                }
+                return "";
+            },
+
             /// 获得Movies目录路径
             getMoviesDir: function() {
                 if (b$.pN) {
@@ -812,6 +834,44 @@
                 }
                 return "";
             },
+
+
+            /// 获得沙盒状态下可写入的Documents路径
+            getWritableDocumentsDir: function() {
+                if (b$.pN) {
+                    return b$.pN.path.appWriteableDocumentDir();
+                }
+                return "";
+            },
+            /// 获得沙盒状态下可写入的Download路径
+            getWritableDownloadDir: function() {
+                if (b$.pN) {
+                    return b$.pN.path.appWriteableDownloadDir();
+                }
+                return "";
+            },
+            /// 获得沙盒状态下可写入的Music路径
+            getWritableMusicDir: function() {
+                if (b$.pN) {
+                    return b$.pN.path.appWriteableMusicDir();
+                }
+                return "";
+            },
+            /// 获得沙盒状态下可写入的Movies路径
+            getWritableMoviesDir: function() {
+                if (b$.pN) {
+                    return b$.pN.path.appWriteableMoviesDir();
+                }
+                return "";
+            },
+            /// 获得沙盒状态下可写入的Pictures路径
+            getWritablePicturesDir: function() {
+                if (b$.pN) {
+                    return b$.pN.path.appWriteablePicturesDir();
+                }
+                return "";
+            },
+
 
 
             /// 检测路径是否存在
