@@ -29,6 +29,8 @@
  *                      补充两个获取路径的接口
  *                      (1)获得本地desktop目录路径
  *                      (2)获得本地Library目录路径
+ * 2016年12月4日19:57:47
+ *                      添加向后兼容性代码参数处理
  *
  */
 
@@ -266,6 +268,13 @@
                         alertType: jsonObj.alertType || 'Alert'
                     };
 
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            params[key] = jsonObj[key];
+                        }
+                    }
+
                     var returnValue = b$.pN.notice.alert($.toJSON(params));
 
                     ///Fixed: 根据Electron及本地引擎的区别来处理返回的值
@@ -302,6 +311,13 @@
                         }, true)
                     };
 
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            params[key] = jsonObj[key];
+                        }
+                    }
+
                     return b$.pN.notice.notify($.toJSON(params));
                 } else {
                     alert(jsonObj.message);
@@ -317,6 +333,13 @@
                             cb && cb(obj);
                         }, true)
                     };
+
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            params[key] = jsonObj[key];
+                        }
+                    }
 
                     if (b$.pIsUseElectron) {
                         if (window.Notification) {
@@ -544,15 +567,22 @@
             },
 
             /// 发送电子邮件
-            sendEmail: function(parms) {
+            sendEmail: function(jsonObj) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['sendAddress'] = parms['sendAddress'] || "admin@gmail.com";
-                        parms['toAddress'] = parms['toAddress'] || "admin@gmail.com";
-                        parms['subject'] = parms['subject'] || "Hello";
-                        parms['body'] = parms['body'] || "Hello!!";
+                        parms['sendAddress'] = jsonObj['sendAddress'] || "admin@gmail.com";
+                        parms['toAddress'] = jsonObj['toAddress'] || "admin@gmail.com";
+                        parms['subject'] = jsonObj['subject'] || "Hello";
+                        parms['body'] = jsonObj['body'] || "Hello!!";
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
 
                         b$.pN.app.sendEmailWithMail($.toJSON(parms));
@@ -591,6 +621,14 @@
                         key: '',
                         value: ''
                     };
+
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            obj[key] = jsonObj[key];
+                        }
+                    }
+
                     b$.pN.window.setInfoToUserDefaults($.toJSON(obj));
                 }
             },
@@ -601,6 +639,14 @@
                         callback: 'console.log',
                         key: ''
                     };
+
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            obj[key] = jsonObj[key];
+                        }
+                    }
+
                     b$.pN.window.getInfoFromUserDefaults($.toJSON(obj));
                 }
             },
@@ -611,6 +657,14 @@
                         callback: 'console.log',
                         key: ''
                     };
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            obj[key] = jsonObj[key];
+                        }
+                    }
+
+
                     b$.pN.window.removeItemFromUserDefaults($.toJSON(obj));
                 }
             },
@@ -975,16 +1029,23 @@
             },
 
             ///拷贝文件
-            copyFile: b$.copyFile = function(parms, cb) {
+            copyFile: b$.copyFile = function(jsonObj, cb) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj) {
+                        parms['callback'] = jsonObj['callback'] || b$._get_callback(function(obj) {
                             cb && cb(obj);
                         }, true);
-                        parms['src'] = parms['src'] || "";
-                        parms['dest'] = parms['dest'] || "";
+                        parms['src'] = jsonObj['src'] || "";
+                        parms['dest'] = jsonObj['dest'] || "";
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.copyFile($.toJSON(parms));
                     } catch (e) {
@@ -994,16 +1055,23 @@
             },
 
             ///拷贝目录
-            copyDir: b$.copyDir = function(parms, cb) {
+            copyDir: b$.copyDir = function(jsonObj, cb) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj) {
+                        parms['callback'] = jsonObj['callback'] || b$._get_callback(function(obj) {
                             cb && cb(obj);
                         }, true);
-                        parms['src'] = parms['src'] || "";
-                        parms['dest'] = parms['dest'] || "";
+                        parms['src'] = jsonObj['src'] || "";
+                        parms['dest'] = jsonObj['dest'] || "";
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.copyDir($.toJSON(parms));
                     } catch (e) {
@@ -1013,16 +1081,23 @@
             },
 
             ///移动文件
-            moveFile: b$.moveFile = function(parms, cb) {
+            moveFile: b$.moveFile = function(jsonObj, cb) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj) {
+                        parms['callback'] = jsonObj['callback'] || b$._get_callback(function(obj) {
                             cb && cb(obj);
                         }, true);
-                        parms['src'] = parms['src'] || "";
-                        parms['dest'] = parms['dest'] || "";
+                        parms['src'] = jsonObj['src'] || "";
+                        parms['dest'] = jsonObj['dest'] || "";
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.moveFile($.toJSON(parms));
                     } catch (e) {
@@ -1032,16 +1107,23 @@
             },
 
             ///移动目录
-            moveDir: b$.moveDir = function(parms, cb) {
+            moveDir: b$.moveDir = function(jsonObj, cb) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['callback'] = parms['callback'] || b$._get_callback(function(obj) {
+                        parms['callback'] = jsonObj['callback'] || b$._get_callback(function(obj) {
                             cb && cb(obj);
                         }, true);
-                        parms['src'] = parms['src'] || "";
-                        parms['dest'] = parms['dest'] || "";
+                        parms['src'] = jsonObj['src'] || "";
+                        parms['dest'] = jsonObj['dest'] || "";
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.moveDir($.toJSON(parms));
                     } catch (e) {
@@ -1591,7 +1673,12 @@
                         parms['filePath'] = parms['filePath'] || (b$.pN.path.tempDir() +
                             "cap_screen.png"); // 保存文件
 
-
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
                         b$.pN.window.capture($.toJSON(parms));
                     } catch (e) {
                         console.error(e);
@@ -1616,6 +1703,13 @@
                             cb && cb(obj);
                         }, true);
                         parms['path'] = parms['path'] || (b$.pN.path.tempDir());
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.createDirChangeWatcher($.toJSON(parms));
                     } catch (e) {
@@ -1642,6 +1736,13 @@
                         }, true);
                         parms['path'] = parms['path'] || (b$.pN.path.tempDir());
 
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
+
                         b$.pN.window.createFileChangeWatcher($.toJSON(parms));
                     } catch (e) {
                         console.error(e);
@@ -1655,6 +1756,13 @@
                     try {
                         var parms = jsonObj || {};
                         parms['path'] = parms['path'] || (b$.pN.path.tempDir());
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         return b$.pN.window.removeFromChangeWatcher($.toJSON(parms));
                     } catch (e) {
@@ -1673,6 +1781,13 @@
                         var parms = jsonObj || {};
                         parms['silent'] = parms['silent'] || false;
                         parms['printBackground'] = parms['printBackground'] || false;
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         return b$.pN.window.print($.toJSON(parms));
                     } catch (e) {
@@ -1698,6 +1813,13 @@
                         parms['landscape'] = parms['landscape'] || false;
                         parms['filePath'] = parms['filePath'] || (b$.pN.path.tempDir() + "/" + Date
                             .now() + ".pdf");
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         return b$.pN.window.printToPDF($.toJSON(parms));
                     } catch (e) {
@@ -1726,6 +1848,13 @@
                             key: jsonObj.xpc_key || "default",
                             id: jsonObj.bundleID || "com.romanysoft.app.mac.xpc.AgentHelper"
                         };
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                params[key] = jsonObj[key];
+                            }
+                        }
 
                         return b$.pN.app.registerNewXPCService($.toJSON(params));
                     } catch (e) {
@@ -1835,6 +1964,13 @@
                             messageDic: _json.messageDic
                         };
 
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                params[key] = jsonObj[key];
+                            }
+                        }
+
                         return b$.pN.app.sendMessageToXPCService($.toJSON(params));
                     } catch (e) {
                         console.error(e)
@@ -1897,6 +2033,13 @@
                     var node_path = pluginDir + "/node";
 
                     var _json = jsonObj || {};
+
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            _json[key] = jsonObj[key];
+                        }
+                    }
 
                     // 创建任务
                     var messageDic = {
@@ -2129,13 +2272,20 @@
             },
 
             // 移动窗体
-            move: function(parms) {
+            move: function(jsonObj) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['x'] = parms['x'] || 0.0;
-                        parms['y'] = parms['y'] || 0.0;
+                        parms['x'] = jsonObj['x'] || 0.0;
+                        parms['y'] = jsonObj['y'] || 0.0;
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.move($.toJSON(parms));
                     } catch (e) {
@@ -2147,13 +2297,20 @@
             },
 
             // 改变窗体大小
-            resize: function(parms) {
+            resize: function(jsonObj) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['width'] = parms['width'] || 600;
-                        parms['height'] = parms['height'] || 400;
+                        parms['width'] = jsonObj['width'] || 600;
+                        parms['height'] = jsonObj['height'] || 400;
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.resize($.toJSON(parms));
                     } catch (e) {
@@ -2176,13 +2333,20 @@
             },
 
             // 设置窗体尺寸最小值
-            setMinSize: function(parms) {
+            setMinSize: function(jsonObj) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['width'] = parms['width'] || 600;
-                        parms['height'] = parms['height'] || 400;
+                        parms['width'] = jsonObj['width'] || 600;
+                        parms['height'] = jsonObj['height'] || 400;
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.setMinsize($.toJSON(parms));
                     } catch (e) {
@@ -2205,13 +2369,20 @@
             },
 
             // 设置窗体最大值
-            setMaxSize: function(parms) {
+            setMaxSize: function(jsonObj) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = jsonObj || {};
                         //限制内部属性：
-                        parms['width'] = parms['width'] || 600;
-                        parms['height'] = parms['height'] || 400;
+                        parms['width'] = jsonObj['width'] || 600;
+                        parms['height'] = jsonObj['height'] || 400;
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
 
                         b$.pN.window.setMaxsize($.toJSON(parms));
                     } catch (e) {
@@ -2235,8 +2406,28 @@
             },
 
             // 设置窗体当前尺寸
-            setSize: function(parms) {
-                b$.Window.resize(parms);
+            setSize: function(jsonObj) {
+                if (b$.pN) {
+                    try {
+                        var parms = jsonObj || {};
+                        //限制内部属性：
+                        parms['width'] = jsonObj['width'] || 600;
+                        parms['height'] = jsonObj['height'] || 400;
+
+                        /// 统一向后兼容处理
+                        for(var key in jsonObj){
+                            if (jsonObj.hasOwnProperty(key)){
+                                parms[key] = jsonObj[key];
+                            }
+                        }
+
+                        b$.Window.resize(parms);
+                    } catch (e) {
+                        console.error(e);
+                    }
+                } else {
+                    alert('启动窗体设置最大尺寸!')
+                }
             }
 
         };
@@ -2264,6 +2455,13 @@
                         actionCB && actionCB(obj);
                     }, true);
 
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
+
 
                     if (b$.pN) {
                         b$.pN.window.setMenuProperty($.toJSON(parms));
@@ -2282,13 +2480,20 @@
 
                 return 0;
             },
-            addRecentDocument: function(parms) {
+            addRecentDocument: function(in_parms) {
                 if (b$.pN) {
                     try {
-                        parms = parms || {};
+                        var parms = in_parms || {};
                         //限制内部属性：
-                        parms['url'] = parms['url'] || "";
-                        parms['mustWritable'] = parms['mustWritable'] || false;
+                        parms['url'] = in_parms['url'] || "";
+                        parms['mustWritable'] = in_parms['mustWritable'] || false;
+
+                        /// 统一向后兼容处理
+                        for(var key in in_parms){
+                            if (in_parms.hasOwnProperty(key)){
+                                parms[key] = in_parms[key];
+                            }
+                        }
 
                         b$.pN.window.addRecentDocument($.toJSON(parms));
                     } catch (e) {
@@ -2361,6 +2566,13 @@
                     parms['offset'] = in_parms['offset'] || 0;
                     parms['dataAppend'] = in_parms['dataAppend'] || false;
 
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
+
                     if (b$.pN) {
                         b$.pN.binaryFileWriter.writeBinaryArray($.toJSON(parms));
                     } else {
@@ -2385,6 +2597,13 @@
                     parms['text'] = in_parms['text'] || "";
                     parms['offset'] = in_parms['offset'] || 0;
                     parms['dataAppend'] = in_parms['dataAppend'] || false;
+
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
 
                     if (b$.pN) {
                         b$.pN.binaryFileWriter.writeTextToFile($.toJSON(parms));
@@ -2423,10 +2642,18 @@
                      UTF16,UTF16BigEndian,UTF16LittleEndian
                      **/
 
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
+
                     if (b$.pN) {
                         return b$.pN.binaryFileWriter.getTextFromFile($.toJSON(parms)); //使用非异步模式(async == false)，直接返回content内容
                     } else {
-                        alert('获取文本文件中的内容（UTF8编码）')
+                        alert('获取文本文件中的内容（UTF8编码）');
+                        cb && cb({success:true, text:""});
                     }
 
                 } catch (e) {
@@ -2447,6 +2674,13 @@
                     parms['filePath'] = in_parms['filePath'] || "";
                     parms['base64String'] = in_parms['base64String'] || "";
                     parms['dataAppend'] = in_parms['dataAppend'] || false;
+
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
 
 
                     if (b$.pN) {
@@ -2474,6 +2708,13 @@
                     parms['imageType'] = in_parms['imageType'] || 'jpeg'; //png,bmp
 
 
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
+
                     if (b$.pN) {
                         b$.pN.binaryFileWriter.base64ToImageFile($.toJSON(parms));
                     } else {
@@ -2499,6 +2740,12 @@
                     parms['orgFilePath'] = in_parms['orgFilePath'] || ""; // 源文件
                     parms['imageType'] = in_parms['imageType'] || 'jpeg'; //png,bmp
 
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
 
                     if (b$.pN) {
                         b$.pN.binaryFileWriter.imageFileConvertToOthers($.toJSON(parms));
@@ -2577,6 +2824,13 @@
                     parms["enableDir"] = jsonObj["enableDir"] || false;
                     parms["enableFile"] = jsonObj["enableFile"] || true;
                     parms["fileTypes"] = jsonObj["fileTypes"] || ["*"]; // ["*","mp3","md", "xls"] 类似这样的格式
+
+                    /// 统一向后兼容处理
+                    for(var key in jsonObj){
+                        if (jsonObj.hasOwnProperty(key)){
+                            parms[key] = jsonObj[key];
+                        }
+                    }
 
                     if (t$.pIsUseElectron) {
                         $(document).ready(function(){
@@ -2792,6 +3046,13 @@
                 parms["label"] = in_parms["label"] || "File Format:";
                 //[end]下拉文件类型选择处理
 
+                /// 统一向后兼容处理
+                for(var key in in_parms){
+                    if (in_parms.hasOwnProperty(key)){
+                        parms[key] = in_parms[key];
+                    }
+                }
+
                 if (b$.pN) {
                     b$.pN.window.openFile($.toJSON(parms));
                 } else {
@@ -2851,6 +3112,14 @@
                 parms['directory'] = in_parms['directory'] || ""; // 默认指定的目录
                 parms['types'] = [];
 
+
+                /// 统一向后兼容处理
+                for(var key in in_parms){
+                    if (in_parms.hasOwnProperty(key)){
+                        parms[key] = in_parms[key];
+                    }
+                }
+
                 if (b$.pN) {
                     b$.pN.window.openFile($.toJSON(parms));
                 } else {
@@ -2906,6 +3175,20 @@
                     parms['directory'] = in_parms['directory'] || ""; // 默认指定的目录
                     parms['types'] = in_parms['types'] || ['*']; // 要求的数组
 
+                    //下拉文件类型选择处理
+                    parms["enableFileFormatCombox"] = in_parms["enableFileFormatCombox"] || false;
+                    parms["typesDescript"] = in_parms["typesDescript"] || [];
+                    parms["lable"] = in_parms["lable"] || "File Format:";
+                    parms["label"] = in_parms["label"] || "File Format:";
+                    //[end]下拉文件类型选择处理
+
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
+
                     b$.pN.window.saveFile($.toJSON(parms));
                 } catch (e) {
                     console.error(e);
@@ -2938,15 +3221,22 @@
         };
 
         // 预览文件
-        b$.previewFile = function(parms, cb) {
+        b$.previewFile = function(in_parms, cb) {
             if (b$.pN) {
                 try {
-                    parms = parms || {};
+                    var parms = in_parms || {};
                     //限制内部属性：
-                    parms['callback'] = parms['callback'] || b$._get_callback(function(obj) {
+                    parms['callback'] = in_parms['callback'] || b$._get_callback(function(obj) {
                         cb && cb(obj);
                     }, true);
-                    parms['filePath'] = parms['filePath'] || "";
+                    parms['filePath'] = in_parms['filePath'] || "";
+
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
 
                     b$.pN.window.preveiwFile($.toJSON(parms));
                 } catch (e) {
