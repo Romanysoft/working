@@ -32,6 +32,9 @@
  * 2016年12月4日19:57:47
  *                      添加向后兼容性代码参数处理
  *
+ * 2016年12月6日
+ *                     根据演示业务需要，加强IAP内置购买的模拟测试
+ *
  */
 
 (function(factory) {
@@ -136,35 +139,201 @@
             path: "/plugin.iap.bundle"
         };
 
+
+        // IAP 非本地模拟
+        b$.IAP_SE_KEY = "RSSDK_SE_SANBOX_IAP";
+        b$.IAP_SE_OBJ = {};
+        b$.IAP_SE_Wrapper = {
+            productIdentifiers:[],   //商品的ID 数组
+            caller: $.Callbacks()     //消息回调处理
+        };
+
         // IAP 功能封装
         b$.cb_handleIAPCallback = null; // IAP的回调函数
         b$.IAP = {
+            NoticeCenter:$.Callbacks(), // 参照Jquery.Callbacks消息回调处理。增加动态注册监控信息的回调处理。是一种扩展
+            MessageType:(function () {  // 开放内核中的消息
+                var msg = [
+                    ///{常用购买流程}
+                    "ProductsLoaded",
+                    "ProductBuyFailed",
+                    "ProductPurchased",
+                    "ProductPurchaseFailed",
+                    "ProductPurchaseFailedDetail",
+                    "ProductRequested",
+                    "ProductCompletePurchased",
 
+                    ///{恢复购买部分}
+                    "ProductsPaymentQueueRestoreCompleted",
+                    "ProductsPaymentRestoreCompletedTransactionsFailed",
+                    "ProductsPaymentRemovedTransactions",
+                    "ProductsPaymentUpdatedDownloads"
+                ];
+
+                var obj = {};
+                var i = 0;
+                for (i = 0; i <msg.length; ++i){
+                    var msgType = msg[i];
+                    obj[msgType] = msgType;
+                }
+
+                return obj;
+            })(),
+
+            data:{
+                /// 产品信息是否发送请求核实并得到同步信息过。IAP机制
+                productIsRequested: false,
+
+                /// 内置产品Map
+                productInfoMap:{},
+                /// 内置的产品信息List
+                productInfoList:[],
+
+
+                ///Methods
+                getProductObj: function (productIdentifier) { /// 获取商品对象
+                    var t$ = this;
+                    var obj = null;
+                    if (t$.productInfoMap[productIdentifier]){
+                        obj = t$.productInfoMap[productIdentifier];
+                    }
+                    return obj;
+                },
+                getPrice: function (productIdentifier) {
+                    var t$ = this;
+                    var obj = t$.getProductObj(productIdentifier);
+                    if (obj){
+                        return obj.price;
+                    }
+
+                    return null;
+                },
+                getDescription: function (productIdentifier) {
+                    var t$ = this;
+                    var obj = t$.getProductObj(productIdentifier);
+                    if (obj){
+                        return obj.description;
+                    }
+
+                    return null;
+                }
+
+            },
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
             /// 获取本地配置是否可以使用IAP。参见：project.json
             getEnable: function() {
+                var t$ = this;
                 if (b$.pN) {
                     try {
                         return b$.pN.app.getIAPEnable();
                     } catch (e) {
                         console.error(e)
                     }
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    var obj = window.localStorage.getItem(b$.IAP_SE_KEY);
+                    if (!obj){
+                        window.localStorage.setItem(b$.IAP_SE_KEY, JSON.stringify(b$.IAP_SE_OBJ));
+                    }else{
+                        b$.IAP_SE_OBJ = JSON.parse(obj);
+                    }
+
+                    return true; //非本地环境返回True，方便测试
                 }
                 return false;
             },
 
             enableIAP: function(in_parms, cb) {
+                var t$ = this;
+
                 try {
                     $.testObjectType(in_parms, 'object');
 
                     var parms = {};
                     parms["cb_IAP_js"] = in_parms["cb_IAP_js"] || b$._get_callback(function(obj) {
+                        //////////////////////////内部处理//////////////////////////////////
+                        try{
+                            if ($.isPlainObject(obj)){
+                                var info = obj.info;
+                                var notifyType = obj.notifyType;
+
+                                if(notifyType == t$.MessageType.ProductRequested){
+                                    if(typeof info == "string"){
+                                        info = JSON.parse(info);
+                                    }
+
+                                    t$.data.productIsRequested = true;
+                                    t$.data.productInfoList = info;
+
+                                    $.each(t$.data.productInfoList, function(index, product){
+                                       t$.data.productInfoMap[product.productIdentifier] = {
+                                           productIdentifier: product.productIdentifier, // 商品ID
+                                           description: product.description || "", // 商品描述
+                                           buyUrl: product.buyUrl || "",     // 外部购买链接
+                                           price: product.price || ""        // 价格
+                                       }
+                                    });
+                                }
+
+                            }
+                        }catch(e){
+                            console.error(e);
+                        }
+
+                        try{
+                            b$.IAP.NoticeCenter.fire(obj);
+                        }catch (e){}
+
+
+                        ///////////////////////////外部处理/////////////////////////////////
                         if ($.isFunction(b$.cb_handleIAPCallback)) {
                             b$.cb_handleIAPCallback && b$.cb_handleIAPCallback(obj);
                         } else {
                             cb && cb(obj);
                         }
+
+                        //////////////////////////////////////////////////////////////////
                     }, true);
-                    parms["productIds"] = in_parms["productIds"] || [];
+
+                    /// 数据校验
+                    console.assert($.RTYUtils.isString(parms["cb_IAP_js"]) == true, "must be function string");
+
+                    ///Ian(原先的方式)
+                    if ($.RTYUtils.isArray(in_parms["productIds"])){
+                        parms["productIds"] = in_parms["productIds"] || [];
+                    }
+
+                    ///Ian 2016.12.06 现在的方式. 支持更高级的商品属性定义传入
+                    parms["products"] = [];
+                    if ($.RTYUtils.isArray(in_parms["products"])){ // [{productIdentifier, description, buyUrl, price}]
+                        try{
+                            var productIds = [];
+                            $.each(in_parms["products"], function (index, product) {
+                                productIds.push(product.productIdentifier);
+                            });
+
+                            if ($.RTYUtils.isUndefinedOrNull(parms["productIds"])){
+                                parms["productIds"] = productIds;
+                            }
+
+                            parms["products"] = in_parms["products"];
+
+                        }catch (e){
+                            console.error(e);
+                            alert(e);
+                        }
+                    }
+
+
+                    /// 统一向后兼容处理
+                    for(var key in in_parms){
+                        if (in_parms.hasOwnProperty(key)){
+                            parms[key] = in_parms[key];
+                        }
+                    }
 
                     if (b$.pN) {
                         //注册IAP回调
@@ -182,9 +351,42 @@
 
                             //发送商品请求
                             b$.pN.iap.requestProducts($.toJSON({
-                                productIdentifiers: parms.productIds || []
+                                productIdentifiers: parms.productIds || [],
+                                products: parms["products"] || []
                             }));
                         }
+                    }else{ /// 以下是Demo 处理
+
+                        ///注册模拟IAP回调
+                        b$.IAP_SE_Wrapper.caller.add(function (obj) {
+                            console.assert($.RTYUtils.isString(parms.cb_IAP_js) == true, "must be function string");
+
+                            var fnc = eval(parms.cb_IAP_js);
+                            if ($.RTYUtils.isFunction(fnc)){
+                                fnc && fnc(obj);
+                            }
+                        });
+
+                        ///注册商品ID
+                        b$.IAP_SE_Wrapper.productIdentifiers = parms.productIds || [];
+
+                        var productsInfo = [];
+                        $.each(parms.productIds, function (index, id) {
+                            var productObj = {
+                                productIdentifier: id,
+                                description: "Plugin Description and price demo for " + id,
+                                buyUrl: "",
+                                price: "$0.99"
+                            };
+
+                            productsInfo.push(productObj);
+                        });
+
+                        ///模拟发送获取产品信息
+                        b$.IAP_SE_Wrapper.caller.fire({
+                            notifyType:t$.MessageType.ProductRequested,
+                            info:productsInfo
+                        });
                     }
 
                 } catch (e) {
@@ -193,65 +395,260 @@
 
             },
 
+            _check: function (productIdentifier) { // 验证数据
+                var t$ = this;
+
+                //检测必须的参数
+                console.assert($.RTYUtils.isUndefinedOrNull(productIdentifier) == false, "productIdentifier 必须赋值");
+                //产品必须已经注册过
+                var isExists = t$.data.productInfoMap.hasOwnProperty(productIdentifier);
+                console.assert(isExists == true, "指定的productIdentifier 必须已经注册，通过EnableIAP注册接口");
+
+                if (!isExists){
+                    var msg = "Product [" + productIdentifier + "] is not registered... please see 'EnableIAP' function";
+                    alert(msg);
+                }
+
+                return isExists;
+            },
+
             restore: function() {
+                var t$ = this;
+
                 if (b$.pN) {
                     //发送购买请求
                     b$.pN.iap.restoreIAP();
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    var obj = window.localStorage.getItem(b$.IAP_SE_KEY);
+                    if (obj){
+                        b$.IAP_SE_OBJ = JSON.parse(obj);
+                    }
+
+                    var purchasedItemList = []; // 声明原先已经购买的商品列表
+
+                    ///检测所有已经注册的ID
+                    $.each(b$.IAP_SE_Wrapper.productIdentifiers, function (index, productID) {
+                        if (b$.IAP_SE_OBJ.hasOwnProperty(productID)){
+
+                            var quantity = b$.IAP_SE_OBJ[productID];
+                            if (quantity > 0){
+                                var purchasedItem = {
+                                    productIdentifier: productID,
+                                    quantity: quantity
+                                };
+
+                                purchasedItemList.push(purchasedItem);
+                            }
+                        }
+
+                    });
+
+                    ///模拟发送获取产品信息
+                    b$.IAP_SE_Wrapper.caller.fire({
+                        notifyType:t$.MessageType["ProductsPaymentQueueRestoreCompleted"],
+                        info:purchasedItemList
+                    });
                 }
             },
 
             buyProduct: function(parms) {
+                var t$ = this;
+                if (!t$._check(parms.productIdentifier)) return;
+
                 if (b$.pN) {
                     //发送购买请求
                     b$.pN.iap.buyProduct($.toJSON({
                         identifier: parms.productIdentifier,
                         quantity: parms.quantity || 1
                     }));
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    var obj = window.localStorage.getItem(b$.IAP_SE_KEY) || JSON.stringify({});
+
+                    b$.IAP_SE_OBJ = JSON.parse(obj);
+                    var orgQuantity = 0, saveQuantity = 0;
+                    if (b$.IAP_SE_OBJ[parms.productIdentifier]){
+                        orgQuantity = b$.IAP_SE_OBJ[parms.productIdentifier];
+                        saveQuantity = orgQuantity + parms.quantity || 1;
+                    }else{
+                        saveQuantity = parms.quantity || 1;
+                    }
+
+                    b$.IAP_SE_OBJ[parms.productIdentifier] = saveQuantity;
+                    window.localStorage.setItem(b$.IAP_SE_KEY, JSON.stringify(b$.IAP_SE_OBJ));
+
+                    //模拟发送成功购买信息
+                    b$.IAP_SE_Wrapper.caller.fire({
+                        notifyType:t$.MessageType["ProductPurchased"],
+                        info:{
+                            productIdentifier: parms.productIdentifier,
+                            quantity: saveQuantity
+                        }
+                    });
+
+                    //模拟发送购买完成信息
+                    b$.IAP_SE_Wrapper.caller.fire({
+                        notifyType:t$.MessageType["ProductCompletePurchased"],
+                        info:{
+                            productIdentifier: parms.productIdentifier,
+                            transactionId: "transactionId" + Math.round(999),
+                            receipt: "receipt" + Math.round(999)
+                        }
+                    });
                 }
             },
 
             getPrice: function(productIdentifier) {
-                if (b$.pN) {
-                    return b$.pN.iap.getPrice(productIdentifier);
-                }
+                var t$ = this;
+                if (!t$._check(productIdentifier)) return;
 
-                return "";
+                if (b$.pN) {
+                    if (b$.App.getSandboxEnable()){
+                        return b$.pN.iap.getPrice(productIdentifier);
+                    }else{
+                        return t$.data.getPrice(productIdentifier);
+                    }
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    return t$.data.getPrice(productIdentifier);
+                }
             },
 
             getUseableProductCount: function(productIdentifier) {
-                if (b$.pN) {
-                    return b$.pN.iap.getUseableProductCount(productIdentifier);
-                }
+                var t$ = this;
+                if (!t$._check(productIdentifier)) return;
 
-                return 0;
+                if (b$.pN) {
+                    return b$.pN.iap.getUseableProductCount(productIdentifier) || 0;
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    var quantity = 0;
+
+                    var obj = window.localStorage.getItem(b$.IAP_SE_KEY) || JSON.stringify({});
+                    if (obj){
+                        b$.IAP_SE_OBJ = JSON.parse(obj);
+                        quantity = b$.IAP_SE_OBJ[productIdentifier] || 0;
+                    }
+
+                    return quantity;
+                }
             },
 
             setUseableProductCount: function(jsonObj) {
+                var t$ = this;
+                if (!t$._check(jsonObj.productIdentifier)) return;
+
+
                 if (b$.pN) {
                     var params = {
                         identifier: jsonObj.productIdentifier || '',
                         quantity: jsonObj.quantity || 1
                     };
-                    return b$.pN.iap.setUseableProductCount($.toJSON(params));
+                    return b$.pN.iap.setUseableProductCount($.toJSON(params)) || 0;
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    var obj = window.localStorage.getItem(b$.IAP_SE_KEY)|| JSON.stringify({});
+                    if (obj) {
+                        b$.IAP_SE_OBJ = JSON.parse(obj);
+
+                        var saveQuantity = jsonObj.quantity || 1;
+                        b$.IAP_SE_OBJ[jsonObj.productIdentifier] = saveQuantity;
+                        window.localStorage.setItem(b$.IAP_SE_KEY, JSON.stringify(b$.IAP_SE_OBJ));
+                        return saveQuantity || 0;
+                    }
                 }
 
                 return 0;
             },
 
             add1Useable: function(productIdentifier) {
+                var t$ = this;
+                if (!t$._check(productIdentifier)) return;
+
                 if (b$.pN) {
-                    return b$.pN.iap.add1Useable(productIdentifier);
+                    return b$.pN.iap.add1Useable(productIdentifier) || 0;
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    var obj = window.localStorage.getItem(b$.IAP_SE_KEY)|| JSON.stringify({});
+                    if (obj){
+                        b$.IAP_SE_OBJ = JSON.parse(obj);
+
+                        var orgQuantity = 0, saveQuantity = 0;
+                        if (b$.IAP_SE_OBJ[productIdentifier]){
+                            orgQuantity = b$.IAP_SE_OBJ[productIdentifier] || 0;
+                            saveQuantity = orgQuantity + 1;
+                        }
+
+                        b$.IAP_SE_OBJ[productIdentifier] = saveQuantity;
+                        window.localStorage.setItem(b$.IAP_SE_KEY, JSON.stringify(b$.IAP_SE_OBJ));
+
+                        return saveQuantity;
+                    }
                 }
 
                 return 0;
             },
 
             sub1Useable: function(productIdentifier) {
+                var t$ = this;
+                if (!t$._check(productIdentifier)) return;
+
                 if (b$.pN) {
-                    return b$.pN.iap.sub1Useable(productIdentifier);
+                    return b$.pN.iap.sub1Useable(productIdentifier) || 0;
+                }else{
+                    console.log("Romanysoft SDK simulation environment....");
+                    var obj = window.localStorage.getItem(b$.IAP_SE_KEY)|| JSON.stringify({});
+                    if (obj){
+                        b$.IAP_SE_OBJ = JSON.parse(obj);
+
+                        var orgQuantity = 0, saveQuantity = 0;
+                        if (b$.IAP_SE_OBJ[productIdentifier]){
+                            orgQuantity = b$.IAP_SE_OBJ[productIdentifier];
+                            saveQuantity = orgQuantity - 1;
+                        }
+
+                        saveQuantity = saveQuantity > 0 ? saveQuantity : 0;
+                        b$.IAP_SE_OBJ[productIdentifier] = saveQuantity;
+                        window.localStorage.setItem(b$.IAP_SE_KEY, JSON.stringify(b$.IAP_SE_OBJ));
+
+                        return saveQuantity;
+                    }
                 }
 
                 return 0;
+            },
+
+            /// {测试}
+            TEST: {
+                //弹出购买窗体
+                showBuyDialog:function (productIdentifier) {
+                    // 核查是否已经获取商品的请求核实数据
+                    if (!(b$.IAP.data.isRegistered)){
+                        var msg = "必须先调用 BS.b$.IAP.getEnable(),并且是可用状态 \n";
+                        msg += "然后调用 BS.b$.IAP.enableIAP() 函数进行初始化";
+
+                        alert(msg);
+                        return;
+                    }
+
+                    // 弹出购买窗体
+                    var allProductsPrice = '$9.99';
+                    var curProductPrice =  b$.IAP.data.getPrice(productIdentifier) || '$0.99';
+                    var message = {
+                        title:"Unlock [" + productIdentifier + "] product",
+                        message:"Only " + curProductPrice + " ,Do you want to unlock it. \nAlso all products only " + allProductsPrice + " you can buy all at times.",
+                        buttons:["Buy","Cancel","Buy All"],
+                        alertType:"Alert"
+                    };
+
+                    var result = b$.Notice.alert(message);
+                    if(result == 0){      //购买单个
+                        b$.IAP.buyProduct(productIdentifier);
+                    }else if(result > 1){ //购买全部
+                        alert("编写购买所有商品的处理方式，可以声明一个商品ID为所有商品的购买ID");
+                    }
+                }
             }
         };
 

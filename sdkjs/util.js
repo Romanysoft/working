@@ -577,7 +577,7 @@
              * @return {[type]}   [description]
              */
             isUndefinedOrNull: function (o) {
-                return Object.prototype.toString.call(o) === "[object Null]" || Object.prototype.toString.call(o) === "[object Null]";
+                return o == null || o == undefined;
             },
 
             isObject: function (o) {
