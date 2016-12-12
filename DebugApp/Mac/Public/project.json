@@ -35,7 +35,7 @@
             {"tag":911,"title":"","method":"re", "descript":"Quit"}
         ]
     },
-    "EnableIAP" : false,
+    "EnableIAP" : true,
     "Tasks":[
         {
             "id":"task0",

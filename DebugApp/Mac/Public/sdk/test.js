@@ -56,6 +56,24 @@
                 console.assert(enable == true, "IAP不可用");
             },
 
+            test_enableIAP: function(){
+                // 先清理本地存储
+                window.localStorage.removeItem(b$.IAP_SE_KEY);
+
+                // 声明
+                var cb = function (obj) {
+                    console.log("object: %o", obj);
+                };
+
+                b$.IAP.enableIAP({
+                    productIds:[
+                        "product1",
+                        "product2",
+                        "product3"
+                    ]
+                }, cb);
+            },
+
             test_first_buy: function () {
                 console.log(
                     "用例：初步安装，第一次购买...."
@@ -63,7 +81,7 @@
 
 
                 // 先清理本地存储
-                window.localStorage.removeItem(b$.IAP_SE_KEY);
+                b$.IAP._rebuildInfo();
 
                 // 声明
                 var cb = function (obj) {
@@ -150,7 +168,7 @@
 
 
                 // 先清理本地存储
-                window.localStorage.removeItem(b$.IAP_SE_KEY);
+                b$.IAP._rebuildInfo();
 
                 // 声明
                 var cb = function (obj) {

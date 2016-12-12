@@ -191,6 +191,13 @@
 
 
                 ///Methods
+                reInit: function(){  /// 核心重新初始化
+                    var t$ = this;
+                    t$.productIsRequested = false;
+                    t$.productInfoMap = {};
+                    t$.productInfoList = [];
+
+                },
                 getProductObj: function (productIdentifier) { /// 获取商品对象
                     var t$ = this;
                     var obj = null;
@@ -260,7 +267,7 @@
                                 var info = obj.info;
                                 var notifyType = obj.notifyType;
 
-                                if(notifyType == t$.MessageType.ProductRequested){
+                                if(notifyType == t$.MessageType["ProductRequested"]){
                                     if(typeof info == "string"){
                                         info = JSON.parse(info);
                                     }
@@ -395,6 +402,20 @@
 
             },
 
+            _rebuildInfo: function () { // 重新构建
+                var t$ = this;
+
+                try{
+                    if (b$.pN) {
+                        b$.pN.iap.resetAll();
+                    }else{
+                        window.localStorage.removeItem(b$.IAP_SE_KEY);
+                    }
+
+                    t$.data.reInit();
+                }catch (e){}
+
+            },
             _check: function (productIdentifier) { // 验证数据
                 var t$ = this;
 
