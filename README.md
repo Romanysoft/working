@@ -9,19 +9,16 @@ working - make app
 
 [API在线查看](https://romanysoft.github.io/working/DebugApp/Mac/Public/index.html)
 
-
 1. **https://github.com/Romanysoft/working/tree/master/DebugApp/Mac/debug_app/DebugApp.zip** 可以直接解压到macOS系统上运行
 1. **https://github.com/Romanysoft/working/tree/master/DebugApp/Mac/Public DebugApp.zip** 核心public源码
 1. **https://github.com/Romanysoft/working/tree/master/sdkjs**  同步最新的SDKJS包
 
-====
+[![](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/images/intro_zh-CN.png)](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
 
 ====
 ### [申请加入](http://wpa.qq.com/msgrd?v=3&uin=34314687&site=qq&menu=yes)
 ### Romanysoft合作开发（中国区）在线系统
 [Romanysoft合作开发（中国区）在线系统](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
-
-[![](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/images/intro_zh-CN.png)](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
 
 ====
 
