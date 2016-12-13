@@ -1708,6 +1708,58 @@
                 return "";
             },
 
+            /**
+             * 获取格式化后的字符串。主要是用动态变量来处理
+             * 支持如下变量：
+             * ${HOME}
+             * ${BUNDLE}
+             * ${BUNDEL_RESOURCE}
+             * ${BUNDEL_PLUGIN}
+             * ${DOCUMENTS}
+             * ${LIBRARY}
+             * ${TEMP}
+             * ${CACHE}
+             * ${APPLICATION}
+             * ${DESKTOP}
+             * ${DOWNLOAD}
+             * ${MOVIES}
+             * ${MUSIC}
+             * ${PICTURES}
+             * ${APPW_DOCUMENTS}
+             * ${APPW_DOWNLOAD}
+             * ${APPW_MOVIES}
+             * ${APPW_MUSIC}
+             * ${APPW_PICTURES}
+             * ${LOCAL_DESKTOP}
+             * ${LOCAL_DOWNLOAD}
+             * ${LOCAL_MOVIES}
+             * ${LOCAL_MUSIC}
+             * ${LOCAL_PICTURES}
+             * ${LOCAL_LIBRARY}
+             * ${LOCAL_DOCUMENTS}
+             * ${USER_NAME}
+             * ${USER_FULL_NAME}
+             * ${APPDATA_HOME}
+             * ${APP_UI_DIR}
+             * ${APP_NAME}
+             * ${APP_VERSION}
+             * ${APP_BUILD_VERSION}
+             * ${APP_ID}
+             * @param str
+             * @returns {*}
+             */
+            getUpdateEnvString: function (str) {
+                if (b$.pN) {
+                    try {
+                        return b$.pN.path.getUpdateEnvString(str);
+                    } catch (e) {
+                        console.error(e);
+                    }
+                }
+
+                return "";
+            },
+
 
             ///获得文件/目录size(实际字节数 1024)
             fileSizeAtPath: function(path) {

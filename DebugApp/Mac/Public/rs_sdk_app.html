@@ -1329,6 +1329,58 @@ BS.b$.App.getOtherAppInfo("/Applications/Safari.app", function(info){
 							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
 
+                            <h3><code class="enableRun">BS.b$.App.getUpdateEnvString(str)</code></h3>
+                            <div class="alert alert-warning">
+                                获取格式化后的字符串。主要是用动态变量来处理
+                                支持如下变量：
+                                <ul>
+                                    <ol>${HOME}</ol>
+                                    <ol>${BUNDLE}</ol>
+                                    <ol>${BUNDEL_RESOURCE}</ol>
+                                    <ol>${BUNDEL_PLUGIN}</ol>
+                                    <ol>${DOCUMENTS}</ol>
+                                    <ol>${LIBRARY}</ol>
+                                    <ol>${TEMP}</ol>
+                                    <ol>${CACHE}</ol>
+                                    <ol>${APPLICATION}</ol>
+                                    <ol>${DESKTOP}</ol>
+                                    <ol>${DOWNLOAD}</ol>
+                                    <ol>${MOVIES}</ol>
+                                    <ol>${MUSIC}</ol>
+                                    <ol>${PICTURES}</ol>
+                                    <ol>${APPW_DOCUMENTS}</ol>
+                                    <ol>${APPW_DOWNLOAD}</ol>
+                                    <ol>${APPW_MOVIES}</ol>
+                                    <ol>${APPW_MUSIC}</ol>
+                                    <ol>${APPW_PICTURES}</ol>
+                                    <ol>${LOCAL_DESKTOP}</ol>
+                                    <ol>${LOCAL_DOWNLOAD}</ol>
+                                    <ol>${LOCAL_MOVIES}</ol>
+                                    <ol>${LOCAL_MUSIC}</ol>
+                                    <ol>${LOCAL_PICTURES}</ol>
+                                    <ol>${LOCAL_LIBRARY}</ol>
+                                    <ol>${LOCAL_DOCUMENTS}</ol>
+                                    <ol>${USER_NAME}</ol>
+                                    <ol>${USER_FULL_NAME}</ol>
+                                    <ol>${APPDATA_HOME}</ol>
+                                    <ol>${APP_UI_DIR}</ol>
+                                    <ol>${APP_NAME}</ol>
+                                    <ol>${APP_VERSION}</ol>
+                                    <ol>${APP_BUILD_VERSION}</ol>
+                                    <ol>${APP_ID}</ol>
+                                </ul>
+
+                                <br><br>
+                                <strong>参数说明:</strong> <br>
+                                <code class="param">@param str 源字符串</code>; <br>
+                                <h6>示例：</h6>
+                                <div class="cx-code">
+                                    <button></button>
+                                    <textarea class="sdk-code" style="width: 100%; height:200px;">
+var out  = BS.b$.App.getUpdateEnvString("${APPDATA_HOME}");
+window.RTYD_callback(out);
+							                                       </textarea><p class="runLogShow"></p></div>
+                            </div>
 
                             <h3><code class="enableRun">BS.b$.App.fileSizeAtPath(path)</code></h3>
                             <div class="alert alert-warning">
@@ -1597,6 +1649,7 @@ BS.b$.App.print({
 <!-- 加载SDK -->
 <script src="sdk/util.js"></script>
 <script src="sdk/bs.js"></script>
+<script src="sdk/test.js"></script>
 
 <!-- 加载公共代码 -->
 <script src="js/app.js"></script>
