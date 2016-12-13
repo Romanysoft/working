@@ -932,7 +932,7 @@ window.RTYD_callback(isZero);
                                 <div class="cx-code">
                                     <button></button>
                                         <textarea class="sdk-code" style="width: 100%; height:200px;">
-var success = BS.b$.App.createEmptyFile(BS.b$.App.getDocumentsDir() + "/new.xml");
+var success = BS.b$.App.createEmptyFile(BS.b$.App.getAppDataHomeDir() + "/new.xml");
 window.RTYD_callback(success);
 							                                            </textarea><p class="runLogShow"></p>
                                 </div>
@@ -953,7 +953,7 @@ window.RTYD_callback(success);
                                 <div class="cx-code">
                                     <button></button>
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.createDir(BS.b$.App.getDocumentsDir() + "/newdir/1/", {}, function(obj){
+BS.b$.App.createDir(BS.b$.App.getAppDataHomeDir() + "/newdir/1/", {}, function(obj){
     window.RTYD_callback(obj);
 });
 							                                       </textarea><p class="runLogShow"></p></div>
@@ -972,7 +972,7 @@ BS.b$.App.createDir(BS.b$.App.getDocumentsDir() + "/newdir/1/", {}, function(obj
                                 <div class="cx-code">
                                     <button></button>
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
-var success = BS.b$.App.removeFile(BS.b$.App.getDocumentsDir() + "/new.xml");
+var success = BS.b$.App.removeFile(BS.b$.App.getAppDataHomeDir() + "/new.xml");
 window.RTYD_callback(success);
 							                                       </textarea><p class="runLogShow"></p></div>
                             </div>
@@ -991,7 +991,7 @@ window.RTYD_callback(success);
                                 <div class="cx-code">
                                     <button></button>
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.removeDir(BS.b$.App.getDocumentsDir() + "/newdir/1/", function(obj){
+BS.b$.App.removeDir(BS.b$.App.getAppDataHomeDir() + "/newdir/1/", function(obj){
     window.RTYD_callback(obj);
 });
 							                                       </textarea><p class="runLogShow"></p></div>
@@ -1011,8 +1011,8 @@ BS.b$.App.removeDir(BS.b$.App.getDocumentsDir() + "/newdir/1/", function(obj){
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.copyFile(
 	{
-		src: BS.b$.App.getDocumentsDir() + "/new.xml",   // 文件源路径
-		dest: BS.b$.App.getDocumentsDir() + "/out.xml"   // 文件目标路径
+		src: BS.b$.App.getAppDataHomeDir() + "/new.xml",   // 文件源路径
+		dest: BS.b$.App.getAppDataHomeDir() + "/out.xml"   // 文件目标路径
 	},
 function(obj){
     window.RTYD_callback(obj);
@@ -1033,8 +1033,8 @@ function(obj){
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.copyDir(
 	{
-		src: BS.b$.App.getDocumentsDir() + "/newdir/",   // 目录源路径
-		dest: BS.b$.App.getDocumentsDir() + "/out/"   // 目标路径
+		src: BS.b$.App.getAppDataHomeDir() + "/newdir/",   // 目录源路径
+		dest: BS.b$.App.getAppDataHomeDir() + "/out/"   // 目标路径
 	},
 function(obj){
     window.RTYD_callback(obj);
@@ -1056,8 +1056,8 @@ function(obj){
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.moveFile(
 	{
-		src: BS.b$.App.getDocumentsDir() + "/new.xml",   // 文件源路径
-		dest: BS.b$.App.getDocumentsDir() + "/out.xml"   // 文件目标路径
+		src: BS.b$.App.getAppDataHomeDir() + "/new.xml",   // 文件源路径
+		dest: BS.b$.App.getAppDataHomeDir() + "/out.xml"   // 文件目标路径
 	},
 function(obj){
     window.RTYD_callback(obj);
@@ -1078,8 +1078,8 @@ function(obj){
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.App.moveDir(
 	{
-		src: BS.b$.App.getDocumentsDir() + "/newdir",   // 目录源路径
-		dest: BS.b$.App.getDocumentsDir() + "/out"   // 目标路径
+		src: BS.b$.App.getAppDataHomeDir() + "/newdir",   // 目录源路径
+		dest: BS.b$.App.getAppDataHomeDir() + "/out"   // 目标路径
 	},
 function(obj){
     window.RTYD_callback(obj);
@@ -1102,7 +1102,7 @@ function(obj){
                                 <div class="cx-code">
                                     <button></button>
                                     <textarea class="sdk-code" style="width: 100%; height:200px;">
-BS.b$.App.findFile( BS.b$.App.getDocumentsDir() + "/newdir", "new.xml", null, function(obj){
+BS.b$.App.findFile( BS.b$.App.getAppDataHomeDir() + "/newdir", "new.xml", null, function(obj){
     window.RTYD_callback(obj);
 });
 							                                       </textarea><p class="runLogShow"></p></div>

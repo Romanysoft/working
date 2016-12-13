@@ -1046,7 +1046,7 @@
                 "ceb": {
                     englishName: "Cebuano",
                     localName: "Cebuano",
-                    zhName: "Cebuano",
+                    zhName: "宿雾语",
                     compatible: ["ceb"],
                     compatibleForKendoUI:{
                         culture:"",

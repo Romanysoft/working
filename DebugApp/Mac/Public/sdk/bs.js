@@ -1790,6 +1790,70 @@
                 return "";
             },
 
+            ///{扩展}
+            getBuyURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getBuyURL();
+                }
+                return "";
+            },
+
+            getFAQURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getFAQURL();
+                }
+                return "";
+            },
+
+            getHomePageURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getHomePageURL();
+                }
+                return "";
+            },
+
+            getDocumentPageURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getDocumentPageURL();
+                }
+                return "";
+            },
+
+            getRoadmapPageURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getRoadmapPageURL();
+                }
+                return "";
+            },
+
+            getReportIssuePageURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getReportIssuePageURL();
+                }
+                return "";
+            },
+
+            getViewLicensePageURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getViewLicensePageURL();
+                }
+                return "";
+            },
+
+            getReleaseNotesPageURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getReleaseNotesPageURL();
+                }
+                return "";
+            },
+
+            getCheckForUpdatePageURL: function () {
+                if (b$.pN) {
+                    return b$.pN.app.getCheckForUpdatePageURL();
+                }
+                return "";
+            },
+
 
             ///获得当前苹果操作系统本地的语言
             getAppleLanguage: function() {
