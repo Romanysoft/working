@@ -5,7 +5,7 @@ working - make app
 
 ### API可视化Demo及API使用文档主要组成部分： 
 
-![](https://github.com/Romanysoft/working/blob/master/images/debugApp_screen.jpg)
+![](https://github.com/Romanysoft/working/raw/master/images/debugApp_screen.jpg)
 
 [API在线查看](https://romanysoft.github.io/working/DebugApp/Mac/Public/index.html)
 
