@@ -441,7 +441,7 @@ BS.b$.Binary.createBinaryFile({
 		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.Binary.createTextFile({
 	filePath: BS.b$.App.getTempDir() + "test1.txt"            // 文件路径
-	data: "Hello World!", // 文本内容
+	text: "Hello World!", // 文本内容
 	offset: 0,  // 偏移量
 	dataAppend: false, // 是否附加到文件中
 }, function(info){
@@ -471,8 +471,7 @@ BS.b$.Binary.createTextFile({
 BS.b$.Binary.getUTF8TextContentFromFile({
 	filePath: BS.b$.App.getTempDir() + "test1.txt"            // 文件路径
 	encode: "utf8", // 文件编码， 默认编码是utf8
-	async: true,     // 异步的时候，回调函数有效，否则无效，直接返回内容值
-	dataAppend: false, // 是否附加到文件中
+	async: true     // 异步的时候，回调函数有效，否则无效，直接返回内容值
 }, function(info){
 	console.log($.obj2string(info));
 })
@@ -519,6 +518,7 @@ BS.b$.Binary.base64ToImageFile({
 	filePath: BS.b$.App.getTempDir() + "test1.png"            // 文件路径
 	base64String: "", // base64编码内容
 	dataAppend: false, // 是否附加到文件中
+    imageType: "png"   // 文件的类型（jpg,jpeg,png,bmp,gif,tiff）
 }, function(info){
 	console.log($.obj2string(info));
 })
