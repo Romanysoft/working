@@ -409,6 +409,8 @@
 
                                 <br>
                                 <label class="label label-primary">重点说明：我们希望使用该功能的合作伙伴，可以直接与我们联系，由我连线讲解并指导。</label>
+                                <br>
+                                <label class="label label-primary">测试用例：在调试模式，下载控制台下输入：$.TESTOOL_RTY.IAP.run() 进行测试。 也可以参照sdkjs目录下面的 test.js </label>
 
                             </p>
 							<br>
@@ -430,9 +432,32 @@
 								<br>
 								示例:<br>
 		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
-// 配置一个全局的函数。来统一处理内置购买的反馈								
-window["g_ryt_iap_callback"] = function(obj){
+// 配置一个全局的函数。来统一处理内置购买的反馈
 
+// 系统传输过来的消息类型通过b$.IAP.MessageType
+///{常用购买流程}
+/// "ProductsLoaded",
+/// "ProductBuyFailed",
+/// "ProductPurchased",
+/// "ProductPurchaseFailed",
+/// "ProductPurchaseFailedDetail",
+/// "ProductRequested",
+/// "ProductCompletePurchased",
+
+///{恢复购买部分}
+/// "ProductsPaymentQueueRestoreCompleted",
+/// "ProductsPaymentRestoreCompletedTransactionsFailed",
+/// "ProductsPaymentRemovedTransactions",
+/// "ProductsPaymentUpdatedDownloads"
+
+
+
+window["g_ryt_iap_callback"] = function(obj){
+    //obj的对象结构包括两个键值。(1)info, 信息 (2)notifyType, 消息的类型，参见b$.IAP.MessageType
+    if ($.isPlainObject(obj)){
+        var info = obj.info;
+        var notifyType = obj.notifyType;
+    }
 };								
 								
 BS.b$.IAP.enableIAP({
@@ -449,32 +474,55 @@ BS.b$.IAP.enableIAP({
                             </div>		
 
 							
-							<h3><code>BS.b$.IAP.restore()</code></h3>
+							<h3><code>BS.b$.IAP.restore(successCallback, failCallback)</code></h3>
                             <div class="alert alert-warning">
 								恢复购买的商品
-								<br><br>								
-                            </div>								
+								<br><br>
+                                <strong>参数说明: (备注：以下是两个回调函数参数，如果恢复成功或失败的操作已经在enableIAP的回调函数处理过，可以不用处理该以下回调参数)</strong> <br>
+                                <code>@param successCallback 恢复购买成功后的回调</code>; <br>
+                                <code>@param failCallback 恢复购买失败后的回调</code>; <br>
+                                <br>
+                                示例:<br>
+                                <textarea class="sdk-code" style="width: 100%; height:200px;">
+BS.b$.IAP.restore(
+    function(info){
+        //info 为数组类型。数组元素为{productIdentifier:"", quantity:0} 这样的结构
+    },
+    function(info,obj){
+        //info 为信息类型, obj. 底层传输过来的参数。（一般，提示：恢复购买失败即可）
+    }
+);
+							   </textarea>
+                            </div>
+
+
 						
-							<h3><code>BS.b$.IAP.buyProduct(parms)</code></h3>
+							<h3><code>BS.b$.IAP.buyProduct(parms, successCallback, failCallback)</code></h3>
                             <div class="alert alert-warning">
 								购买商品
 								<br><br>
-								<strong>参数说明:</strong> <br>
-								<code>@param parms json对象</code>; <br>	
+								<strong>参数说明: (备注：以下是两个回调函数参数，如果恢复成功或失败的操作已经在enableIAP的回调函数处理过，可以不用处理该以下回调参数)</strong> <br>
+								<code>@param parms json对象</code>; <br>
+                                <code>@param successCallback 购买成功后的回调</code>; <br>
+                                <code>@param failCallback 购买失败后的回调</code>; <br>
 								<br>
 								示例:<br>
 		                        <textarea class="sdk-code" style="width: 100%; height:200px;">
 BS.b$.IAP.buyProduct({
 	productIdentifier:"com.romanysoft.app.plugins1",  // 商品ID
-	quantity:1										  // 商品数量		
-})
+	quantity:1										  // 商品数量
+}, function(productIdentifier, obj){
+   //成功购买, 一般可以重新获取当前商品的数量，然后根据数量，更新相关界面元素
+}, function(productIdentifier, obj){
+   //失败购买, 一般可以告知用户购买失败，也可以重新获取当前商品的数量，然后根据数量，更新相关界面元素
+});
 							   </textarea>	
                             </div>								
 
 							
 							<h3><code>BS.b$.IAP.getPrice(productIdentifier)</code></h3>
                             <div class="alert alert-warning">
-								获取商品的价格（本地与macOS系统当前的语言有关）
+								获取商品的价格（本地与macOS系统当前的语言有关）（直接返回值）
 								<br><br>
 								<strong>参数说明:</strong> <br>
 								<code>@param productIdentifier 商品ID</code>; <br>	
@@ -489,7 +537,7 @@ BS.b$.IAP.getPrice(
 							
 							<h3><code>BS.b$.IAP.getUseableProductCount(productIdentifier)</code></h3>
                             <div class="alert alert-warning">
-								获取商品的可用数量
+								获取商品的可用数量（直接返回值）
 								<br><br>
 								<strong>参数说明:</strong> <br>
 								<code>@param productIdentifier 商品ID</code>; <br>	
@@ -504,7 +552,7 @@ BS.b$.IAP.getUseableProductCount(
 							
 							<h3><code>BS.b$.IAP.setUseableProductCount(productIdentifier)</code></h3>
                             <div class="alert alert-warning">
-								设置商品的可用数量
+								设置商品的可用数量（直接返回值）
 								<br><br>
 								<strong>参数说明:</strong> <br>
 								<code>@param jsonObj json对象</code>; <br>
@@ -520,7 +568,7 @@ BS.b$.IAP.setUseableProductCount(
 
 							<h3><code>BS.b$.IAP.add1Useable(productIdentifier)</code></h3>
                             <div class="alert alert-warning">
-								商品的可用数量 + 1
+								商品的可用数量 + 1 （直接返回值）
 								<br><br>
 								<strong>参数说明:</strong> <br>
 								<code>@param productIdentifier 商品ID</code>; <br>	
@@ -536,7 +584,7 @@ BS.b$.IAP.add1Useable(
 							
 							<h3><code>BS.b$.IAP.sub1Useable(productIdentifier)</code></h3>
                             <div class="alert alert-warning">
-								商品的可用数量 - 1
+								商品的可用数量 - 1 （直接返回值）
 								<br><br>
 								<strong>参数说明:</strong> <br>
 								<code>@param productIdentifier 商品ID</code>; <br>	
@@ -547,7 +595,47 @@ BS.b$.IAP.sub1Useable(
 	"com.romanysoft.app.plugins1" // 商品ID
 );
 							   </textarea>	
-                            </div>								
+                            </div>
+
+                            <h3>简单的购买用例</h3>
+                            <div class="alert alert-warning">
+                                以下是弹出窗体的举例说明
+                                <br><br>
+                                <br>
+                                示例:<br>
+                                <textarea class="sdk-code" style="width: 100%; height:200px;">
+
+var b$ = window.BS.b$;
+//弹出购买窗体
+var showBuyDialog = function (productIdentifier) {
+    // 核查是否已经获取商品的请求核实数据
+    if (!(b$.IAP.data.isRegistered)){
+        var msg = "必须先调用 BS.b$.IAP.getEnable(),并且是可用状态 \n";
+        msg += "然后调用 BS.b$.IAP.enableIAP() 函数进行初始化";
+
+        alert(msg);
+        return;
+    }
+
+    // 弹出购买窗体
+    var allProductsPrice = '$9.99';
+    var curProductPrice =  b$.IAP.data.getPrice(productIdentifier) || '$0.99';
+    var message = {
+        title:"Unlock [" + productIdentifier + "] product",
+        message:"Only " + curProductPrice + " ,Do you want to unlock it. \nAlso all products only " + allProductsPrice + " you can buy all at times.",
+        buttons:["Buy","Cancel","Buy All"],
+        alertType:"Alert"
+    };
+
+    var result = b$.Notice.alert(message);
+    if(result == 0){      //购买单个
+        b$.IAP.buyProduct(productIdentifier);
+    }else if(result > 1){ //购买全部
+        alert("编写购买所有商品的处理方式，可以声明一个商品ID为所有商品的购买ID");
+    }
+}
+							   </textarea>
+                            </div>
 							
                         </div>
                     </div>

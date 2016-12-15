@@ -433,8 +433,37 @@
                 return isExists;
             },
 
-            restore: function() {
+            /**
+             * 恢复购买操作
+             * @param successCallback 恢复成功后的回调, 传值参数为上的商品列表[{标识及数量}]，和消息内容
+             * @param failCallback 恢复失败后的回调。原失败的内容
+             */
+            restore: function(successCallback, failCallback) {
                 var t$ = this;
+
+                //////////////////////////////////////////////////////////////////////////////
+                var _cb = function(obj){
+                    try{
+                        b$.IAP.NoticeCenter.remove(_cb);
+                        if ($.isPlainObject(obj)){
+                            var info = obj.info;
+                            var notifyType = obj.notifyType;
+
+                            if (info.productIdentifier == parms.productIdentifier){
+                                if (notifyType == t$.MessageType["ProductsPaymentQueueRestoreCompleted"]){
+                                    successCallback && successCallback(info);
+                                }else if (t$.MessageType["ProductsPaymentRestoreCompletedTransactionsFailed"]){
+                                    failCallback && failCallback(info, obj);
+                                }
+                            }
+                        }
+                    }catch(e){
+                        console.error(e);
+                    }
+                };
+
+                // 注册一个消息回调
+                b$.IAP.NoticeCenter.add(_cb);
 
                 if (b$.pN) {
                     //发送购买请求
@@ -473,9 +502,40 @@
                 }
             },
 
-            buyProduct: function(parms) {
+            /**
+             * 购买商品
+             * @param parms {} 参数productIdentifier： 购买的商品唯一标识， quantity： 购买的商品数量
+             * @param successCallback 购买成功后的回调, 传值参数为商品标识，和消息内容
+             * @param failCallback 购买失败后的回调，传值参数为商品标识，和消息内容
+             */
+            buyProduct: function(parms, successCallback, failCallback) {
                 var t$ = this;
                 if (!t$._check(parms.productIdentifier)) return;
+
+                //////////////////////////////////////////////////////////////////////////////
+                var _cb = function(obj){
+                    try{
+                        b$.IAP.NoticeCenter.remove(_cb);
+                        if ($.isPlainObject(obj)){
+                            var info = obj.info;
+                            var notifyType = obj.notifyType;
+
+                            if (info.productIdentifier == parms.productIdentifier){
+                                if (notifyType == t$.MessageType["ProductPurchased"]){
+                                    successCallback && successCallback(info.productIdentifier, obj);
+                                }else if (t$.MessageType["ProductPurchaseFailed"]){
+                                    failCallback && failCallback(info.productIdentifier, obj);
+                                }
+                            }
+                        }
+                    }catch(e){
+                        console.error(e);
+                    }
+                };
+
+                // 注册一个消息回调
+                b$.IAP.NoticeCenter.add(_cb);
+
 
                 if (b$.pN) {
                     //发送购买请求
@@ -638,38 +698,6 @@
                 }
 
                 return 0;
-            },
-
-            /// {测试}
-            TEST: {
-                //弹出购买窗体
-                showBuyDialog:function (productIdentifier) {
-                    // 核查是否已经获取商品的请求核实数据
-                    if (!(b$.IAP.data.isRegistered)){
-                        var msg = "必须先调用 BS.b$.IAP.getEnable(),并且是可用状态 \n";
-                        msg += "然后调用 BS.b$.IAP.enableIAP() 函数进行初始化";
-
-                        alert(msg);
-                        return;
-                    }
-
-                    // 弹出购买窗体
-                    var allProductsPrice = '$9.99';
-                    var curProductPrice =  b$.IAP.data.getPrice(productIdentifier) || '$0.99';
-                    var message = {
-                        title:"Unlock [" + productIdentifier + "] product",
-                        message:"Only " + curProductPrice + " ,Do you want to unlock it. \nAlso all products only " + allProductsPrice + " you can buy all at times.",
-                        buttons:["Buy","Cancel","Buy All"],
-                        alertType:"Alert"
-                    };
-
-                    var result = b$.Notice.alert(message);
-                    if(result == 0){      //购买单个
-                        b$.IAP.buyProduct(productIdentifier);
-                    }else if(result > 1){ //购买全部
-                        alert("编写购买所有商品的处理方式，可以声明一个商品ID为所有商品的购买ID");
-                    }
-                }
             }
         };
 

@@ -159,6 +159,52 @@
                 }
 
 
+            },
+
+
+            test_buy_callback: function () {
+                console.log(
+                    "用例：初步安装，第一次购买...."
+                );
+
+
+                // 先清理本地存储
+                b$.IAP._rebuildInfo();
+
+                // 声明
+                var cb = function (obj) {
+                    console.log("object: %o", obj);
+                };
+
+                b$.IAP.enableIAP({
+                    productIds:[
+                        "product1",
+                        "product2",
+                        "product3"
+                    ]
+                }, cb);
+
+
+                //Step1：先测试价格
+                var onePrice = b$.IAP.getPrice("product1");
+                console.assert(onePrice == "$0.99", "价格返回不正常");
+                console.log("product1 price: %s", onePrice);
+
+                //Step2: 查询是否已经可以数量
+                var count = b$.IAP.getUseableProductCount("product1");
+                console.assert(count > -1, "应该为数字");
+                console.log("product1 count: %d", count);
+
+                //Step3: 开始执行购买测试
+                b$.IAP.buyProduct({productIdentifier:"product1", quantity:1},function (id, obj) {
+                    console.log("Buy Success = %s", id);
+                    console.assert(id == "product1", "应该是 product1");
+                }, function (id,obj) {
+
+                });
+                b$.IAP.buyProduct({productIdentifier:"product2", quantity:1});
+
+
             }
 
             ,test_complex_buy: function () {
@@ -270,6 +316,40 @@
 
 
 
+            },
+
+
+
+            /// {测试}
+            TEST: {
+                //弹出购买窗体
+                showBuyDialog:function (productIdentifier) {
+                    // 核查是否已经获取商品的请求核实数据
+                    if (!(b$.IAP.data.isRegistered)){
+                        var msg = "必须先调用 BS.b$.IAP.getEnable(),并且是可用状态 \n";
+                        msg += "然后调用 BS.b$.IAP.enableIAP() 函数进行初始化";
+
+                        alert(msg);
+                        return;
+                    }
+
+                    // 弹出购买窗体
+                    var allProductsPrice = '$9.99';
+                    var curProductPrice =  b$.IAP.data.getPrice(productIdentifier) || '$0.99';
+                    var message = {
+                        title:"Unlock [" + productIdentifier + "] product",
+                        message:"Only " + curProductPrice + " ,Do you want to unlock it. \nAlso all products only " + allProductsPrice + " you can buy all at times.",
+                        buttons:["Buy","Cancel","Buy All"],
+                        alertType:"Alert"
+                    };
+
+                    var result = b$.Notice.alert(message);
+                    if(result == 0){      //购买单个
+                        b$.IAP.buyProduct(productIdentifier);
+                    }else if(result > 1){ //购买全部
+                        alert("编写购买所有商品的处理方式，可以声明一个商品ID为所有商品的购买ID");
+                    }
+                }
             }
             
         };
