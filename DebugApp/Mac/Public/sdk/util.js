@@ -581,6 +581,10 @@
                 return o == null || o == undefined;
             },
 
+            isUnderfinedOrNullOrFalse: function (o) {
+                return o == null || o == undefined || o == false;
+            },
+
             isObject: function (o) {
                 return Object.prototype.toString.call(o) === "[object Object]";
             },

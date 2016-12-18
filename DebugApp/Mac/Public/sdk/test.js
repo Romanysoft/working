@@ -353,12 +353,127 @@
             }
             
         };
-        
-        
+
+
+        _u.Binary = {
+            run: function () {
+                var t$ = this;
+
+                for (var key in t$){
+                    if (t$.hasOwnProperty(key) && key.indexOf("test_") > -1){
+                        if ($.RTYUtils.isFunction(t$[key])){
+                            try{
+                                console.log("Test:[" + key + "] begin....\n");
+                                t$[key]();
+                                console.log("Test:[" + key + "] end....\n\n\n");
+                                console.log(".............................................");
+                            }catch(e) {console.error(e);}
+
+                        }
+                    }
+                }
+            },
+
+            test_write_and_get_text_file: function () {
+                console.log(
+                    "用例：测试写入Text文件...."
+                );
+
+                //判断文件是否存在
+                var tmpFilePath = b$.App.getNewTempFilePath("__101TEST01.txt");
+                console.assert(tmpFilePath.indexOf("__101TEST01.txt") > -1, "获取临时文件路径有问题");
+
+                //先判断这个临时文件是否存在
+                console.log("判断文件是否存在");
+                var fileExist = b$.App.checkPathIsFile(tmpFilePath);
+                console.assert(fileExist == false, "文件已经存在，这是错误的");
+
+                //先尝试写入文件
+                console.log("执行写入");
+                b$.Binary.createTextFile({
+                    filePath:tmpFilePath,
+                    text: "TestContent"
+                }, function(obj){
+                    console.assert($.isPlainObject(obj) == true, "obj对象返回不能为null");
+                    console.assert(obj.success == true, "写入不成功");
+                })
+
+                //判断读取文件时候有值
+                console.log("执行读取");
+                b$.Binary.getUTF8TextContentFromFile({
+                    filePath: tmpFilePath
+                }, function (obj) {
+                    console.assert($.isPlainObject(obj) == true, "obj对象返回不能为null");
+                    console.assert(obj.success == true, "读取不成功");
+
+                    if (obj.success) {
+                        console.assert(obj.content == "TestContent", "文件内容不正确");
+                    }
+                });
+
+
+            },
+
+            test_wirte_and_get_text_file_with_space: function() {
+                console.log(
+                    "用例：测试写入Text文件带空格路径的...."
+                );
+
+                //判断文件是否存在
+                var tmpFilePath = b$.App.getAppDataHomeDir() + "__101TEST012222.txt";
+                console.log("临时文件 = ", tmpFilePath);
+
+                //先尝试写入文件
+                console.log("执行写入");
+                b$.Binary.createTextFile({
+                    filePath:tmpFilePath,
+                    text: "TestContent"
+                }, function(obj){
+                    console.assert($.isPlainObject(obj) == true, "obj对象返回不能为null");
+                    console.assert(obj.success == true, "写入不成功");
+                })
+
+                //判断读取文件时候有值
+                console.log("执行读取");
+                b$.Binary.getUTF8TextContentFromFile({
+                    filePath: tmpFilePath
+                }, function (obj) {
+                    console.assert($.isPlainObject(obj) == true, "obj对象返回不能为null");
+                    console.assert(obj.success == true, "读取不成功");
+
+                    if (obj.success) {
+                        console.assert(obj.content == "TestContent", "文件内容不正确");
+                        console.log("读取到内容: ", obj.content);
+                    }
+                });
+            }
+        };
 
 
 
+        ////// 完善处理
+        _u.run = function(){
+            var t$ = this;
 
+            for (var key in t$){
+                if (t$.hasOwnProperty(key)){
+                    if ($.isPlainObject(t$[key])){
+                        try{
+                            if ($.RTYUtils.isFunction(t$[key]["run"])){
+                                try{
+                                    console.log("【Test:[" + key + "】 begin....\n");
+                                    t$[key]["run"]();
+                                    console.log("【Test:[" + key + "】 end....\n\n\n");
+                                    console.log("#################################################");
+                                }catch(e) {console.error(e);}
+
+                            }
+                        }catch(e) {console.error(e);}
+
+                    }
+                }
+            }
+        };
 
         $.TESTOOL_RTY = _u;
 

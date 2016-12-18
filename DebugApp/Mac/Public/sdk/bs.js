@@ -2692,7 +2692,7 @@
                             "command": _json.command || ['-v'],
                             "currentDirectoryPath": _json.currentDirectoryPath || "",
                             "environmentDic": _json.environmentDic || {},
-                            "mainThread": _json.mainThread || true
+                            "mainThread": _json.mainThread == false ? false : true
                         }
                     };
 
@@ -2755,7 +2755,7 @@
                     command: command || ['-v'],
                     currentDirectoryPath: _json.currentDirectoryPath || "",
                     "environmentDic": _json.environmentDic || {},
-                    "mainThread": _json.mainThread || true
+                    "mainThread": _json.mainThread == false ? false : true
                 };
 
                 $t.common_exec(newJson, successCB, failedCB);
@@ -2777,7 +2777,7 @@
                     "command": " --port=" + b$.App.getServerPort(), // {要求string}
                     "currentDirectoryPath": _json.currentDirectoryPath || "",
                     "environmentDic": _json.environmentDic || {},
-                    "mainThread": _json.mainThread || true
+                    "mainThread": _json.mainThread == false ? false : true
                 };
 
                 $t.exec(newJson, successCB, failedCB);
@@ -3195,7 +3195,7 @@
                     }, true);
                     parms['filePath'] = in_parms['filePath'] || "";
                     parms['encode'] = in_parms['encode'] || 'utf8';
-                    parms['async'] = in_parms['async'] || true; // 异步的时候，回调函数有效，否则无效，直接返回内容值
+                    parms['async'] = in_parms['async'] == false ? false : true; // 异步的时候，回调函数有效，否则无效，直接返回内容值
 
                     /**
                      encode: 说明，不区分大小写
@@ -3384,7 +3384,7 @@
 
                     }, true);
                     parms["enableDir"] = jsonObj["enableDir"] || false;
-                    parms["enableFile"] = jsonObj["enableFile"] || true;
+                    parms["enableFile"] = jsonObj["enableFile"] == false ? false : true;
                     parms["fileTypes"] = jsonObj["fileTypes"] || ["*"]; // ["*","mp3","md", "xls"] 类似这样的格式
 
                     /// 统一向后兼容处理
@@ -3667,7 +3667,7 @@
                 parms['prompt'] = in_parms['prompt'] || "Select";
 
                 parms['allowOtherFileTypes'] = false;
-                parms['canCreateDir'] = in_parms['canCreateDir'] || true;
+                parms['canCreateDir'] = in_parms['canCreateDir'] == false ? false : true;
                 parms['canChooseDir'] = true;
                 parms['canChooseFiles'] = false; //不可以选择文件
                 parms['canAddToRecent'] = true; // 是否添加到最近目录中
@@ -3731,7 +3731,7 @@
                     parms['prompt'] = in_parms['prompt'] || "Save";
 
                     parms['allowOtherFileTypes'] = false;
-                    parms['canCreateDir'] = in_parms['canCreateDir'] || true;
+                    parms['canCreateDir'] = in_parms['canCreateDir'] == false ? false : true;
                     parms['canAddToRecent'] = true; // 是否添加到最近目录中
                     parms['fileName'] = in_parms['fileName'] || "untitled";
                     parms['directory'] = in_parms['directory'] || ""; // 默认指定的目录
