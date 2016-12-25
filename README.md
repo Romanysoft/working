@@ -1,5 +1,13 @@
 
-working - make app
+====
+[![](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/images/intro_zh-CN.png)](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
+
+
+====
+### [申请加入](http://wpa.qq.com/msgrd?v=3&uin=34314687&site=qq&menu=yes)
+### Romanysoft合作开发（中国区）在线系统
+[Romanysoft合作开发（中国区）在线系统](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
+
 ====
 ### 产品界面赏析
 
@@ -21,12 +29,7 @@ working - make app
 1. **https://github.com/Romanysoft/working/tree/master/DebugApp/Mac/Public DebugApp.zip** 核心public源码
 1. **https://github.com/Romanysoft/working/tree/master/sdkjs**  同步最新的SDKJS包
 
-[![](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/images/intro_zh-CN.png)](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
 
-====
-### [申请加入](http://wpa.qq.com/msgrd?v=3&uin=34314687&site=qq&menu=yes)
-### Romanysoft合作开发（中国区）在线系统
-[Romanysoft合作开发（中国区）在线系统](https://romanysoft.github.io/CommonLib/devhelper/zh-CN/dev-app)
 
 ====
 
