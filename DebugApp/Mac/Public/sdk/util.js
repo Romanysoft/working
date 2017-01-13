@@ -293,6 +293,7 @@
         (function () {
             var $du = $.RTY_Config = {};
             $du.kendoui_url = ""; // 配置KendoUI的Url方便，全局处理
+            $du.reportErr = false; // 是否发送错误报告到服务器
         })();
 
         //=============================================================================================
@@ -2726,16 +2727,21 @@
              该用法用来捕捉不在try... catch 内的Error
              */
 
+            
             var _callReport = function (e) {
                 try {
                     var message = $.RTYUtils.getErrorMessage(e);
                     if (message && message != "") {
                         console.log("------异常捕获 _callReport -----");
-                        // 发送到服务器
-                        $.reportInfo({
-                            type: "HTML5_RTY_EXCEPTION",
-                            errorMessage: message
-                        });
+                        console.log(message);
+
+                        if($.RTY_Config.reportErr){
+                            // 发送到服务器
+                            $.reportInfo({
+                                type: "HTML5_RTY_EXCEPTION",
+                                errorMessage: message
+                            });
+                        }
                     }
                 } catch (err) {
                     console.error(err);
