@@ -17,7 +17,7 @@
 
     <!-- Gritter -->
     <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
-	
+
 	 <!-- CodeMirror -->
 	 <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
 
@@ -66,7 +66,7 @@
                             <li><a href="rs_sdk_iap.html">IAP</a></li>
                             <li><a href="rs_sdk_xpc.html">XPC</a></li>
                         </ul>
-                    </li>                    
+                    </li>
                     <li>
                         <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -405,7 +405,7 @@
                                 <strong>Binary</strong> 提供了基础的二进制处理函数
                             </p>
 							<br>
-							
+
 							<h3><code>BS.b$.Binary.createBinaryFile(in_parms, cb)</code></h3>
                             <div class="alert alert-warning">
 								创建二进制文件
@@ -424,11 +424,11 @@ BS.b$.Binary.createBinaryFile({
 }, function(info){
 	console.log(info);
 })
-										
-							   </textarea>									
-                            </div>	
 
-							
+							   </textarea>
+                            </div>
+
+
 							<h3><code>BS.b$.Binary.createTextFile(in_parms, cb)</code></h3>
                             <div class="alert alert-warning">
 								创建文本文件
@@ -447,11 +447,11 @@ BS.b$.Binary.createTextFile({
 }, function(info){
 	console.log($.obj2string(info));
 })
-										
-							   </textarea>									
-                            </div>								
-							
-							
+
+							   </textarea>
+                            </div>
+
+
 							<h3><code>BS.b$.Binary.getUTF8TextContentFromFile(in_parms, cb)</code></h3>
                             <div class="alert alert-warning">
 								获得文件的utf-8编码内容
@@ -475,11 +475,11 @@ BS.b$.Binary.getUTF8TextContentFromFile({
 }, function(info){
 	console.log($.obj2string(info));
 })
-										
-							   </textarea>									
-                            </div>							
-							
-							
+
+							   </textarea>
+                            </div>
+
+
 							<h3><code>BS.b$.Binary.base64ToFile(in_parms, cb)</code></h3>
                             <div class="alert alert-warning">
 								base64编码转换成文件
@@ -498,11 +498,11 @@ BS.b$.Binary.base64ToFile({
 }, function(info){
 	console.log($.obj2string(info));
 })
-										
-							   </textarea>									
-                            </div>								
-							
-							
+
+							   </textarea>
+                            </div>
+
+
 							<h3><code>BS.b$.Binary.base64ToImageFile(in_parms, cb)</code></h3>
                             <div class="alert alert-warning">
 								base64编码转换成文件
@@ -516,17 +516,17 @@ BS.b$.Binary.base64ToFile({
 
 BS.b$.Binary.base64ToImageFile({
 	filePath: BS.b$.App.getTempDir() + "test1.png"            // 文件路径
-	base64String: "", // base64编码内容
+	base64String: "", // base64编码内容, 注意：以"data:image/png;base64" 开头的URI都需要通过 split(',')[1] 来获取后面真正的base64字符串。 
 	dataAppend: false, // 是否附加到文件中
     imageType: "png"   // 文件的类型（jpg,jpeg,png,bmp,gif,tiff）
 }, function(info){
 	console.log($.obj2string(info));
 })
-										
-							   </textarea>									
-                            </div>							
-							
-							
+
+							   </textarea>
+                            </div>
+
+
 							<h3><code>BS.b$.Binary.imageFileConvertToOthers(in_parms, cb)</code></h3>
                             <div class="alert alert-warning">
 								简易图片转换接口
@@ -541,23 +541,23 @@ BS.b$.Binary.base64ToImageFile({
 BS.b$.Binary.imageFileConvertToOthers({
 	filePath: BS.b$.App.getTempDir() + "test1.png"            // 目标文件路径
 	orgFilePath: BS.b$.App.getTempDir() + "org_test1.jpg" ,   // 源文件
-	imageType: 'png'                                          // 目标文件图片编码格式。如："gif,bmp,png,jpg,jpeg"                              
+	imageType: 'png'                                          // 目标文件图片编码格式。如："gif,bmp,png,jpg,jpeg"
 }, function(info){
 	console.log($.obj2string(info));
 })
-										
-							   </textarea>									
-                            </div>								
-							
 
-							
+							   </textarea>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
-			
-        </div>			
-		
+
+        </div>
+
         </div>
 
 
@@ -601,12 +601,12 @@ BS.b$.Binary.imageFileConvertToOthers({
 
     <!-- Toastr -->
     <script src="js/plugins/toastr/toastr.min.js"></script>
-	
+
 	<!-- CodeMirror -->
 	<script src="js/plugins/codemirror/codemirror.js"></script>
 	<script src="js/plugins/codemirror/mode/javascript/javascript.js"></script>
-	
-	
+
+
 	<!-- 加载SDK -->
 	<script src="sdk/util.js"></script>
 	<script src="sdk/bs.js"></script>
